@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics — Malabar College of Engineering</title>
+    <meta name="description"
+        content="Explore the academic departments, programmes, and courses offered at Malabar College of Engineering.">
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <style>
+        .dept-hero {
+            background: linear-gradient(135deg, var(--mce-primary-dark), var(--mce-secondary));
+            border-radius: 14px;
+            padding: 40px;
+            color: var(--mce-white);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dept-hero-icon {
+            font-size: 60px;
+            flex-shrink: 0;
+        }
+
+        .prog-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--mce-bg-gray);
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 6px;
+            transition: var(--mce-transition);
+        }
+
+        .prog-badge:hover {
+            background: var(--mce-secondary-light);
+            border-color: var(--mce-secondary);
+            color: var(--mce-secondary);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--mce-white);
+            border: 1.5px solid var(--mce-primary);
+            color: var(--mce-primary);
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--mce-transition);
+        }
+
+        .download-btn:hover {
+            background: var(--mce-primary);
+            color: var(--mce-white);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="mce-header"></header>
+
+    <section class="hero-banner"
+        style="background: linear-gradient(135deg, var(--mce-primary) 0%, var(--mce-secondary) 100%);">
+        <h1>Academics</h1>
+        <p class="hero-description">Explore our diverse programmes across four dynamic academic schools — crafted for
+            modern career success.</p>
+        <div class="breadcrumb-container">
+            <a href="index.html">Home</a><span class="breadcrumb-separator">›</span><span>Academics</span>
+        </div>
+    </section>
+
+    <!-- Departments Overview intro -->
+    <section class="section-padding">
+        <div class="section-container">
+            <div class="section-header reveal reveal-fade-up">
+                <h2 class="section-title">Our Academic Schools</h2>
+                <p class="section-subtitle">Four specialized schools, each offering industry-centric programmes
+                    delivering real-world competitiveness.</p>
+            </div>
+
+            <!-- ITI -->
+            <div class="dept-hero reveal reveal-fade-left" style="margin-bottom: 40px;">
+                <div class="dept-hero-icon">⚙️</div>
+                <div>
+                    <h2 style="color: var(--mce-white); font-size: 28px; margin-bottom: 8px;">Industrial Training
+                        Institute (ITI)</h2>
+                    <p style="color: rgba(255,255,255,0.88); font-size: 15px; line-height: 1.7; margin-bottom: 20px;">
+                        NCVT-affiliated ITI programmes providing government-certified trade skills in mechanical, civil,
+                        and service industries. Graduates are eligible for apprenticeships and government employment
+                        across Kerala and India.</p>
+                    <div>
+                        <span class="prog-badge"
+                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">⚡
+                            Electrician</span>
+                        <span class="prog-badge"
+                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">📐
+                            Draughtsman Civil</span>
+                        <span class="prog-badge"
+                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">🏥
+                            Health Sanitary Inspector</span>
+                        <span class="prog-badge"
+                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">🏨
+                            Front Office Assistant</span>
+                    </div>
+                    <a href="iti.html" class="btn-primary"
+                        style="margin-top: 20px; display: inline-flex; background: var(--mce-accent); color: var(--mce-primary-dark);">View
+                        ITI Courses →</a>
+                </div>
+            </div>
+
+            <!-- SIT -->
+            <div class="premium-card reveal reveal-fade-right" style="margin-bottom: 30px;">
+                <div style="display: flex; gap: 24px; align-items: flex-start;">
+                    <div style="font-size: 50px; flex-shrink: 0;">💻</div>
+                    <div>
+                        <h2 style="color: var(--mce-secondary); font-size: 26px; margin-bottom: 10px;">School of
+                            Information
+                            Technology (SIT)</h2>
+                        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">SIT offers
+                            diploma and certificate programmes in computing, multimedia, accounting software, and
+                            networking. Our labs are equipped with the latest hardware and software environments used in
+                            tech companies.</p>
+                        <div>
+                            <span class="prog-badge">💾 DCA</span>
+                            <span class="prog-badge">🖥️ PGDCA</span>
+                            <span class="prog-badge">🎨 CCA / CCAD</span>
+                            <span class="prog-badge">📱 Multimedia & Design</span>
+                            <span class="prog-badge">🌐 Web Technologies</span>
+                        </div>
+                        <a href="sit.html" class="btn-secondary" style="margin-top: 20px; display: inline-flex;">View
+                            SIT Courses →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMS -->
+            <div class="premium-card reveal reveal-fade-left"
+                style="margin-bottom: 30px; border-left: 4px solid var(--mce-accent);">
+                <div style="display: flex; gap: 24px; align-items: flex-start;">
+                    <div style="font-size: 50px; flex-shrink: 0;">📊</div>
+                    <div>
+                        <h2 style="color: var(--mce-primary); font-size: 26px; margin-bottom: 10px;">School of
+                            Management
+                            Studies (SMS)</h2>
+                        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">SMS provides
+                            professional management and executive education programmes designed for students aspiring to
+                            leadership and business roles. Our faculty bring real-world corporate experience to every
+                            classroom.</p>
+                        <div>
+                            <span class="prog-badge">📈 MBA Executive</span>
+                            <span class="prog-badge">🏢 Office Administration</span>
+                            <span class="prog-badge">💼 Import Export Management</span>
+                            <span class="prog-badge">📋 Certificate in Business</span>
+                        </div>
+                        <a href="sms.html" class="btn-secondary" style="margin-top: 20px; display: inline-flex;">View
+                            SMS Courses →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cognita -->
+            <div class="premium-card reveal reveal-fade-right" style="border-left: 4px solid #2e7d32;">
+                <div style="display: flex; gap: 24px; align-items: flex-start;">
+                    <div style="font-size: 50px; flex-shrink: 0;">✈️</div>
+                    <div>
+                        <h2 style="color: #2e7d32; font-size: 26px; margin-bottom: 10px;">Cognita Global Education</h2>
+                        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">Cognita is our
+                            international academic gateway — offering guided admissions, IELTS coaching, visa
+                            counseling, and university placement support for those pursuing education in UK, USA,
+                            Canada, Australia, and Europe.</p>
+                        <div>
+                            <span class="prog-badge">🇬🇧 UK Universities</span>
+                            <span class="prog-badge">🇨🇦 Canada Pathway</span>
+                            <span class="prog-badge">🇦🇺 Australia Programmes</span>
+                            <span class="prog-badge">🇺🇸 USA Education</span>
+                        </div>
+                        <a href="cognita.html" class="btn-secondary"
+                            style="margin-top: 20px; display: inline-flex; border-color: #2e7d32; color: #2e7d32;">Explore
+                            Cognita →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Calendar & Downloads -->
+
+
+    <!-- CTA -->
+    <section class="section-padding">
+        <div class="section-container reveal reveal-fade-up">
+            <div class="cta-banner">
+                <h2>Find Your Academic Path</h2>
+                <p>Whether you're drawn to hands-on trades, tech innovation, business leadership, or global education —
+                    Malabar College of Engineering has the perfect programme for you.</p>
+                <a href="admission.html" class="btn-primary"
+                    style="background: var(--mce-accent); color: var(--mce-primary-dark);">Start Your Application</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Premium Departments -->
+    <!-- ========================================= -->
+
+    <section class="premium-department section-padding">
+
+        <div class="section-container">
+
+            <div class="premium-layout">
+
+                <!-- LEFT SIDEBAR -->
+
+                <div class="premium-sidebar">
+
+                    <h6>ACADEMIC DEPARTMENTS</h6>
+
+                    <button class="premium-btn active" data-dept="tourism">
+                        Travel & Tourism
+                    </button>
+
+                    <button class="premium-btn" data-dept="commerce">
+                        Commerce
+                    </button>
+
+                    <button class="premium-btn" data-dept="english">
+                        English
+                    </button>
+
+                    <button class="premium-btn" data-dept="multimedia">
+                        Multimedia
+                    </button>
+
+                    <button class="premium-btn" data-dept="cs">
+                        Computer Science
+                    </button>
+
+                    <button class="premium-btn" data-dept="bba">
+                        Business Administration
+                    </button>
+
+                </div>
+
+                <!-- RIGHT CONTENT -->
+
+                <div class="premium-content">
+
+                    <h2 id="deptTitle">
+                        Department of Travel & Tourism
+                    </h2>
+
+                    <p id="deptDescription">
+
+                        The Department of Travel and Tourism prepares students for
+                        careers in tourism, hospitality, airlines, travel
+                        management and destination marketing through practical
+                        learning and industrial exposure.
+
+                    </p>
+
+                    <!-- Faculty -->
+
+                    <div id="facultyCards" class="premium-faculty">
+
+                        <div class="faculty-box">
+
+                            <img src="assets/images/faculty/faculty1.jpg">
+
+                            <h4>Anusha K</h4>
+
+                            <span>Head of Department</span>
+
+                        </div>
+
+                        <div class="faculty-box">
+
+                            <img src="assets/images/faculty/faculty2.jpg">
+
+                            <h4>Suramya T</h4>
+
+                            <span>Assistant Professor</span>
+
+                        </div>
+
+                        <div class="faculty-box">
+
+                            <img src="assets/images/faculty/faculty3.jpg">
+
+                            <h4>Najumdheen K</h4>
+
+                            <span>Assistant Professor</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        const data = {
+
+            tourism: {
+                title: "Department of Travel & Tourism",
+                description: "The Department of Travel and Tourism prepares students for careers in tourism, hospitality, airlines, travel management and destination marketing through practical learning and industrial exposure.",
+                faculty: [
+                    ["assets/images/faculty/faculty1.jpg", "Anusha K", "Head of Department"],
+                    ["assets/images/faculty/faculty2.jpg", "Suramya T", "Assistant Professor"],
+                    ["assets/images/faculty/faculty3.jpg", "Najumdheen K", "Assistant Professor"]
+                ]
+            },
+
+            commerce: {
+                title: "Department of Commerce",
+                description: "The Department of Commerce equips students with accounting, finance, taxation and entrepreneurship skills through projects and internships.",
+                faculty: [
+                    ["assets/images/faculty/commerce1.jpg", "Rahul R", "Head of Department"],
+                    ["assets/images/faculty/commerce2.jpg", "Anjana M", "Assistant Professor"],
+                    ["assets/images/faculty/commerce3.jpg", "Nidhin K", "Assistant Professor"]
+                ]
+            },
+
+            english: {
+                title: "Department of English",
+                description: "The Department of English develops communication, literature and research skills.",
+                faculty: [
+                    ["assets/images/faculty/english1.jpg", "Arya S", "Head of Department"],
+                    ["assets/images/faculty/english2.jpg", "Megha P", "Faculty"],
+                    ["assets/images/faculty/english3.jpg", "Neethu T", "Faculty"]
+                ]
+            },
+
+            multimedia: {
+                title: "Department of Multimedia",
+                description: "The Multimedia Department focuses on Graphic Design, Motion Graphics, Animation and Video Editing.",
+                faculty: [
+                    ["assets/images/faculty/multi1.jpg", "Irshad Ali", "Head of Department"],
+                    ["assets/images/faculty/multi2.jpg", "Nabeel", "Faculty"],
+                    ["assets/images/faculty/multi3.jpg", "Aslam", "Faculty"]
+                ]
+            },
+
+            cs: {
+                title: "Department of Computer Science",
+                description: "The Department of Computer Science focuses on AI, Programming, Cyber Security and Software Engineering.",
+                faculty: [
+                    ["assets/images/faculty/cs1.jpg", "Ashif", "Head of Department"],
+                    ["assets/images/faculty/cs2.jpg", "Suhail", "Faculty"],
+                    ["assets/images/faculty/cs3.jpg", "Faris", "Faculty"]
+                ]
+            },
+
+            bba: {
+                title: "Department of Business Administration",
+                description: "The Department of Business Administration prepares future managers and entrepreneurs.",
+                faculty: [
+                    ["assets/images/faculty/bba1.jpg", "Shameer", "Head of Department"],
+                    ["assets/images/faculty/bba2.jpg", "Rashid", "Faculty"],
+                    ["assets/images/faculty/bba3.jpg", "Nisam", "Faculty"]
+                ]
+            }
+
+        };
+
+        const buttons = document.querySelectorAll(".premium-btn");
+
+        buttons.forEach(btn => {
+
+            btn.onclick = function () {
+
+                buttons.forEach(b => b.classList.remove("active"));
+
+                this.classList.add("active");
+
+                const d = data[this.dataset.dept];
+
+                document.getElementById("deptTitle").innerHTML = d.title;
+
+                document.getElementById("deptDescription").innerHTML = d.description;
+
+                let html = "";
+
+                d.faculty.forEach(f => {
+
+                    html += `
+<div class="faculty-box">
+<img src="${f[0]}" alt="">
+<h4>${f[1]}</h4>
+<span>${f[2]}</span>
+</div>
+`;
+
+                });
+
+                document.getElementById("facultyCards").innerHTML = html;
+
+            }
+
+        });
+
+    </script>
+
+    <footer id="mce-footer"></footer>
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+</body>
+
+</html>

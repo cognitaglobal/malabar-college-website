@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Login — Malabar College of Engineering</title>
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <style>
+        .erp-login-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--mce-white);
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 48px 40px;
+        }
+
+        .erp-role-btn {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: var(--mce-white);
+            cursor: pointer;
+            margin-bottom: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            transition: var(--mce-transition);
+            color: #333;
+            text-decoration: none;
+        }
+
+        .erp-role-btn:hover {
+            border-color: var(--mce-primary);
+            background: rgba(139, 26, 26, 0.04);
+            color: var(--mce-primary);
+        }
+
+        .erp-role-btn .icon {
+            font-size: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="mce-header"></header>
+
+    <section class="hero-banner"
+        style="background: linear-gradient(135deg, #0a1628 0%, var(--mce-secondary) 50%, var(--mce-primary) 100%);">
+        <h1>ERP Login Portal</h1>
+        <p class="hero-description">Secure access to the Malabar College of Engineering Enterprise Resource Planning system.</p>
+        <div class="breadcrumb-container"><a href="index.html">Home</a><span
+                class="breadcrumb-separator">›</span><span>ERP Login</span></div>
+    </section>
+
+    <section class="section-padding">
+        <div class="section-container">
+            <div class="grid-2" style="align-items: start; gap: 60px;">
+                <!-- Login Form -->
+                <div class="erp-login-card reveal reveal-fade-left">
+                    <div style="text-align: center; margin-bottom: 32px;">
+                        <img src="assets/images/mce-logo.png" alt="MCE Logo" style="height: 60px; margin-bottom: 16px;"
+                            onerror="this.style.display='none'">
+                        <h2 style="font-size: 22px; color: var(--mce-primary); margin-bottom: 6px;">Welcome Back</h2>
+                        <p style="color: #888; font-size: 14.5px;">Sign in to access the Malabar College of Engineering ERP System</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username / Employee ID</label>
+                        <input class="form-control" placeholder="Enter your username or ID" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" placeholder="Enter your password" type="password">
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#"
+                            style="color: var(--mce-secondary); font-size: 14px; font-weight: 600; text-decoration: none;">Forgot
+                            password?</a>
+                    </div>
+                    <button class="btn-primary" style="width: 100%; font-size: 16px; padding: 16px;">Login to ERP
+                        →</button>
+                    <div
+                        style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #f0f0f0;">
+                        <p style="font-size: 13.5px; color: #888;">Having trouble? <a href="contact.html"
+                                style="color: var(--mce-primary); font-weight: 700;">Contact IT Support</a></p>
+                    </div>
+                </div>
+
+                <!-- Role Selection & Info -->
+                <div class="reveal reveal-fade-right">
+                    <h3 style="font-size: 26px; color: var(--mce-primary); font-weight: 800; margin-bottom: 8px;">Access
+                        by Role</h3>
+                    <p style="color: #555; margin-bottom: 24px; font-size: 15px;">Select your role to be redirected to
+                        the appropriate ERP portal section.</p>
+
+                    <a href="https://erp.malabarcet.ac.in" target="_blank" class="erp-role-btn">
+                        <span class="icon">👨‍💼</span>
+                        <div>
+                            <div>Admin / Management</div>
+                            <div style="font-size: 12px; color: #888; font-weight: 500;">Full ERP control panel access
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://erp.malabarcet.ac.in" target="_blank" class="erp-role-btn">
+                        <span class="icon">🎓</span>
+                        <div>
+                            <div>Student Portal</div>
+                            <div style="font-size: 12px; color: #888; font-weight: 500;">Marks, attendance, fees,
+                                timetable</div>
+                        </div>
+                    </a>
+                    <a href="https://erp.malabarcet.ac.in" target="_blank" class="erp-role-btn">
+                        <span class="icon">👨‍🏫</span>
+                        <div>
+                            <div>Faculty / Staff</div>
+                            <div style="font-size: 12px; color: #888; font-weight: 500;">Attendance entry, marks upload,
+                                leave</div>
+                        </div>
+                    </a>
+                    <a href="https://erp.malabarcet.ac.in" target="_blank" class="erp-role-btn">
+                        <span class="icon">👨‍👩‍👦</span>
+                        <div>
+                            <div>Parent Login</div>
+                            <div style="font-size: 12px; color: #888; font-weight: 500;">View ward's academic progress
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="premium-card"
+                        style="margin-top: 30px; background: var(--mce-bg-gray); box-shadow: none; border: 1px solid #e0e0e0;">
+                        <h4 style="color: var(--mce-secondary); margin-bottom: 10px;">ℹ️ ERP Features</h4>
+                        <ul style="font-size: 14px; color: #555; line-height: 2.2; list-style: none;">
+                            <li>📊 Real-time attendance tracking</li>
+                            <li>📋 Online fee payment gateway</li>
+                            <li>📝 Internal marks & gradebook</li>
+                            <li>📅 Timetable & schedule management</li>
+                            <li>📢 Announcements & notifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="mce-footer"></footer>
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+</body>
+
+</html>

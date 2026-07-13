@@ -1,0 +1,430 @@
+/* =========================================================
+   Malabar Engineering College — Inner Pages Styles
+   File: pages.css
+   ========================================================= */
+
+:root {
+    --clr-teal: #008080;
+    --clr-teal-soft: #e0f2f2;
+    --clr-orange: #ff6b35;
+    --clr-orange-soft: #fff0eb;
+}
+
+/* ---------- Inner Page Wrapper ---------- */
+.inner-page {
+    padding-bottom: var(--space-xl);
+}
+
+/* ---------- Back Button ---------- */
+.back-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-full);
+    color: var(--clr-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all var(--trans-base);
+}
+
+.back-btn:hover {
+    background: var(--clr-white);
+    transform: translateX(-5px);
+    box-shadow: 0 8px 25px rgba(26, 79, 186, 0.15);
+    border-color: var(--clr-primary-light);
+}
+
+.back-arrow {
+    font-size: 1.2rem;
+    transition: transform var(--trans-fast);
+}
+
+/* ---------- Institution Hero Header ---------- */
+.inst-header {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(180deg, rgba(232, 238, 249, 0.5) 0%, transparent 100%);
+}
+
+.inst-hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.inst-logo-wrap {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    background: var(--clr-white);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--clr-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: logoEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.inst-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.inst-info {
+    flex-grow: 1;
+}
+
+.inst-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--clr-accent-soft);
+    color: var(--clr-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    margin-bottom: 1rem;
+}
+
+.inst-badge--teal {
+    background: var(--clr-teal-soft);
+    color: var(--clr-teal);
+}
+
+.inst-badge--orange {
+    background: var(--clr-orange-soft);
+    color: var(--clr-orange);
+}
+
+.inst-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--clr-text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.inst-description {
+    font-size: 1.05rem;
+    color: var(--clr-text-mid);
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* ---------- Courses Grid ---------- */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* ---------- Course Card ---------- */
+.course-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    padding: 2.5rem 2rem;
+    transition: all var(--trans-base);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.course-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(26, 79, 186, 0.05), transparent);
+    pointer-events: none;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    background: var(--clr-white);
+    box-shadow: 0 20px 40px rgba(26, 79, 186, 0.12);
+    border-color: var(--clr-primary-light);
+}
+
+.course-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--clr-accent-soft);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: all var(--trans-base);
+}
+
+.course-card:hover .course-icon-wrap {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--clr-primary);
+}
+
+.course-card:hover .course-icon {
+    filter: brightness(2);
+}
+
+.course-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--clr-text-dark);
+}
+
+.course-desc {
+    font-size: 0.95rem;
+    color: var(--clr-text-mid);
+    line-height: 1.6;
+}
+
+.course-cta {
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--clr-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Variations for Institutions */
+.course-card--teal:hover {
+    box-shadow: 0 20px 40px rgba(0, 128, 128, 0.12);
+    border-color: var(--clr-teal);
+}
+
+.course-card--teal .course-icon-wrap {
+    background: var(--clr-teal-soft);
+}
+
+.course-card--teal:hover .course-icon-wrap {
+    background: var(--clr-teal);
+}
+
+.course-card--teal .course-cta {
+    color: var(--clr-teal);
+}
+
+.course-card--orange:hover {
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.12);
+    border-color: var(--clr-orange);
+}
+
+.course-card--orange .course-icon-wrap {
+    background: var(--clr-orange-soft);
+}
+
+.course-card--orange:hover .course-icon-wrap {
+    background: var(--clr-orange);
+}
+
+.course-card--orange .course-cta {
+    color: var(--clr-orange);
+}
+
+/* ---------- PDF Viewer Styles ---------- */
+.viewer-body {
+    background-color: var(--clr-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewer-header {
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+
+.viewer-title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.viewer-badge {
+    padding: 0.4rem 1.2rem;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.viewer-course-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--clr-text-dark);
+}
+
+.viewer-section {
+    flex-grow: 1;
+    padding-bottom: 5rem;
+}
+
+.pdf-wrapper {
+    background: var(--clr-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--clr-border);
+    min-height: 600px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-placeholder {
+    padding: 4rem;
+    text-align: center;
+    width: 100%;
+}
+
+.pdf-placeholder-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.pdf-icon-anim {
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.placeholder-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--clr-primary-dark);
+}
+
+.placeholder-sub {
+    color: var(--clr-text-mid);
+    font-size: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.placeholder-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.2rem;
+    background: var(--clr-bg);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-text-mid);
+}
+
+.placeholder-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--clr-primary);
+    border-radius: 50%;
+    animation: pulseDot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pdf-iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+    .inst-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .inst-description {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .back-btn {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .inst-header {
+        padding-top: 6rem;
+    }
+
+    .inst-title {
+        font-size: 1.8rem;
+    }
+
+    .viewer-course-title {
+        font-size: 1.8rem;
+    }
+
+    .pdf-wrapper {
+        min-height: 400px;
+    }
+}

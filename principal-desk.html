@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal's Desk — Malabar College of Engineering</title>
+    <meta name="description"
+        content="Read the welcome message and vision of the Principal, Dr. T.K. Maqbool, at Malabar College of Engineering.">
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        /* Slider/Banner Styling */
+        .hero-slider-wrap {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mce-white);
+            text-align: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(92, 15, 15, 0.88), rgba(0, 74, 173, 0.65));
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 24px;
+        }
+
+        .slide-content h2 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--mce-white);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-content p {
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 35px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Principal Column Grid Styling */
+        .principal-img-container {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 4/5;
+            margin: 0 auto;
+        }
+
+        .principal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .principal-img-container:hover .principal-img {
+            transform: scale(1.08);
+        }
+
+        .principal-tag {
+            color: var(--mce-secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .principal-titles {
+            font-size: 36px;
+            margin: 0 0 4px;
+            color: var(--mce-primary);
+            font-weight: 800;
+        }
+
+        .principal-sub {
+            font-size: 18px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .principal-sub::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--mce-secondary);
+            border-radius: 2px;
+        }
+
+        .expandable-text {
+            max-height: 145px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .expandable-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .expandable-text.expanded::after {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider-wrap {
+                height: 450px;
+            }
+
+            .slide-content h2 {
+                font-size: 32px;
+            }
+
+            .slide-content p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Header -->
+    <header id="mce-header"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-slider-wrap" id="homeSlider">
+        <div class="slide active" style="background-image: url('assets/images/campus-main.jpg');">
+            <div class="slide-content">
+                <h2>Principal's Desk</h2>
+                <p>Welcome to Malabar College of Engineering. Nurturing outstanding career paths and values for
+                    over a century.</p>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <a href="admission.html" class="btn-primary">Apply Online</a>
+                    <a href="about.html" class="btn-secondary"
+                        style="border-color: var(--mce-white); color: var(--mce-white);">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Section -->
+    <section class="section-padding reveal reveal-fade-up" style="background-color: var(--mce-white);">
+        <div class="section-container grid-2" style="align-items: center; gap: 50px;">
+            <!-- Left Side: Principal's photo -->
+            <div class="reveal reveal-fade-left" style="display: flex; justify-content: center; align-items: center;">
+                <div class="principal-img-container">
+                    <img src="assets/images/principal.webp" alt="Dr. T.K. Maqbool" class="principal-img"
+                        onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800'">
+                </div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="reveal reveal-fade-right">
+                <span class="principal-tag">Principal's Desk</span>
+                <h2 class="principal-titles">Dr. T.K. Maqbool</h2>
+                <div class="principal-sub">Principal</div>
+
+                <div class="expandable-text-wrap">
+                    <div class="expandable-text" id="welcomeText">
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px;">
+                            Welcome to the Principal's Desk of Malabar College of Engineering. It is with great
+                            pleasure and pride that I welcome you to our academic community. For over a century, MCE
+                            Islam has stood as a beacon of knowledge, service, and educational empowerment. We are
+                            committed to nurturing intellectual curiosity, professional capability, and deep-seated
+                            ethical values in all our students.
+                        </p>
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px;">
+                            Here, education is not just about local textbook learning but rather a transformative
+                            process that encourages students to think beyond classroom boundaries. Through our diverse
+                            academic offerings—from industrial training and software engineering to management studies
+                            and global program options—we focus on preparing our trainees with real-world skills that
+                            translate into solid employment.
+                        </p>
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px;">
+                            Our state-of-the-art laboratory networks, collaborative study spaces, and seasoned faculty
+                            members ensure a holistic learning journey. We are proud of our student-centric initiatives,
+                            academic quality assurance, and robust placement partnerships that connect our graduates
+                            directly with national and multinational companies.
+                        </p>
+                        <p style="font-size: 16px; line-height: 1.8; color: #555;">
+                            As we move ahead, we continue to innovate our curriculum, explore global pathways, and
+                            welcome prospective students to join our legacy. We invite you to explore our campus, learn
+                            about our heritage, and build a successful professional foundation. Let us learn, pioneer,
+                            and transform the future together.
+                        </p>
+                    </div>
+                    <button id="readMoreBtn" class="btn-secondary" style="margin-top: 15px;">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer -->
+    <footer id="mce-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('readMoreBtn');
+            const text = document.getElementById('welcomeText');
+
+            if (btn && text) {
+                btn.addEventListener('click', () => {
+                    if (text.classList.contains('expanded')) {
+                        text.style.maxHeight = '145px';
+                        text.classList.remove('expanded');
+                        btn.textContent = 'Read More';
+                    } else {
+                        text.style.maxHeight = text.scrollHeight + 'px';
+                        text.classList.add('expanded');
+                        btn.textContent = 'Read Less';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

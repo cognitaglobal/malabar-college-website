@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malabar Engineering College - Premium Gateway</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="iti-home.css">
+    <meta name="description"
+        content="ITI Naduvannur – NCVT Affiliated Industrial Training Institute offering Electrician, Fitter, COPA, Welder and more trades. Quality technical education in Kerala.">
+    <meta name="keywords"
+        content="ITI Naduvannur, Industrial Training Institute, NCVT, Kerala ITI, Electrician course, Fitter course, COPA, Vocational training">
+
+    <style>
+        .card-icon {
+            width: 170px !important;
+            height: 120px !important;
+            object-fit: contain;
+        }
+
+        .card-logo-container {
+            width: 80px;
+            height: 80px;
+        }
+
+        .large-logo {
+            width: 170px !important;
+            height: 120px !important;
+        }
+
+        .normal-logo {
+            width: 140px !important;
+            height: 120px !important;
+            object-fit: contain;
+        }
+
+        .floating-admission {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        .circle-popup {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #004aad, #007bff);
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            font-weight: bold;
+            font-size: 18px;
+
+            box-shadow: 0 15px 40px rgba(0, 74, 173, 0.4);
+
+            animation: popup3d 2s infinite;
+            transition: 0.3s;
+        }
+
+        .circle-popup:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes popup3d {
+            0% {
+                transform: scale(0.3) rotateY(90deg);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1) rotateY(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        .starburst-popup {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 220px;
+            height: 220px;
+
+            background: #004aad;
+            color: white;
+            text-decoration: none;
+            z-index: 9999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            clip-path: polygon(50% 0%, 60% 12%, 75% 5%, 80% 20%,
+                    95% 15%, 90% 35%, 100% 50%, 90% 65%,
+                    95% 85%, 80% 80%, 75% 95%, 60% 88%,
+                    50% 100%, 40% 88%, 25% 95%, 20% 80%,
+                    5% 85%, 10% 65%, 0% 50%, 10% 35%,
+                    5% 15%, 20% 20%, 25% 5%, 40% 12%);
+
+            box-shadow: 0 15px 40px rgba(0, 74, 173, .4);
+            animation: pulse 2s infinite;
+        }
+
+        .popup-text h3 {
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .popup-text p {
+            font-size: 13px;
+            margin-top: 8px;
+            line-height: 1.3;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateY(-50%) scale(1);
+            }
+
+            50% {
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            100% {
+                transform: translateY(-50%) scale(1);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+</head>
+
+
+<body>
+    <a href="admission.html" class="starburst-popup">
+        <div class="popup-text">
+            <h3>School of Skill Development</h3>
+            <p>(Short Term Courses)</p>
+        </div>
+    </a>
+    <div class="container">
+        <section class="hero-section" style="padding-top: 10px;">
+            <div class="hero-logo-container">
+                <img src="assets/images/mce-logo.png" alt="Malabar Logo" class="main-logo"
+                    onerror="this.style.display='none'; console.error('Failed to load Malabar logo')">
+            </div>
+
+            <div class="description-section">
+                <p class="hero-desc">
+                    Welcome to Malabar Engineering College, a leading institution dedicated to technical education,
+                    skill development, and career-oriented learning.
+                    We provide industry-focused training programs through Industrial Training Institute, Information
+                    Technology, Management Studies, and Global Education pathways.
+                    Our mission is to empower students with practical knowledge, innovation, and professional excellence
+                    for a successful future.
+                </p>
+                <div class="decorative-divider"></div>
+            </div>
+        </section>
+
+        <nav class="home-2x2-grid">
+            <a href="iti.html" class="home-card">
+                <div class="card-logo-container">
+                    <img src="assets/images/logo-iti.png" alt="ITI" class="card-icon normal-logo"
+                        onerror="this.style.display='none'; console.error('Failed to load ITI logo')">
+                </div>
+                <h3>Industrial Training Institute</h3>
+                <p>Affiliated To NCVT (Govt of India)</p>
+                <span class="explore-btn">Click to Explore Page</span>
+            </a>
+
+            <a href="sit.html" class="home-card">
+                <div class="card-logo-container">
+                    <img src="assets/images/logo-cdit.jpg" alt="SIT" class="card-icon normal-logo"
+                        onerror="this.style.display='none'; console.error('Failed to load SIT logo')">
+                </div>
+                <h3>School of Information Technology</h3>
+                <p>C-DIT (Under Govt of Kerala) Educational Partner</p>
+                <span class="explore-btn">Click to Explore Page</span>
+            </a>
+
+            <a href="sms.html" class="home-card">
+                <div class="card-logo-container">
+                    <img src="assets/images/logo-sms.png" alt="SMS" class="card-icon normal-logo"
+                        onerror="this.style.display='none'; console.error('Failed to load SMS logo')">
+                </div>
+                <h3>School of Management Studies</h3>
+                <p>Authorized Training Center</p>
+                <span class="explore-btn">Click to Explore Page</span>
+            </a>
+
+            <a href="cognita.html" class="home-card">
+
+                <div style="height:120px; display:flex; align-items:center; justify-content:center;">
+                    <img src="assets/images/logo-cognita-new.webp" alt="Cognita" style="width:200px; height:80px;">
+                </div>
+
+                <h3 style="margin-bottom: 28px;">
+                    Cognita Global Education
+                </h3>
+                <p style="margin-bottom: 30px;">
+                    The Gateway to Global Education
+                </p>
+                <span class="explore-btn">Click to Explore Page</span>
+
+            </a>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Training Institute - Malabar Engineering College</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .decor-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-blue), transparent);
+            z-index: -1;
+            opacity: 0.2;
+            filter: blur(20px);
+
+            .dept-logo-badge {
+                background: white;
+                width: 340px;
+                padding: 20px 30px;
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 35px;
+                box-shadow: 0 40px 80px -20px rgba(0, 74, 173, 0.2);
+                position: relative;
+            }
+
+            .dept-logo-badge::after {
+                content: '';
+                position: absolute;
+                inset: -6px;
+                border-radius: 42px;
+                border: 1px solid rgba(0, 74, 173, 0.12);
+                z-index: -1;
+            }
+
+            .dept-logo-badge img {
+                width: 140%;
+                max-width: 280px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                object-fit: contain;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header header-iti">
+            <div class="decor-circle" style="width: 130px; height: 130px; top: 10%; left: 5%;"></div>
+            <div class="decor-circle"
+                style="width: 100px; height: 100px; bottom: 20%; right: 10%; background: var(--primary-blue);"></div>
+
+            <div class="dept-logo-badge">
+                <img src="assets/images/logo-iti.png" alt="ITI" onerror="console.error('Missing logo-iti.png')">
+            </div>
+            <h1 class="dept-title">Industrial Training Institute</h1>
+            <p class="dept-subtitle">Affiliated To NCVT (Govt of India)</p>
+            <div class="decorative-divider"></div>
+            <p class="dept-desc">
+                Empowering students with technical skills and industrial expertise for a successful career in
+                engineering and manufacturing through NCVT-certified training programs.
+            </p>
+        </header>
+
+        <div class="course-grid">
+
+            <!-- 1st -->
+            <div class="glass-card">
+                <h4>Draughtsman (Civil)</h4>
+                <div class="info-line"><strong>NSQF:</strong> Level 4</div>
+                <div class="info-line"><strong>Eligibility:</strong> SSLC </div>
+                <div class="info-line"><strong>Duration:</strong> 2 Years</div>
+                <a href="draughtsman-civil.html" class="btn-primary"
+                    style="padding: 10px 25px; font-size: 0.85rem; margin-top: 15px; display: inline-block;">
+                    More Details
+                </a>
+            </div>
+
+            <!-- 2nd -->
+            <div class="glass-card">
+                <h4>Front Office Assistant</h4>
+                <div class="info-line"><strong>NSQF:</strong> Level 3</div>
+                <div class="info-line"><strong>Eligibility:</strong> SSLC</div>
+                <div class="info-line"><strong>Duration:</strong> 1 Years</div>
+                <a href="front-office-assistant.html" class="btn-primary"
+                    style="padding: 10px 25px; font-size: 0.85rem; margin-top: 15px; display: inline-block;">
+                    More Details
+                </a>
+            </div>
+
+            <!-- 3rd -->
+            <div class="glass-card">
+                <h4>Health Sanitary Inspector</h4>
+                <div class="info-line"><strong>NSQF:</strong> Level 3</div>
+                <div class="info-line"><strong>Eligibility:</strong> SSLC</div>
+                <div class="info-line"><strong>Duration:</strong> 1 Years</div>
+                <a href="health-sanitary-inspector.html" class="btn-primary"
+                    style="padding: 10px 25px; font-size: 0.85rem; margin-top: 15px; display: inline-block;">
+                    More Details
+                </a>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html" class="btn-primary">Back to Home</a>
+        </div>
+    </div>
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+</body>
+
+</html>

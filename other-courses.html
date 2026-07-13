@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Courses - Malabar Engineering College</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .course-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f5f8ff;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .course-item:hover {
+            background: #004aad;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+</head>
+
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1 class="dept-title" id="course-title">Course Title</h1>
+            <p class="dept-desc" id="full-name">(Full Course Name)</p>
+            <div class="decorative-divider"></div>
+        </header>
+
+        <div style="display:flex; flex-wrap:wrap; gap:20px; margin:40px 0;">
+
+            <!-- Left Side -->
+            <div
+                style="width:300px; height:600px; overflow-y:auto; background:white; border-radius:20px; padding:15px;">
+
+                <div class="course-item" onclick="showCourse('CMC')">CMC</div>
+                <div class="course-item" onclick="showCourse('ADL')">ADL</div>
+                <div class="course-item" onclick="showCourse('TEC')">TEC</div>
+                <div class="course-item" onclick="showCourse('TEL1')">TE L1</div>
+                <div class="course-item" onclick="showCourse('TEL2')">TE L2</div>
+                <div class="course-item" onclick="showCourse('TEL3')">TE L3</div>
+                <div class="course-item" onclick="showCourse('GCCVT')">GCCVT</div>
+                <div class="course-item" onclick="showCourse('TDST')">TDST</div>
+                <div class="course-item" onclick="showCourse('PBCU')">PBCU</div>
+                <div class="course-item" onclick="showCourse('CDTP')">CDTP</div>
+                <div class="course-item" onclick="showCourse('CPHP')">CPHP</div>
+                <div class="course-item" onclick="showCourse('CJP')">CJP</div>
+                <div class="course-item" onclick="showCourse('CNP')">CNP</div>
+                <div class="course-item" onclick="showCourse('CIP')">CIP</div>
+
+            </div>
+
+            <!-- Right Side -->
+            <div style="flex:1; background:white; border-radius:20px; padding:20px;">
+
+                <h2 id="courseName">Select a Course</h2>
+
+                <p><strong>Certificate:</strong> <span id="certificate"></span></p>
+
+                <p><strong>Duration:</strong> <span id="duration"></span></p>
+
+                <p><strong>Eligibility:</strong> <span id="eligibility"></span></p>
+
+
+                <!-- <p id="description"></p> -->
+
+                <div id="pdfContainer" style="width:100%; height:500px; background:#f5f8ff; border:2px dashed #004aad;
+                    border-radius:15px; display:flex; align-items:center; justify-content:center;
+                    flex-direction:column;">
+
+                    <span style="font-size:60px;">📄</span>
+
+                    <h3 style="color:#004aad;">
+                        PDF Will Be Uploaded Soon
+                    </h3>
+
+                    <p style="color:#666;">
+                        Course PDF will be added here later
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="sit.html" class="btn-primary">← Back to SIT</a>
+        </div>
+    </div>
+
+    <script>
+        const courses = {
+            'pgdca': ['PGDCA', 'Post Graduate Diploma in Computer Applications'],
+            'adctt': ['ADCTT', 'Advanced Diploma in Computer Teacher Training'],
+            'dca': ['DCA', 'Diploma in Computer Applications'],
+            'dcfm': ['DCFM', 'Diploma in Computerized Financial Management'],
+            'dfa': ['DFA', 'Diploma in Financial Accounting'],
+            'ddtp': ['DDTP', 'Diploma in Desktop Publishing'],
+            'doa': ['DOA', 'Diploma in Office Automation'],
+            'dim': ['DIM', 'Diploma in Multimedia'],
+            'cdeco': ['CDECO', 'Certificate in Data Entry and Computer Operations'],
+            'cifa': ['CIFA', 'Certificate in Financial Accounting'],
+            'cca': ['CCA', 'Certificate in Computer Applications'],
+            'cwd': ['CWD', 'Certificate in Web Designing'],
+            'ccad': ['CCAD', 'Certificate in Computer Aided Design'],
+            'ceo': ['CEO', 'Certificate in Office Automation'],
+            'other-courses': ['Other Courses', 'Specialized Short-term IT Courses']
+        };
+
+        const filename = window.location.pathname.split('/').pop().replace('.html', '');
+        const data = courses[filename] || ['Course', 'Information'];
+
+        document.getElementById('course-title').innerText = data[0];
+        document.getElementById('full-name').innerText = '(' + data[1] + ')';
+    </script>
+    <script>
+
+        const courseDetails = {
+
+            CMC: {
+                name: "Certificate in Malayalam Computing (CMC)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "1 Month",
+                eligibility: "SSLC",
+                description: "Malayalam computing, typing and digital document preparation.",
+                pdf: "pdfs/cmc.pdf"
+            },
+
+            ADL: {
+                name: "IT Application In Daily (ADL)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "25 Hours",
+                eligibility: "SSLC",
+                description: "Comprehensive logistics and supply chain management training."
+            },
+
+            TEC: {
+                name: "Tally Essentials Comprehensive (TEC)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "106 Hours",
+                eligibility: "Plus Two",
+                description: "Fundamentals of Tally accounting and GST."
+            },
+
+            TEL1: {
+                name: "Tally Essentials Level 2 (TEL1)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "35 Hours",
+                eligibility: "Plus Two",
+                description: "Beginner level professional Tally training."
+            },
+
+            TEL2: {
+                name: "Tally Essentials Level 3 (TEL2)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "35 Hours",
+                eligibility: "Plus Two",
+                description: "Intermediate Tally and accounting practices."
+            },
+
+            TEL3: {
+                name: "Tally Essentials Level 4 (TEL3)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "35 Hours",
+                eligibility: "Plus Two",
+                description: "Advanced Tally, GST, payroll and business accounting."
+            },
+
+            GCCVT: {
+                name: "GCC VAT Using Tally (GCCVT)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "35 Hours",
+                eligibility: "Plus Two",
+                description: "Vocational skill development and certification program."
+            },
+
+            TDST: {
+                name: "TDS Using Tally (TDST)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "7 Hours",
+                eligibility: "Plus Two",
+                description: "Training program for teaching and classroom management skills."
+            },
+
+            PBCU: {
+                name: "Prime Bridge Course Upgrade (PBCU)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "5 Hours",
+                eligibility: "Tally ACE/Tally pro certified (From C-Dit)",
+                description: "Business communication and computer application skills."
+            },
+
+            CDTP: {
+                name: "Certificate in Desktop Publishing (CDTP)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "3 Months",
+                eligibility: "SSLC",
+                description: "DTP, page design and publishing software training."
+            },
+
+            CPHP: {
+                name: "Certificate in PHP (CPHP)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "3 Months",
+                eligibility: "PLUS TWO/3 Year Diploma in Engineering",
+                description: "PHP web development and database integration."
+            },
+
+            CJP: {
+                name: "Certificate in Java (CJP)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "3 Months",
+                eligibility: "PLUS TWO/3 Year Diploma in Engineering",
+                description: "Core Java programming and application development."
+            },
+
+            CNP: {
+                name: "Certificate in .NET (CNP)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "3 Months",
+                eligibility: "PLUS TWO/3 Year Diploma in Engineering",
+                description: ".NET application development using C#."
+            },
+
+            CIP: {
+                name: "Certificate in Python Programming (CIP)",
+                Certificate: "C-Dit (Under Govt of Kerala)",
+                duration: "3 Months",
+                eligibility: "SSLC",
+                description: "Python programming from fundamentals to advanced concepts."
+            }
+
+        };
+
+
+
+
+
+        function showCourse(key) {
+
+            const c = courseDetails[key];
+
+            document.getElementById("courseName").innerText = c.name;
+
+            document.getElementById("certificate").innerText =
+                c.Certificate || "";
+
+            document.getElementById("duration").innerText =
+                c.duration;
+
+            document.getElementById("eligibility").innerText =
+                c.eligibility;
+
+            document.getElementById("description").innerText =
+                c.description || "";
+
+            // document.getElementById("pdfViewer").src = c.pdf;
+
+        }
+
+        showCourse('CMC');
+    </script>
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+</body>
+
+</html>

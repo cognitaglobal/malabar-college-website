@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malabar College of Engineering — Home</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <style>
+        /* Slider Styling */
+        .hero-slider-wrap {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mce-white);
+            text-align: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(92, 15, 15, 0.88), rgba(0, 74, 173, 0.65));
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 24px;
+        }
+
+        .slide-content h2 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--mce-white);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-content p {
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 35px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modern Horizontal Institution Cards Styling */
+        .horizontal-depts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .horizontal-dept-card {
+            display: flex;
+            background: var(--mce-white);
+            border-radius: 18px;
+            border: 1px solid #e8edf5;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .05);
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            transition: .35s ease;
+            min-height: 210px;
+            align-items: stretch;
+        }
+
+        .horizontal-dept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 74, 173, 0.12);
+            border-color: rgba(0, 74, 173, 0.18);
+        }
+
+        .horizontal-dept-card .card-left {
+            flex: 0 0 18%;
+            min-width: 170px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            border-right: 1px solid #eef2f7;
+        }
+
+        .logo-wrapper {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+        .horizontal-dept-card .dept-logo {
+            width: auto;
+            height: auto;
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: contain;
+            transition: .35s ease;
+        }
+
+        .horizontal-dept-card:hover .dept-logo {
+            transform: scale(1.08);
+        }
+
+        .horizontal-dept-card .card-right {
+            flex: 1;
+            padding: 28px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* .horizontal-dept-card .card-top-right-arrow {
+            position: absolute;
+            top: 24px;
+            right: 40px;
+            font-size: 20px;
+            color: #94a3b8;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .horizontal-dept-card:hover .card-top-right-arrow {
+            color: var(--mce-secondary);
+            transform: translateX(4px);
+        } */
+
+        .horizontal-dept-card .card-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--mce-dark);
+            margin: 0 0 2px 0;
+            line-height: 1.2;
+        }
+
+        .horizontal-dept-card .card-subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--mce-secondary);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .horizontal-dept-card .card-desc {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 92%;
+            margin-top: 8px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .horizontal-dept-card .card-action {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+        }
+
+        .horizontal-dept-card .view-details-link {
+            width: 155px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid var(--mce-secondary);
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--mce-secondary);
+            background: #fff;
+            transition: .35s ease;
+        }
+
+        .horizontal-dept-card .arrow-slide {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .horizontal-dept-card:hover .view-details-link {
+            background: var(--mce-secondary);
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        .horizontal-dept-card:hover .arrow-slide {
+            transform: translateX(4px);
+        }
+
+        /* News & Event items list */
+        .news-item {
+            background-color: var(--mce-white);
+            border-left: 4px solid var(--mce-primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: var(--mce-shadow-sm);
+            margin-bottom: 16px;
+            transition: var(--mce-transition);
+        }
+
+
+        .news-item:hover {
+            transform: translateX(8px);
+            background-color: var(--mce-secondary-light);
+        }
+
+        /* Placement Partners Scroller Grid */
+        .partner-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            align-items: center;
+        }
+
+        .partner-logo {
+            background-color: var(--mce-white);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #777;
+            font-size: 15px;
+            transition: var(--mce-transition);
+        }
+
+        .partner-logo:hover {
+            border-color: var(--mce-primary);
+            color: var(--mce-primary);
+            box-shadow: var(--mce-shadow-sm);
+        }
+
+        /* Principal Photo */
+        .pd-photo-wrap {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 4/5;
+            margin: 0 auto;
+        }
+
+        .pd-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .pd-photo-wrap:hover img {
+            transform: scale(1.07);
+        }
+
+        /* Read-more expand */
+        .pd-text-body {
+            max-height: 148px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .pd-text-body::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 42px;
+            background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .pd-text-body.expanded::after {
+            opacity: 0;
+        }
+
+        .pd-subtitle {
+            font-size: 17px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 22px;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .pd-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 38px;
+            height: 3px;
+            background: var(--mce-secondary);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider-wrap {
+                height: 450px;
+            }
+
+            .slide-content h2 {
+                font-size: 32px;
+            }
+
+            .slide-content p {
+                font-size: 15px;
+            }
+
+            .partner-logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* .testimonial-image { */
+
+            /*==========================================
+        PREMIUM TESTIMONIALS (2026 UI)
+==========================================*/
+
+            .premium-testimonials {
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                padding: 100px 0;
+                background: #F8F9FC;
+                overflow: hidden;
+            }
+
+            /* Heading */
+
+            .section-heading {
+                margin-bottom: 55px;
+            }
+
+            .section-heading .sub-title {
+
+                display: inline-block;
+
+                color: #8B1D1D;
+
+                text-transform: uppercase;
+
+                font-size: 15px;
+
+                font-weight: 700;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 20px;
+
+                position: relative;
+            }
+
+            .section-heading .sub-title::after {
+
+                content: "";
+
+                width: 70px;
+
+                height: 2px;
+
+                background: #8B1D1D;
+
+                position: absolute;
+
+                top: 50%;
+
+                left: 115%;
+
+            }
+
+            .section-heading h2 {
+
+                font-size: 46px;
+
+                font-weight: 800;
+
+                color: #222;
+
+                line-height: 1.2;
+
+                margin: 0;
+
+            }
+
+            /* Slider spacing */
+
+            .slick_slider_1 {
+
+                margin-top: 20px;
+
+            }
+
+            /* Card */
+
+            .testimonial-card {
+
+                background: #fff;
+
+                border-radius: 28px;
+
+                padding: 40px;
+
+                box-shadow:
+
+                    0 15px 45px rgba(0, 0, 0, .08);
+
+                transition: .45s;
+
+                margin: 20px;
+
+                backface-visibility: hidden;
+                -webkit-font-smoothing: antialiased;
+                transform: translateZ(0);
+                will-change: transform;
+
+            }
+
+            .testimonial-flex {
+                display: flex;
+                align-items: center;
+                gap: 35px;
+            }
+
+            .testimonial-content {
+                flex: 1;
+            }
+
+            .testimonial-image {
+                flex-shrink: 0;
+            }
+
+            @media(max-width:768px) {
+
+                .testimonial-flex {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+            }
+
+            .testimonial-card:hover {
+
+                transform: translateY(-10px);
+
+                box-shadow:
+
+                    0 30px 70px rgba(0, 0, 0, .15);
+
+            }
+
+            /* Image */
+
+            .testimonial-image {
+                width: 130px;
+                height: 90px;
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, .10);
+            }
+
+            .testimonial-image img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                display: block;
+            }
+
+            .testimonial-card:hover .testimonial-image img {
+
+                transform: scale(1.08);
+
+            }
+
+            /* Quote */
+
+            .quote-icon {
+                width: 55px;
+                height: 55px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                margin: 15px auto;
+            }
+
+            /* Name */
+
+            .student-name {
+
+                font-size: 34px;
+
+                font-weight: 800;
+
+                color: #222;
+
+                margin-bottom: 8px;
+
+            }
+
+            /* Batch */
+
+            .student-batch {
+
+                color: #8B1D1D;
+
+                font-size: 18px;
+
+                font-weight: 600;
+
+                margin-bottom: 25px;
+
+            }
+
+            /* Paragraph */
+
+            .testimonial-text {
+
+                max-height: 110px;
+
+                overflow: hidden;
+
+                transition: max-height .4s ease;
+
+                position: relative;
+
+            }
+
+            .testimonial-text.expanded {
+
+                max-height: 1000px;
+
+            }
+
+            /* .testimonial-text::after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            background: linear-gradient(to top, #fff, transparent);
+
+        } */
+
+            .testimonial-text.expanded::after {
+
+                display: none;
+
+            }
+
+            /* Button */
+
+            .read-btn {
+
+                display: inline-flex;
+
+                align-items: center;
+
+                gap: 14px;
+
+                text-decoration: none;
+
+                padding: 14px 28px;
+
+                background: #0F52BA;
+
+                color: #fff;
+
+                border-radius: 50px;
+
+                font-weight: 700;
+
+                transition: .4s;
+
+            }
+
+            .read-btn span {
+
+                transition: .4s;
+
+            }
+
+            .read-btn:hover {
+
+                background: #083a86;
+
+                color: #fff;
+
+            }
+
+            .read-btn:hover span {
+
+                transform: translateX(8px);
+
+            }
+
+            /* Slick Slide */
+
+            .slick-slide {
+                padding: 25px;
+                opacity: .55;
+                transform: none;
+                transition: .45s;
+            }
+
+            .slick-center {
+                opacity: 1;
+                transform: none;
+            }
+
+            .slick-center .testimonial-card {
+                box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
+            }
+
+            .slick-list {
+                overflow: visible;
+            }
+
+            .slick-track {
+                display: flex;
+                align-items: center;
+            }
+
+            /* Dots */
+
+            .slick-dots {
+
+                margin-top: 45px;
+
+            }
+
+            .slick-dots li {
+
+                margin: 0 8px;
+
+            }
+
+            .slick-dots li button {
+
+                width: 14px;
+
+                height: 14px;
+
+                border-radius: 50%;
+
+                background: #d5d5d5;
+
+            }
+
+            .slick-dots li button:before {
+
+                display: none;
+
+            }
+
+            .slick-dots li.slick-active button {
+
+                background: #8B1D1D;
+
+                transform: scale(1.3);
+
+            }
+
+            /* Remove outline */
+
+            .slick-slide {
+
+                outline: none;
+
+            }
+
+            /* Responsive */
+
+            @media(max-width:1199px) {
+
+                .section-heading h2 {
+
+                    font-size: 40px;
+
+                }
+
+                .student-name {
+
+                    font-size: 30px;
+
+                }
+
+                .testimonial-card {
+
+                    padding: 45px;
+
+                }
+
+            }
+
+            @media(max-width:991px) {
+
+                .testimonial-card {
+
+                    text-align: center;
+
+                    padding: 40px;
+
+                }
+
+                .quote-icon {
+
+                    margin: auto auto 25px;
+
+                }
+
+                .testimonial-image {
+
+                    width: 190px;
+
+                    height: 190px;
+
+                    margin-bottom: 30px;
+
+                }
+
+                .student-name {
+
+                    font-size: 28px;
+
+                }
+
+                .testimonial-text {
+
+                    font-size: 17px;
+
+                    line-height: 1.8;
+
+                }
+
+            }
+
+            @media(max-width:767px) {
+
+                .premium-testimonials {
+
+                    padding: 80px 0;
+
+                }
+
+                .section-heading h2 {
+
+                    font-size: 34px;
+
+                }
+
+                .testimonial-card {
+
+                    padding: 20px;
+
+                    margin: 8px;
+
+                    border-radius: 18px;
+
+                    min-height: 520px;
+
+                }
+
+                .testimonial-image {
+
+                    width: 140px;
+
+                    height: 90px;
+
+                }
+
+                .student-name {
+
+                    font-size: 20px;
+
+                }
+
+                .student-batch {
+
+                    font-size: 16px;
+
+                }
+
+                .testimonial-text {
+
+                    font-size: 15px;
+
+                    line-height: 1.6;
+
+                    max-height: 90px;
+
+                }
+
+                .read-more-btn {
+
+                    display: inline-block;
+
+                    margin-top: 15px;
+
+                    color: #0F52BA;
+
+                    font-size: 16px;
+
+                    font-weight: 700;
+
+                    cursor: pointer;
+
+                    transition: .3s;
+
+                }
+
+                .read-more-btn:hover {
+
+                    color: #8B1D1D;
+
+                    text-decoration: underline;
+
+                }
+
+
+
+                .testimonial-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .testimonial-text {
+                    max-height: none;
+                    overflow: visible;
+                }
+
+                .read-more-btn {
+                    display: inline-block;
+                    margin-top: 20px;
+                    position: relative;
+                    z-index: 10;
+                }
+
+
+            }
+
+            @media(max-width:575px) {
+
+                .section-heading h2 {
+
+                    font-size: 28px;
+
+                }
+
+
+
+                .testimonial-card {
+
+                    padding: 25px;
+
+                }
+
+            }
+
+            /* ===== Center Slider Effect ===== */
+
+            /* ===== Mobile Fix ===== */
+
+            .slick-list {
+                overflow: hidden;
+            }
+
+            .slick-track {
+                display: flex;
+                align-items: stretch;
+            }
+
+            .slick-slide,
+            .slick-current,
+            .slick-active,
+            .slick-center {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            /* Responsive fix for Academic Department cards */
+            @media (max-width: 768px) {
+                .horizontal-dept-card {
+                    flex-direction: column;
+                    min-height: auto;
+                }
+
+                .horizontal-dept-card .card-left {
+
+                    flex: none;
+
+                    width: 100%;
+
+                    min-width: 0;
+
+                    height: 150px;
+
+                    padding: 20px;
+
+                    border-right: none;
+
+                    border-bottom: 1px solid #eef2f7;
+
+                    display: flex;
+
+                    align-items: center;
+
+                    justify-content: center;
+
+                }
+
+                .horizontal-dept-card .dept-logo {
+
+                    width: auto;
+
+                    height: auto;
+
+                    max-width: 150px;
+
+                    max-height: 110px;
+
+                    object-fit: contain;
+
+                }
+
+                .horizontal-dept-card .card-right {
+                    padding: 22px 24px 28px;
+                }
+
+                .horizontal-dept-card .card-action {
+                    position: static;
+                    margin-top: 18px;
+                }
+
+                .horizontal-dept-card .view-details-link {
+                    width: 100%;
+                }
+
+                .horizontal-dept-card .card-desc {
+                    max-width: 100%;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .horizontal-dept-card .card-title {
+                    font-size: 21px;
+                }
+            }
+
+
+
+            /* Hide Read More button */
+            .read-more-btn {
+                display: none !important;
+            }
+
+            /* Show full testimonial text */
+            .testimonial-text {
+                max-height: none !important;
+                overflow: visible !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dynamic MCE Header Container -->
+    <header id="mce-header"></header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider-wrap" id="homeSlider">
+        <div class="slide active" style="background-image: url('assets/images/campus-main.jpg');">
+            <div class="slide-content">
+                <h2>Welcome to Malabar College of Engineering</h2>
+                <p>Establishing educational excellence, moral values, and student carer growth for over 100 years.
+                    Learn. Pioneer. Transform.</p>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <a href="admission.html" class="btn-primary">Apply Online</a>
+                    <a href="about.html" class="btn-secondary"
+                        style="border-color: var(--mce-white); color: var(--mce-white);">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('assets/images/campus-hall.jpg');">
+            <div class="slide-content">
+                <h2>Centenary of Educational Legacy</h2>
+                <p>Nurturing thousands of students across fields of Skill Development, Information Technology, and
+                    Management pathways.</p>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <a href="academics.html" class="btn-primary">Explore Paths</a>
+                    <a href="contact.html" class="btn-secondary"
+                        style="border-color: var(--mce-white); color: var(--mce-white);">Contact Campus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal's Desk -->
+    <section class="section-padding reveal reveal-fade-up">
+        <div class="section-container grid-2" style="align-items: center; gap: 50px;">
+
+            <!-- LEFT: Principal Photo -->
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="pd-photo-wrap">
+                    <img src="assets/images/principal.webp" alt="Dr. T.K. Maqbool"
+                        onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800'">
+                </div>
+            </div>
+
+            <!-- RIGHT: Content -->
+            <div>
+                <span
+                    style="color: var(--mce-secondary); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 8px;">Principal's
+                    Desk</span>
+                <h2 style="font-size: 36px; margin: 0 0 4px; color: var(--mce-primary); font-weight: 800;">Dr. T.K.
+                    Maqbool</h2>
+                <span class="pd-subtitle">Principal</span>
+
+                <div class="pd-text-body" id="pdTextBody">
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 14px;">
+                        Welcome to the Principal's Desk of Malabar College of Engineering. It is with great
+                        pleasure and pride that I welcome you to our academic community. For over a century, Malabar
+                        College of Engineering
+                        has stood as a beacon of knowledge, service, and educational empowerment. We are committed to
+                        nurturing intellectual curiosity, professional capability, and deep-seated ethical values in
+                        all our students.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 14px;">
+                        Here, education is not just about textbook learning — it is a transformative process that
+                        encourages students to think beyond classroom boundaries. Through our diverse academic
+                        offerings — from industrial training and software engineering to management studies and global
+                        programme options — we focus on preparing our trainees with real-world skills that translate
+                        into solid employment.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 14px;">
+                        Our state-of-the-art laboratory networks, collaborative study spaces, and seasoned faculty
+                        members ensure a holistic learning journey. We are proud of our student-centric initiatives,
+                        academic quality assurance, and robust placement partnerships that connect our graduates
+                        directly with national and multinational companies.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555;">
+                        As we move ahead, we continue to innovate our curriculum, explore global pathways, and welcome
+                        prospective students to join our legacy. We invite you to explore our campus, learn about our
+                        heritage, and build a successful professional foundation. Let us learn, pioneer, and transform
+                        the future together.
+                    </p>
+                </div>
+
+                <button id="pdReadMoreBtn" class="btn-secondary" style="margin-top: 18px;">Read More</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Academic Departments -->
+    <section class="section-padding bg-gray" style="background-color: var(--mce-bg-gray);">
+        <div class="section-container">
+            <div class="section-header reveal reveal-fade-up">
+                <h2 class="section-title">Our Academic Schools</h2>
+                <p class="section-subtitle">Dedicated units tailored to specific tracks of skill creation, science
+                    courses, management streams, and dynamic global education.</p>
+            </div>
+
+            <div class="horizontal-depts-container reveal reveal-fade-up" style="margin-bottom: 40px;">
+                <!-- ITI Card -->
+                <a href="iti.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-iti.png" alt="ITI Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">Industrial Training Institute (ITI)</h3>
+                        <span class="card-subtitle">Affiliated with NCVT, Govt. of India</span>
+                        <p class="card-desc">Equipping trainees with modern trade skills like Electrical, Civil
+                            Drafting, Front Office Management, and Sanitary Engineering. Focused on high-fidelity
+                            practical training and national certification.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SIT Card -->
+                <a href="sit.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-cdit.jpg" alt="SIT Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">School of Information Technology (SIT)</h3>
+                        <span class="card-subtitle">C-DIT & Govt. Approved Programs</span>
+                        <p class="card-desc">Advancing software, multimedia, CAD design, accounting systems, and
+                            computer education. Delivering certified courses designed to prepare students for rapid
+                            placement in technology roles.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SMS Card -->
+                <a href="sms.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-sms.png" alt="SMS Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">School of Management Studies (SMS)</h3>
+                        <span class="card-subtitle">Professional & Executive Management Studies</span>
+                        <p class="card-desc">Nurturing future administrative leaders with specialized training in
+                            Logistics, Supply Chain Management, and Healthcare Administration. Preparing students for
+                            competitive industrial environments.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cognita Card -->
+                <a href="cognita.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-cognita-new.webp" alt="Cognita Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">Cognita Global Education</h3>
+                        <span class="card-subtitle">International Higher Education Pathways</span>
+                        <p class="card-desc">Providing global study guidance, application documentation, test
+                            preparation, and secure visa counseling. Linking students to top university campuses in the
+                            UK, Canada, Australia, and beyond.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose Us & Stats Counter -->
+    <section class="section-padding reveal reveal-fade-up">
+        <div class="section-container">
+            <div class="grid-2" style="align-items: center; margin-bottom: 60px;">
+                <div>
+                    <h2 style="font-size: 34px; color: var(--mce-primary); margin-bottom: 18px; font-weight: 800;">Why
+                        Study at Malabar College of Engineering?</h2>
+                    <p style="color: #555; margin-bottom: 24px; font-size: 15.5px; line-height: 1.7;">
+                        For over a century, Malabar College of Engineering has delivered quality practical-oriented
+                        career training. Our goal
+                        is to transform student capability, making them highly employer-ready through customized
+                        laboratory training, professional mentors, and strong placement connections.
+                    </p>
+                    <ul
+                        style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; font-weight: 600;">
+                        <li>⭐ ISO 9001:2015 certified college processes.</li>
+                        <li>⭐ Interactive laboratories with modern machinery.</li>
+                        <li>⭐ Placement support cell with global corporate connects.</li>
+                        <li>⭐ Excellent sports, hostel, and cafeteria facilities.</li>
+                    </ul>
+                </div>
+                <div
+                    style="background-color: var(--mce-primary); padding: 40px; border-radius: 12px; color: var(--mce-white); box-shadow: var(--mce-shadow-lg);">
+                    <h3
+                        style="color: var(--mce-white); margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">
+                        Admissions Open 2026</h3>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 14.5px; margin-bottom: 28px; line-height: 1.7;">
+                        Take the step towards a reliable professional future. Apply for admission across various
+                        technical courses and career-focused certifications.
+                    </p>
+                    <a href="admission.html" class="btn-primary"
+                        style="background: var(--mce-accent); color: var(--mce-primary-dark); box-shadow: 0 4px 15px rgba(243, 186, 47, 0.4);">Register
+                        Online Now</a>
+                </div>
+            </div>
+            <!-- =========================
+     PREMIUM TESTIMONIALS
+========================= -->
+
+            <section id="testimonials" class="premium-testimonials">
+
+                <div class="container-fluid px-0">
+                    <div class="container">
+
+                        <!-- Heading -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center">
+
+                                <div class="section-heading" data-aos="fade-up">
+
+                                    <span class="sub-title">
+                                        Testimonials
+                                    </span>
+
+                                    <h2>
+                                        LET'S HEAR WHAT THEY HAVE TO SAY
+                                    </h2>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-5">
+
+                            <div class="col-12">
+
+                                <div class="slick_slider_1">
+
+                                    <!-- CARD 1 -->
+
+                                    <div class="testimonial-card">
+
+                                        <div class="testimonial-flex">
+
+                                            <div class="testimonial-image">
+
+                                                <img src="assets/images/logo-cognita-new.png">
+
+                                            </div>
+
+                                            <div class="testimonial-content">
+
+                                                <div class="quote-icon">
+                                                    <i class="fas fa-quote-left"></i>
+                                                </div>
+
+                                                <h3 class="student-name">
+                                                    Amina Munawira
+                                                </h3>
+
+                                                <span class="student-batch">
+                                                    B.Com Finance | 2021–2024
+                                                </span>
+
+                                                <p class="testimonial-text">
+                                                    Forever grateful and thankful to be an alumnus of Malabar College of
+                                                    Engineering.
+                                                    The college gave me confidence, leadership skills, lifelong
+                                                    friendships,
+                                                    and excellent academic guidance. Every faculty member inspired me to
+                                                    grow,
+                                                    both professionally and personally. I am proud to be a part of the
+                                                    MCE
+                                                    family.
+                                                </p>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- CARD 2 -->
+
+                                    <div class="testimonial-card">
+
+                                        <div class="testimonial-flex">
+
+                                            <div class="testimonial-image">
+
+                                                <img src="assets/images/logo-cdit.jpg">
+
+                                            </div>
+
+                                            <div class="testimonial-content">
+
+                                                <div class="quote-icon">
+                                                    <i class="fas fa-quote-left"></i>
+                                                </div>
+
+                                                <h3 class="student-name">
+                                                    Amina Munawira
+                                                </h3>
+
+                                                <span class="student-batch">
+                                                    B.Com Finance | 2021–2024
+                                                </span>
+
+                                                <p class="testimonial-text">
+                                                    Forever grateful and thankful to be an alumnus of Malabar College of
+                                                    Engineering.
+                                                    The college gave me confidence, leadership skills, lifelong
+                                                    friendships,
+                                                    and excellent academic guidance. Every faculty member inspired me to
+                                                    grow,
+                                                    both professionally and personally. I am proud to be a part of the
+                                                    MCE
+                                                    family.
+                                                </p>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- CARD 3 -->
+
+                                    <div class="testimonial-card">
+
+                                        <div class="testimonial-flex">
+
+                                            <div class="testimonial-image">
+
+                                                <img src="assets/images/logo-cdit.jpg">
+
+                                            </div>
+
+                                            <div class="testimonial-content">
+
+                                                <div class="quote-icon">
+                                                    <i class="fas fa-quote-left"></i>
+                                                </div>
+
+                                                <h3 class="student-name">
+                                                    Amina Munawira
+                                                </h3>
+
+                                                <span class="student-batch">
+                                                    B.Com Finance | 2021–2024
+                                                </span>
+
+                                                <p class="testimonial-text">
+                                                    Forever grateful and thankful to be an alumnus of Malabar College of
+                                                    Engineering.
+                                                    The college gave me confidence, leadership skills, lifelong
+                                                    friendships,
+                                                    and excellent academic guidance. Every faculty member inspired me to
+                                                    grow,
+                                                    both professionally and personally. I am proud to be a part of the
+                                                    MCE
+                                                    family.
+                                                </p>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- CARD 4 -->
+
+                                    <div class="testimonial-card">
+
+                                        <div class="testimonial-flex">
+
+                                            <div class="testimonial-image">
+
+                                                <img src="assets/images/logo-cdit.jpg">
+
+                                            </div>
+
+                                            <div class="testimonial-content">
+
+                                                <div class="quote-icon">
+                                                    <i class="fas fa-quote-left"></i>
+                                                </div>
+
+                                                <h3 class="student-name">
+                                                    Amina Munawira
+                                                </h3>
+
+                                                <span class="student-batch">
+                                                    B.Com Finance | 2021–2024
+                                                </span>
+
+                                                <p class="testimonial-text">
+                                                    Forever grateful and thankful to be an alumnus of Malabar College of
+                                                    Engineering.
+                                                    The college gave me confidence, leadership skills, lifelong
+                                                    friendships,
+                                                    and excellent academic guidance. Every faculty member inspired me to
+                                                    grow,
+                                                    both professionally and personally. I am proud to be a part of the
+                                                    MCE
+                                                    family.
+                                                </p>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+            </section>
+
+            <!-- Stats Counter Block -->
+            <div class="stats-container grid-4">
+                <div class="stat-item">
+                    <span class="num" data-target="104" data-suffix="+">0</span>
+                    <span class="label">Years of Legacy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="num" data-target="70000" data-suffix="+">0</span>
+                    <span class="label">Lives Sanitized/Upgraded</span>
+                </div>
+                <div class="stat-item">
+                    <span class="num" data-target="35" data-suffix="+">0</span>
+                    <span class="label">Courses & Sectors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="num" data-target="96" data-suffix="%">0</span>
+                    <span class="label">Placement Success</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="section-padding bg-gray" style="background-color: var(--mce-bg-gray);">
+        <div class="section-container grid-2">
+            <!-- News Section -->
+            <div class="reveal reveal-fade-left">
+                <h3
+                    style="font-size: 26px; color: var(--mce-primary); font-weight: 800; margin-bottom: 24px; text-transform: uppercase;">
+                    Latest News Ticker</h3>
+                <div class="news-item">
+                    <span
+                        style="font-size: 12px; color: var(--mce-secondary); font-weight: 700; display: block; margin-bottom: 6px;">JULY
+                        09, 2026</span>
+                    <h4>Centenary Celebration Skill Fair announced</h4>
+                    <p style="font-size: 14px; color: #666; margin-top: 8px;">Malabar College of Engineering campus
+                        announces the annual
+                        skill development exhibition starting next Tuesday. Highlighting student electronics and civil
+                        trade models.</p>
+                </div>
+                <div class="news-item">
+                    <span
+                        style="font-size: 12px; color: var(--mce-secondary); font-weight: 700; display: block; margin-bottom: 6px;">JUNE
+                        28, 2026</span>
+                    <h4>New IT Admissions & Scholarships open</h4>
+                    <p style="font-size: 14px; color: #666; margin-top: 8px;">Applications for dynamic short term SIT
+                        paths and PG courses are open now. Financial aid available for orphan students.</p>
+                </div>
+            </div>
+
+            <!-- Events Section -->
+            <div class="reveal reveal-fade-right">
+                <h3
+                    style="font-size: 26px; color: var(--mce-primary); font-weight: 800; margin-bottom: 24px; text-transform: uppercase;">
+                    Upcoming Events</h3>
+                <div
+                    style="background-color: var(--mce-white); border-radius: 8px; box-shadow: var(--mce-shadow-sm); overflow: hidden; padding: 24px;">
+                    <div
+                        style="display: flex; gap: 16px; border-bottom: 1px solid #eee; padding-bottom: 18px; margin-bottom: 18px;">
+                        <div
+                            style="background-color: var(--mce-primary-dark); color: var(--mce-white); width: 60px; height: 60px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700;">
+                            <span style="font-size: 18px;">18</span>
+                            <span style="font-size: 11px; text-transform: uppercase;">Jul</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px;"><a href="gallery.html"
+                                    style="text-decoration: none; color: #111;">Annual Alumni Rendezvous 2026</a></h4>
+                            <p style="font-size: 13.5px; color: #666; margin-top: 4px;">Grand reunion event hosted in
+                                main auditorium, checking placement drives and student mentoring networks.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 16px;">
+                        <div
+                            style="background-color: var(--mce-secondary); color: var(--mce-white); width: 60px; height: 60px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700;">
+                            <span style="font-size: 18px;">22</span>
+                            <span style="font-size: 11px; text-transform: uppercase;">Jul</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px;"><a href="gallery.html"
+                                    style="text-decoration: none; color: #111;">Campus Grievance & IQAC Workshop</a>
+                            </h4>
+                            <p style="font-size: 13.5px; color: #666; margin-top: 4px;">A dynamic training workshop by
+                                quality assurance experts regarding college course evaluations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Partners -->
+    <section class="section-padding reveal reveal-fade-up">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Placement & Corporate recruitment partners</h2>
+                <p class="section-subtitle">Prominent MNCs and regional corporations that recruit Malabar College of
+                    Engineering trainees for
+                    various skill jobs.</p>
+            </div>
+
+            <div class="partner-logo-grid">
+                <div class="partner-logo">TCS</div>
+                <div class="partner-logo">Infosys</div>
+                <div class="partner-logo">Wipro</div>
+                <div class="partner-logo">Keltron</div>
+                <div class="partner-logo">Rutronix</div>
+                <div class="partner-logo">C-DIT</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="section-padding reveal reveal-fade-up">
+        <div class="section-container">
+            <div class="cta-banner">
+                <h2>Build Your Practical Professional Future</h2>
+                <p>Learn trades in industrial machinery, software technologies, office management processes, or connect
+                    with overseas courses.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="admission.html" class="btn-primary"
+                        style="background-color: var(--mce-accent); color: var(--mce-primary-dark);">Get Started Now</a>
+                    <a href="contact.html" class="btn-secondary"
+                        style="border-color: var(--mce-white); color: var(--mce-white);">Locate Our Campus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic MCE Footer Container -->
+    <footer id="mce-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Simple slider interval loop
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#homeSlider .slide');
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 6000);
+
+        // Principal's Desk – Read More / Read Less
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('pdReadMoreBtn');
+            const body = document.getElementById('pdTextBody');
+            if (btn && body) {
+                btn.addEventListener('click', () => {
+                    if (body.classList.contains('expanded')) {
+                        body.style.maxHeight = '148px';
+                        body.classList.remove('expanded');
+                        btn.textContent = 'Read More';
+                    } else {
+                        body.style.maxHeight = body.scrollHeight + 'px';
+                        body.classList.add('expanded');
+                        btn.textContent = 'Read Less';
+                    }
+                });
+            }
+        });
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        $(document).ready(function () {
+
+            $('.slick_slider_1').slick({
+
+                centerMode: true,
+                centerPadding: '180px',
+
+                slidesToShow: 1,
+                slidesToScroll: 1,
+
+                infinite: true,
+
+                autoplay: true,
+                autoplaySpeed: 4000,
+
+                arrows: false,
+
+                dots: true,
+
+                speed: 700,
+
+                adaptiveHeight: false,
+
+                responsive: [
+
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            centerPadding: '120px'
+                        }
+                    },
+
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            centerPadding: '60px'
+                        }
+                    },
+
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            centerMode: false,
+                            centerPadding: '0',
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            adaptiveHeight: true
+                        }
+                    }
+
+                ]
+
+            });
+
+        });
+
+        document.querySelectorAll('.read-more-btn').forEach(function (btn) {
+
+            btn.addEventListener('click', function () {
+
+                const text = this.previousElementSibling;
+
+                if (text.classList.contains('expanded')) {
+
+                    text.classList.remove('expanded');
+
+                    this.textContent = "Read More";
+
+                } else {
+
+                    text.classList.add('expanded');
+
+                    this.textContent = "Hide";
+
+                }
+
+            });
+
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Malabar College of Engineering</title>
+    <meta name="description"
+        content="Explore the photo and video gallery showcasing campus life, events, and achievements at Malabar College of Engineering.">
+    <link rel="stylesheet" href="mce-header-footer.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <style>
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 36px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            background: var(--mce-white);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--mce-transition);
+            color: #555;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--mce-primary);
+            color: var(--mce-white);
+            border-color: var(--mce-primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(139, 26, 26, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            background: rgba(139, 26, 26, 0.38);
+        }
+
+        .gallery-item .zoom-icon {
+            font-size: 28px;
+            color: var(--mce-white);
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .zoom-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+        }
+
+        .lb-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            color: var(--mce-white);
+            font-size: 36px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="mce-header"></header>
+
+    <section class="hero-banner"
+        style="background: linear-gradient(135deg, #1a1a2e 0%, var(--mce-primary) 50%, var(--mce-secondary) 100%);">
+        <h1>Gallery</h1>
+        <p class="hero-description">Glimpses of campus life, events, achievements, and the vibrant spirit of Malabar College of Engineering
+            College.</p>
+        <div class="breadcrumb-container">
+            <a href="index.html">Home</a><span class="breadcrumb-separator">›</span><span>Gallery</span>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="section-container">
+            <!-- Filter Buttons -->
+            <div class="filter-bar reveal reveal-fade-up">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="labs">Laboratories</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+            </div>
+
+            <!-- Gallery Grid — using picsum placeholder images with distinct seeds -->
+            <div class="gallery-grid reveal reveal-fade-up" id="galleryGrid">
+                <div class="gallery-item" data-cat="campus"><img src="https://picsum.photos/seed/campus1/400/400"
+                        alt="Campus Building" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="events"><img src="https://picsum.photos/seed/event1/400/400"
+                        alt="College Event" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="labs"><img src="https://picsum.photos/seed/lab1/400/400"
+                        alt="Laboratory" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="sports"><img src="https://picsum.photos/seed/sports1/400/400"
+                        alt="Sports Ground" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="cultural"><img src="https://picsum.photos/seed/cultural1/400/400"
+                        alt="Cultural Event" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="campus"><img src="https://picsum.photos/seed/campus2/400/400"
+                        alt="Campus Exterior" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="events"><img src="https://picsum.photos/seed/event2/400/400"
+                        alt="Annual Day" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="labs"><img src="https://picsum.photos/seed/lab2/400/400"
+                        alt="IT Lab" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="sports"><img src="https://picsum.photos/seed/sports2/400/400"
+                        alt="Football" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="cultural"><img src="https://picsum.photos/seed/cultural2/400/400"
+                        alt="Stage Performance" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="campus"><img src="https://picsum.photos/seed/campus3/400/400"
+                        alt="Hostel Building" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="gallery-item" data-cat="events"><img src="https://picsum.photos/seed/event3/400/400"
+                        alt="Graduation" onerror="this.style.background='var(--mce-bg-gray)'">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose">✕</button>
+        <img id="lbImg" src="" alt="Gallery image">
+    </div>
+
+    <section class="section-padding">
+        <div class="section-container reveal reveal-fade-up">
+            <div class="cta-banner">
+                <h2>Want to See Our Campus in Person?</h2>
+                <p>Schedule a guided tour and experience the Malabar College of Engineering learning environment for yourself.</p>
+                <a href="contact.html" class="btn-primary"
+                    style="background: var(--mce-accent); color: var(--mce-primary-dark);">Book Campus Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="mce-footer"></footer>
+    <script src="mce-components.js"></script>
+    <script src="theme-scroller.js"></script>
+    <script>
+        // Filter logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.style.display = (filter === 'all' || item.dataset.cat === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Lightbox logic
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                lbImg.src = item.querySelector('img').src;
+                lightbox.classList.add('open');
+            });
+        });
+        document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+{
+    "hosting": {
+        "public": ".",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            "*.py",
+            "*.bat",
+            "*.md",
+            "firebase-debug.log",
+            "temp_serve.js",
+            "delete-temp.js",
+            "copy_*.js",
+            "copy_*.py",
+            "debug_copy.py",
+            "final_copy.py",
+            "fix_logos.py",
+            "setup_*.py",
+            "update_assets.py",
+            "inspect.html",
+            "premium-department-section.html"
+        ],
+        "headers": [
+            {
+                "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=604800"
+                    }
+                ]
+            },
+            {
+                "source": "**/*.@(css|js)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=86400"
+                    }
+                ]
+            },
+            {
+                "source": "**/*.pdf",
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/pdf"
+                    }
+                ]
+            }
+        ]
+    }
+}

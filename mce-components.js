@@ -90,12 +90,6 @@
       </div>
     </div>
     <div class="mce-top-bar-right">
-      <a class="mce-top-link" href="campus-life.html">Campus Life</a>
-<a class="mce-top-link" href="career.html">Career</a>
-<a class="mce-top-link" href="grievance.html">Grievance</a>
-<a class="mce-top-link" href="iqac.html">IQAC</a>
-<a class="mce-top-link" href="nirf.html">NIRF</a>
-<a class="mce-top-link mce-erp-btn" href="erp.html">ERP LOGIN</a>
     </div>
   </div>
 </div>
@@ -248,11 +242,7 @@ stroke-linejoin="round">
 
         <a href="facilities.html">Facilities</a>
 
-        <a href="campus-life.html">Campus Life</a>
-
         <a href="alumni.html">Alumni</a>
-
-        <a href="career.html">Career</a>
 
         <a href="contact.html">Contact</a>
 
@@ -360,7 +350,7 @@ stroke-linejoin="round">
                 </span>
 
                 <a href="tel:+918281826552">
-                    +91 8281 826 552
+                    +91 8182 826 552
                 </a>
 
             </div>
@@ -371,8 +361,8 @@ stroke-linejoin="round">
                     <i class="fas fa-envelope"></i>
                 </span>
 
-                <a href="mailto:info@malabarcollege.ac.in">
-                    info@malabarcollege.ac.in
+                <a href="mailto:itinaduvannur@gmail.com">
+                    itinaduvannur@gmail.com
                 </a>
 
             </div>

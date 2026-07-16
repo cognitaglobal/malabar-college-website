@@ -11,60 +11,193 @@
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <style>
-        .dept-hero {
-            background: linear-gradient(135deg, var(--mce-primary-dark), var(--mce-secondary));
-            border-radius: 14px;
-            padding: 40px;
-            color: var(--mce-white);
+        /* Modern Horizontal Institution Cards Styling */
+        .horizontal-depts-container {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .horizontal-dept-card {
+            display: flex;
+            background: var(--mce-white);
+            border-radius: 18px;
+            border: 1px solid #e8edf5;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .05);
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            transition: .35s ease;
+            min-height: 210px;
+            align-items: stretch;
+        }
+
+        .horizontal-dept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 74, 173, 0.12);
+            border-color: rgba(0, 74, 173, 0.18);
+        }
+
+        .horizontal-dept-card .card-left {
+            flex: 0 0 18%;
+            min-width: 170px;
+            background: #ffffff;
+            display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
+            padding: 25px;
+            border-right: 1px solid #eef2f7;
         }
 
-        .dept-hero-icon {
-            font-size: 60px;
-            flex-shrink: 0;
+        .logo-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .prog-badge {
-            display: inline-flex;
+        .horizontal-dept-card .dept-logo {
+            width: auto;
+            height: auto;
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: contain;
+            transition: .35s ease;
+        }
+
+        .horizontal-dept-card:hover .dept-logo {
+            transform: scale(1.08);
+        }
+
+        .horizontal-dept-card .card-right {
+            flex: 1;
+            padding: 28px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .horizontal-dept-card .card-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--mce-dark);
+            margin: 0 0 2px 0;
+            line-height: 1.2;
+        }
+
+        .horizontal-dept-card .card-subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--mce-secondary);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .horizontal-dept-card .card-desc {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 92%;
+            margin-top: 8px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .horizontal-dept-card .card-action {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+        }
+
+        .horizontal-dept-card .view-details-link {
+            width: 155px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
             align-items: center;
             gap: 8px;
-            background: var(--mce-bg-gray);
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 10px 16px;
+            border: 2px solid var(--mce-secondary);
+            border-radius: 30px;
             font-size: 14px;
             font-weight: 600;
-            margin: 6px;
-            transition: var(--mce-transition);
-        }
-
-        .prog-badge:hover {
-            background: var(--mce-secondary-light);
-            border-color: var(--mce-secondary);
             color: var(--mce-secondary);
+            background: #fff;
+            transition: .35s ease;
         }
 
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--mce-white);
-            border: 1.5px solid var(--mce-primary);
-            color: var(--mce-primary);
-            border-radius: 8px;
-            padding: 10px 18px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            transition: var(--mce-transition);
+        .horizontal-dept-card .arrow-slide {
+            transition: transform 0.3s ease;
+            display: inline-block;
         }
 
-        .download-btn:hover {
-            background: var(--mce-primary);
-            color: var(--mce-white);
+        .horizontal-dept-card:hover .view-details-link {
+            background: var(--mce-secondary);
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        .horizontal-dept-card:hover .arrow-slide {
+            transform: translateX(4px);
+        }
+
+        /* Responsive fix for Academic Department cards */
+        @media (max-width: 768px) {
+            .horizontal-dept-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .horizontal-dept-card .card-left {
+                flex: none;
+                width: 100%;
+                min-width: 0;
+                height: 150px;
+                padding: 20px;
+                border-right: none;
+                border-bottom: 1px solid #eef2f7;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .horizontal-dept-card .dept-logo {
+                width: auto;
+                height: auto;
+                max-width: 150px;
+                max-height: 110px;
+                object-fit: contain;
+            }
+
+            .horizontal-dept-card .card-right {
+                padding: 22px 24px 28px;
+            }
+
+            .horizontal-dept-card .card-action {
+                position: static;
+                margin-top: 18px;
+            }
+
+            .horizontal-dept-card .view-details-link {
+                width: 100%;
+            }
+
+            .horizontal-dept-card .card-desc {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .horizontal-dept-card .card-title {
+                font-size: 21px;
+            }
         }
     </style>
 </head>
@@ -91,107 +224,90 @@
                     delivering real-world competitiveness.</p>
             </div>
 
-            <!-- ITI -->
-            <div class="dept-hero reveal reveal-fade-left" style="margin-bottom: 40px;">
-                <div class="dept-hero-icon">⚙️</div>
-                <div>
-                    <h2 style="color: var(--mce-white); font-size: 28px; margin-bottom: 8px;">Industrial Training
-                        Institute (ITI)</h2>
-                    <p style="color: rgba(255,255,255,0.88); font-size: 15px; line-height: 1.7; margin-bottom: 20px;">
-                        NCVT-affiliated ITI programmes providing government-certified trade skills in mechanical, civil,
-                        and service industries. Graduates are eligible for apprenticeships and government employment
-                        across Kerala and India.</p>
-                    <div>
-                        <span class="prog-badge"
-                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">⚡
-                            Electrician</span>
-                        <span class="prog-badge"
-                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">📐
-                            Draughtsman Civil</span>
-                        <span class="prog-badge"
-                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">🏥
-                            Health Sanitary Inspector</span>
-                        <span class="prog-badge"
-                            style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: var(--mce-white);">🏨
-                            Front Office Assistant</span>
-                    </div>
-                    <a href="iti.html" class="btn-primary"
-                        style="margin-top: 20px; display: inline-flex; background: var(--mce-accent); color: var(--mce-primary-dark);">View
-                        ITI Courses →</a>
-                </div>
-            </div>
-
-            <!-- SIT -->
-            <div class="premium-card reveal reveal-fade-right" style="margin-bottom: 30px;">
-                <div style="display: flex; gap: 24px; align-items: flex-start;">
-                    <div style="font-size: 50px; flex-shrink: 0;">💻</div>
-                    <div>
-                        <h2 style="color: var(--mce-secondary); font-size: 26px; margin-bottom: 10px;">School of
-                            Information
-                            Technology (SIT)</h2>
-                        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">SIT offers
-                            diploma and certificate programmes in computing, multimedia, accounting software, and
-                            networking. Our labs are equipped with the latest hardware and software environments used in
-                            tech companies.</p>
-                        <div>
-                            <span class="prog-badge">💾 DCA</span>
-                            <span class="prog-badge">🖥️ PGDCA</span>
-                            <span class="prog-badge">🎨 CCA / CCAD</span>
-                            <span class="prog-badge">📱 Multimedia & Design</span>
-                            <span class="prog-badge">🌐 Web Technologies</span>
+            <div class="horizontal-depts-container reveal reveal-fade-up" style="margin-bottom: 40px;">
+                <!-- ITI Card -->
+                <a href="iti.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-iti.png" alt="ITI Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
                         </div>
-                        <a href="sit.html" class="btn-secondary" style="margin-top: 20px; display: inline-flex;">View
-                            SIT Courses →</a>
                     </div>
-                </div>
-            </div>
-
-            <!-- SMS -->
-            <div class="premium-card reveal reveal-fade-left"
-                style="margin-bottom: 30px; border-left: 4px solid var(--mce-accent);">
-                <div style="display: flex; gap: 24px; align-items: flex-start;">
-                    <div style="font-size: 50px; flex-shrink: 0;">📊</div>
-                    <div>
-                        <h2 style="color: var(--mce-primary); font-size: 26px; margin-bottom: 10px;">School of
-                            Management
-                            Studies (SMS)</h2>
-                        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">SMS provides
-                            professional management and executive education programmes designed for students aspiring to
-                            leadership and business roles. Our faculty bring real-world corporate experience to every
-                            classroom.</p>
-                        <div>
-                            <span class="prog-badge">📈 MBA Executive</span>
-                            <span class="prog-badge">🏢 Office Administration</span>
-                            <span class="prog-badge">💼 Import Export Management</span>
-                            <span class="prog-badge">📋 Certificate in Business</span>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">Industrial Training Institute (ITI)</h3>
+                        <span class="card-subtitle">Affiliated with NCVT, Govt. of India</span>
+                        <p class="card-desc">Equipping trainees with modern trade skills like Electrical, Civil
+                            Drafting, Front Office Management, and Sanitary Engineering. Focused on high-fidelity
+                            practical training and national certification.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
                         </div>
-                        <a href="sms.html" class="btn-secondary" style="margin-top: 20px; display: inline-flex;">View
-                            SMS Courses →</a>
                     </div>
-                </div>
-            </div>
+                </a>
 
-            <!-- Cognita -->
-            <div class="premium-card reveal reveal-fade-right" style="border-left: 4px solid #2e7d32;">
-                <div style="display: flex; gap: 24px; align-items: flex-start;">
-                    <div style="font-size: 50px; flex-shrink: 0;">✈️</div>
-                    <div>
-                        <h2 style="color: #2e7d32; font-size: 26px; margin-bottom: 10px;">Cognita Global Education</h2>
-                        <p style="color: #555; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">Cognita is our
-                            international academic gateway — offering guided admissions, IELTS coaching, visa
-                            counseling, and university placement support for those pursuing education in UK, USA,
-                            Canada, Australia, and Europe.</p>
-                        <div>
-                            <span class="prog-badge">🇬🇧 UK Universities</span>
-                            <span class="prog-badge">🇨🇦 Canada Pathway</span>
-                            <span class="prog-badge">🇦🇺 Australia Programmes</span>
-                            <span class="prog-badge">🇺🇸 USA Education</span>
+                <!-- SIT Card -->
+                <a href="sit.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-cdit.jpg" alt="SIT Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
                         </div>
-                        <a href="cognita.html" class="btn-secondary"
-                            style="margin-top: 20px; display: inline-flex; border-color: #2e7d32; color: #2e7d32;">Explore
-                            Cognita →</a>
                     </div>
-                </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">School of Information Technology (SIT)</h3>
+                        <span class="card-subtitle">C-DIT & Govt. Approved Programs</span>
+                        <p class="card-desc">Advancing software, multimedia, CAD design, accounting systems, and
+                            computer education. Delivering certified courses designed to prepare students for rapid
+                            placement in technology roles.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SMS Card -->
+                <a href="sms.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-sms.png" alt="SMS Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">School of Management Studies (SMS)</h3>
+                        <span class="card-subtitle">Professional & Executive Management Studies</span>
+                        <p class="card-desc">Nurturing future administrative leaders with specialized training in
+                            Logistics, Supply Chain Management, and Healthcare Administration. Preparing students for
+                            competitive industrial environments.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cognita Card -->
+                <a href="cognita.html" class="horizontal-dept-card">
+                    <div class="card-left">
+                        <div class="logo-wrapper">
+                            <img src="assets/images/logo-cognita-new.webp" alt="Cognita Logo" class="dept-logo"
+                                onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-top-right-arrow">→</div>
+                        <h3 class="card-title">Cognita Global Education</h3>
+                        <span class="card-subtitle">International Higher Education Pathways</span>
+                        <p class="card-desc">Providing global study guidance, application documentation, test
+                            preparation, and secure visa counseling. Linking students to top university campuses in the
+                            UK, Canada, Australia, and beyond.</p>
+                        <div class="card-action">
+                            <span class="view-details-link">View Details <span class="arrow-slide">→</span></span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

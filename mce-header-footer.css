@@ -19,6 +19,8 @@
     /* Light Blue Background */
     --mce-accent: #FFC000;
     /* Highlight Yellow */
+    --mce-heading-color: #111827;
+    /* Universal heading color — replaces all blue heading uses */
     --mce-white: #ffffff;
     --mce-dark: #0F172A;
     /* Primary text color */
@@ -38,6 +40,35 @@
     --mce-header-padding-tablet: 28px;
     --mce-header-padding-mobile: 16px;
     --mce-header-max-width: 1440px;
+}
+
+/* ══════════════════════════════════════════
+   GLOBAL HEADING COLOR — #111827 throughout
+   Overrides any inline color: var(--mce-primary) on headings.
+   Buttons, links, icons, and non-heading elements are NOT affected.
+══════════════════════════════════════════ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--mce-heading-color);
+}
+
+/* Headings inside coloured banners / dark backgrounds keep white */
+.hero-banner h1,
+.cta-banner h2,
+.stats-container h2,
+.stats-container h3,
+[style*="background-color: var(--mce-primary)"] h2,
+[style*="background-color: var(--mce-primary)"] h3 {
+    color: var(--mce-white) !important;
+}
+
+/* Footer headings stay white */
+#mce-footer h4 {
+    color: #fff !important;
 }
 
 /* ══════════════════════════════════════════
@@ -83,7 +114,7 @@
 }
 
 #mce-header.scrolled .mce-logo-block img {
-    height: 50px;
+    height: 68px;
 }
 
 /* ── TOP INFORMATION BAR ── */
@@ -224,8 +255,10 @@
 
 /* ── MAIN HEADER ROW ── */
 .mce-main-header {
-    background-color: var(--mce-primary);
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
 }
+
 
 .mce-main-header-inner {
     display: grid;
@@ -240,19 +273,20 @@
 }
 
 /* Logo Block */
+/* Logo Block */
 .mce-logo-block {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     flex-shrink: 0;
 }
 
 .mce-logo-block img {
-    height: 62px;
+    height: 78px;
     width: auto;
-    display: block;
     object-fit: contain;
-    transition: height 0.3s ease;
+
+    filter: none;
 }
 
 .mce-college-name {
@@ -263,7 +297,7 @@
 .mce-college-name .mce-main-name {
     font-size: 20px;
     font-weight: 800;
-    color: var(--mce-white);
+    color: #111827;
     line-height: 1.15;
     letter-spacing: -0.3px;
     text-transform: uppercase;
@@ -272,7 +306,7 @@
 .mce-college-name .mce-sub-name {
     font-size: 14px;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
+    color: #6b7280;
     line-height: 1.25;
     letter-spacing: 0.5px;
 }
@@ -297,7 +331,7 @@
 }
 
 .mce-nav-link {
-    color: var(--mce-white);
+    color: #111827;
     text-decoration: none;
     font-size: 13.5px;
     font-weight: 700;
@@ -336,7 +370,8 @@
 }
 
 .mce-nav-link.mce-nav-active {
-    color: var(--mce-white);
+    color: var(--mce-primary);
+
 }
 
 .mce-nav-link.mce-nav-active::after {
@@ -369,7 +404,14 @@
     z-index: 9999;
 }
 
-.mce-nav-item:hover .mce-dropdown-menu {
+/* ── ACADEMICS DROPDOWN: opens only via JS-toggled .dropdown-open class ──
+   NOTE: uses .mce-dropdown-toggle (NOT Bootstrap's .dropdown-toggle)
+   to avoid Bootstrap's ::after pseudo-element overwriting the SVG caret. */
+.mce-nav-item.mce-dropdown-toggle {
+    position: relative;
+}
+
+.mce-nav-item.dropdown-open .mce-dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -399,44 +441,43 @@
 
 /* ── SEARCH BOX & CONTROLS ── */
 .mce-header-right {
-
     width: auto;
-
     display: flex;
-
     justify-content: flex-end;
-
     align-items: center;
+    /* No fixed margin — let the grid auto-distribute space */
+    flex-shrink: 0;
 }
 
 .mce-search-box {
     position: relative;
     display: flex;
     align-items: center;
+
 }
 
 .mce-search-box input {
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    border-radius: 24px;
-    padding: 8px 40px 8px 16px;
+    border: 2px solid #0070C0;
+    padding: 10px 45px 10px 18px;
     font-size: 13px;
     font-weight: 500;
-    color: var(--mce-white);
-    width: 150px;
+    color: #ffffff;
+    width: clamp(100px, 12vw, 150px);
     outline: none;
-    background: rgba(255, 255, 255, 0.15);
+    background: #0070C0;
     transition: var(--mce-transition);
+    border-radius: 30px;
 }
 
 .mce-search-box input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .mce-search-box input:focus {
-    border-color: var(--mce-white);
-    background-color: rgba(255, 255, 255, 0.25);
-    width: 210px;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+    border-color: #005fa3;
+    background-color: #005fa3;
+    width: clamp(130px, 15vw, 210px);
+    box-shadow: 0 0 0 4px rgba(0, 112, 192, 0.18);
 }
 
 .mce-search-box button {
@@ -445,14 +486,14 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
     display: flex;
     align-items: center;
     transition: color 0.2s ease;
 }
 
 .mce-search-box button:hover {
-    color: var(--mce-white);
+    color: #FFC000;
 }
 
 /* ── MOBILE MENU TOGGLE ── */
@@ -1354,4 +1395,40 @@ body {
 
     display: block;
 
+}
+
+.mce-logo-block {
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.mce-nav-link svg {
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-left: 4px;
+    stroke: currentColor !important;
+    fill: none !important;
+    /* Prevent Bootstrap .dropdown-toggle::after from appearing */
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.mce-nav-link svg * {
+    stroke: currentColor !important;
+    fill: none !important;
+}
+
+/* Rotate caret when Academics dropdown is open */
+.mce-nav-item.mce-dropdown-toggle.dropdown-open .mce-nav-link svg {
+    transform: rotate(180deg);
+}
+
+/* Suppress Bootstrap's own ::after arrow on our custom toggle */
+.mce-nav-item.mce-dropdown-toggle .mce-nav-link::after {
+    display: none !important;
+    content: none !important;
 }

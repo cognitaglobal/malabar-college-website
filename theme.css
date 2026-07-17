@@ -18,7 +18,7 @@ h4,
 h5,
 h6 {
     font-family: 'Outfit', sans-serif;
-    color: #111111;
+    color: var(--mce-heading-color);
     font-weight: 700;
 }
 
@@ -48,7 +48,7 @@ h6 {
 }
 
 .hero-banner h1 {
-    font-size: 42px;
+    font-size: clamp(24px, 5vw, 42px);
     color: var(--mce-white);
     text-transform: uppercase;
     font-weight: 800;
@@ -58,11 +58,12 @@ h6 {
 }
 
 .hero-description {
-    font-size: 17px;
+    font-size: clamp(14px, 2.5vw, 17px);
     color: rgba(255, 255, 255, 0.9);
     max-width: 700px;
     margin: 0 auto 24px;
     font-weight: 400;
+    padding: 0 8px;
 }
 
 /* Breadcrumb Navigation */
@@ -106,8 +107,8 @@ h6 {
 }
 
 .section-title {
-    font-size: 32px;
-    color: var(--mce-primary);
+    font-size: clamp(22px, 4vw, 32px);
+    color: var(--mce-heading-color);
     text-transform: uppercase;
     position: relative;
     display: inline-block;
@@ -128,11 +129,12 @@ h6 {
 }
 
 .section-subtitle {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     color: #666;
     font-weight: 500;
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 8px;
 }
 
 /* ── Grid Framework ── */
@@ -164,6 +166,17 @@ h6 {
     }
 }
 
+@media (max-width: 576px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .grid-2 {
         grid-template-columns: 1fr;
@@ -174,11 +187,17 @@ h6 {
     }
 
     .grid-4 {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .section-padding {
         padding: 60px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-4 {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -270,7 +289,7 @@ h6 {
 .cta-banner {
     background: linear-gradient(135deg, var(--mce-secondary) 0%, #002d68 100%);
     border-radius: 16px;
-    padding: 60px 40px;
+    padding: clamp(30px, 5vw, 60px) clamp(20px, 4vw, 40px);
     color: var(--mce-white);
     text-align: center;
     position: relative;
@@ -278,7 +297,7 @@ h6 {
 }
 
 .cta-banner h2 {
-    font-size: 32px;
+    font-size: clamp(20px, 4vw, 32px);
     color: var(--mce-white);
     margin-bottom: 14px;
     text-transform: uppercase;
@@ -305,7 +324,7 @@ h6 {
 }
 
 .stat-item .num {
-    font-size: 48px;
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 800;
     color: var(--mce-accent);
     line-height: 1;
@@ -587,6 +606,18 @@ textarea.form-control {
     margin-top: 45px;
 }
 
+@media (max-width: 900px) {
+    .committee-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .committee-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .committee-card {
     background: #fff;
     border-radius: 12px;
@@ -610,7 +641,7 @@ textarea.form-control {
 }
 
 .committee-info h4 {
-    color: #a0462a;
+    color: var(--mce-heading-color);
     font-size: 18px;
     margin-bottom: 5px;
 }
@@ -801,7 +832,7 @@ textarea.form-control {
 
 .faculty-info h4 {
 
-    color: #a6462d;
+    color: var(--mce-heading-color);
 
     font-size: 22px;
 
@@ -940,7 +971,7 @@ textarea.form-control {
 #deptTitle {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #1e293b;
+    color: var(--mce-heading-color);
 }
 
 #deptDescription {
@@ -980,7 +1011,7 @@ textarea.form-control {
 .faculty-box h4 {
     margin: 16px 0 5px;
     text-align: center;
-    color: #8b3d2e;
+    color: var(--mce-heading-color);
     font-size: 20px;
 }
 
@@ -1047,7 +1078,7 @@ textarea.form-control {
 }
 
 .premium-sidebar h6 {
-    color: var(--mce-primary);
+    color: var(--mce-heading-color);
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 25px;
@@ -1099,7 +1130,7 @@ textarea.form-control {
 #deptTitle {
     font-size: 46px;
     font-weight: 800;
-    color: #1e293b;
+    color: var(--mce-heading-color);
     margin-bottom: 20px;
 }
 
@@ -1141,7 +1172,7 @@ textarea.form-control {
 .faculty-box h4 {
     margin: 16px 0 5px;
     text-align: center;
-    color: var(--mce-primary);
+    color: var(--mce-heading-color);
     font-size: 20px;
 }
 

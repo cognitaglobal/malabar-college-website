@@ -367,666 +367,211 @@
         PREMIUM TESTIMONIALS (2026 UI)
 ==========================================*/
 
+
+
+        /*=================================================
+      PREMIUM TESTIMONIALS 2026
+==================================================*/
+
         .premium-testimonials {
             width: 100vw;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
+            margin-left: calc(-50vw + 50%);
             padding: 100px 0;
-            background: #F8F9FC;
+            background: #f5f5f5;
             overflow: hidden;
         }
 
-        /* Heading */
-
-        .section-heading {
-            margin-bottom: 55px;
+        .testimonial-slider {
+            margin-top: 70px;
         }
-
-        .section-heading .sub-title {
-
-            display: inline-block;
-
-            color: #8B1D1D;
-
-            text-transform: uppercase;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 20px;
-
-            position: relative;
-        }
-
-        .section-heading .sub-title::after {
-
-            content: "";
-
-            width: 70px;
-
-            height: 2px;
-
-            background: #8B1D1D;
-
-            position: absolute;
-
-            top: 50%;
-
-            left: 115%;
-
-        }
-
-        .section-heading h2 {
-
-            font-size: 46px;
-
-            font-weight: 800;
-
-            color: #222;
-
-            line-height: 1.2;
-
-            margin: 0;
-
-        }
-
-        /* Slider spacing */
-
-        .slick_slider_1 {
-
-            margin-top: 20px;
-
-        }
-
-        /* Card */
 
         .testimonial-card {
-
-            background: #fff;
-
-            border-radius: 28px;
-
-            padding: 40px;
-
-            box-shadow:
-
-                0 15px 45px rgba(0, 0, 0, .08);
-
-            transition: .45s;
-
-            margin: 20px;
-
-            backface-visibility: hidden;
-            -webkit-font-smoothing: antialiased;
-            transform: translateZ(0);
-            will-change: transform;
-
-        }
-
-        .testimonial-flex {
+            position: relative;
             display: flex;
             align-items: center;
-            gap: 35px;
-        }
-
-        .testimonial-content {
-            flex: 1;
-        }
-
-        .testimonial-image {
-            flex-shrink: 0;
-        }
-
-        @media(max-width:768px) {
-
-            .testimonial-flex {
-                flex-direction: column;
-                text-align: center;
-            }
-
+            gap: 28px;
+            background: #fff;
+            border-radius: 22px;
+            max-width: 900px;
+            min-height: 200px;
+            margin: 20px auto;
+            padding: 32px 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+            transition: .4s;
         }
 
         .testimonial-card:hover {
-
             transform: translateY(-10px);
-
-            box-shadow:
-
-                0 30px 70px rgba(0, 0, 0, .15);
-
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .15);
         }
 
-        /* Image */
 
-        .testimonial-image {
-            width: 200px;
-            height: 200px;
+
+        .testimonial-left {
+            flex: 0 0 150px;
+            width: 150px;
+            height: 150px;
+            border-radius: 18px;
             overflow: hidden;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 25px;
-            background: #fff;
         }
 
-        .testimonial-image img {
+
+        .testimonial-left img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            object-position: center;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .testimonial-card:hover .testimonial-left img {
+            transform: scale(1.08);
+        }
+
+
+        .testimonial-right {
+            flex: 1;
+            min-width: 0;
+        }
+
+
+
+        .testimonial-right h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+
+        .testimonial-right span {
+            display: block;
+            color: #666;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+
+        .testimonial-right p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .testimonial-right p.expanded {
+            -webkit-line-clamp: unset;
             display: block;
         }
 
-        .testimonial-card:hover .testimonial-image img {
-
-            transform: scale(1.08);
-
-        }
-
-        /* Quote */
-
-        .quote-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin: 15px auto;
-        }
-
-        /* Name */
-
-        .student-name {
-
-            font-size: 34px;
-
-            font-weight: 800;
-
+        .testimonial-right .read-more-btn {
             color: #222;
-
-            margin-bottom: 8px;
-
-        }
-
-        /* Batch */
-
-        .student-batch {
-
-            color: #8B1D1D;
-
-            font-size: 18px;
-
-            font-weight: 600;
-
-            margin-bottom: 25px;
-
-        }
-
-        /* Paragraph */
-
-        .testimonial-text {
-
-            max-height: 110px;
-
-            overflow: hidden;
-
-            transition: max-height .4s ease;
-
-            position: relative;
-
-        }
-
-        .testimonial-text.expanded {
-
-            max-height: 1000px;
-
-        }
-
-        /* .testimonial-text::after {
-
-            content: "";
-
-            position: absolute;
-
-            bottom: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 40px;
-
-            background: linear-gradient(to top, #fff, transparent);
-
-        } */
-
-        .testimonial-text.expanded::after {
-
-            display: none;
-
-        }
-
-        /* Button */
-
-        .read-btn {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 14px;
-
-            text-decoration: none;
-
-            padding: 14px 28px;
-
-            background: #0F52BA;
-
-            color: #fff;
-
-            border-radius: 50px;
-
             font-weight: 700;
-
-            transition: .4s;
-
+            cursor: pointer;
+            white-space: nowrap;
         }
 
-        .read-btn span {
+        /*=========================================
+      SLICK SLIDER + RESPONSIVE
+==========================================*/
 
-            transition: .4s;
-
+        .testimonial-slider .slick-slide {
+            padding: 20px;
+            height: inherit !important;
         }
 
-        .read-btn:hover {
-
-            background: #083a86;
-
-            color: #fff;
-
+        .testimonial-slider .slick-slide {
+            outline: none;
         }
 
-        .read-btn:hover span {
-
-            transform: translateX(8px);
-
+        .testimonial-slider .slick-slide:focus,
+        .testimonial-slider .slick-slide *:focus {
+            outline: none;
         }
 
-        /* Slick Slide */
-
-        .slick-slide {
-            padding: 25px;
-            opacity: .55;
-            transform: none;
-            transition: .45s;
+        .testimonial-card:focus,
+        .testimonial-card *:focus {
+            outline: none;
         }
 
-        .slick-center {
-            opacity: 1;
-            transform: none;
-        }
-
-        .slick-center .testimonial-card {
-            box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
-        }
-
-        .slick-list {
+        .testimonial-slider .slick-list {
             overflow: visible;
         }
 
-        .slick-track {
-            display: flex;
-            align-items: center;
+        .testimonial-slider .slick-track {
+            display: flex !important;
+            align-items: stretch !important;
         }
 
-        /* Dots */
-
-        .slick-dots {
-
+        .testimonial-slider .slick-dots {
             margin-top: 45px;
-
+            display: flex !important;
+            justify-content: center;
+            list-style: none;
         }
 
-        .slick-dots li {
-
+        .testimonial-slider .slick-dots li {
             margin: 0 8px;
-
         }
 
-        .slick-dots li button {
-
+        .testimonial-slider .slick-dots button {
             width: 14px;
-
             height: 14px;
-
             border-radius: 50%;
-
-            background: #d5d5d5;
-
+            border: none;
+            background: #d4d4d4;
+            font-size: 0;
         }
 
-        .slick-dots li button:before {
-
+        .testimonial-slider .slick-dots li button:before {
             display: none;
-
         }
 
-        .slick-dots li.slick-active button {
-
+        .testimonial-slider .slick-dots li.slick-active button {
             background: #8B1D1D;
-
             transform: scale(1.3);
-
         }
 
-        /* Remove outline */
+        /*==========================
+        Responsive
+===========================*/
 
-        .slick-slide {
-
-            outline: none;
-
-        }
-
-        /* Responsive */
-
-        @media(max-width:1199px) {
-
-            .section-heading h2 {
-
-                font-size: 40px;
-
-            }
-
-            .student-name {
-
-                font-size: 30px;
-
-            }
-
-            .testimonial-card {
-
-                padding: 45px;
-
-            }
-
-        }
-
-        @media(max-width:991px) {
-
-            .testimonial-card {
-
-                text-align: center;
-
-                padding: 40px;
-
-            }
-
-            .quote-icon {
-
-                margin: 8px auto 12px;
-                font-size: 20px;
-            }
-
-            .testimonial-image {
-
-                width: 190px;
-
-                height: 190px;
-
-                margin-bottom: 30px;
-
-            }
-
-            .student-name {
-
-                font-size: 28px;
-                margin-bottom: 8px;
-
-            }
-
-            .testimonial-text {
-
-                font-size: 17px;
-
-                line-height: 1.8;
-
-            }
-
-        }
-
-        @media(max-width:767px) {
-
+        @media(max-width:768px) {
             .premium-testimonials {
-
                 padding: 80px 0;
-
-            }
-
-            .section-heading h2 {
-
-                font-size: 34px;
-
             }
 
             .testimonial-card {
-
-                padding: 25px 20px;
-
-                margin: 8px;
-
-                border-radius: 20px;
-
-                min-height: auto;
-
-            }
-
-            .testimonial-image {
-
-                width: 220px;
-
-                height: 140px;
-
-            }
-
-            .student-name {
-
-                font-size: 20px;
-
-            }
-
-            .student-batch {
-
-                font-size: 18px;
-                margin-bottom: 18px;
-
-            }
-
-            .testimonial-text {
-
-                font-size: 17px;
-
-                line-height: 1.8;
-
-                max-height: none;
-                overflow: visible;
-
-
-            }
-
-            .read-more-btn {
-
-                display: inline-block;
-
-                margin-top: 15px;
-
-                color: #0F52BA;
-
-                font-size: 16px;
-
-                font-weight: 700;
-
-                cursor: pointer;
-
-                transition: .3s;
-
-            }
-
-            .read-more-btn:hover {
-
-                color: #8B1D1D;
-
-                text-decoration: underline;
-
-            }
-
-
-
-            .testimonial-content {
-                display: flex;
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .testimonial-text {
-                max-height: none;
-                overflow: visible;
-            }
-
-            .read-more-btn {
-                display: inline-block;
-                margin-top: 20px;
-                position: relative;
-                z-index: 10;
-            }
-
-
-        }
-
-        @media(max-width:575px) {
-
-            .section-heading h2 {
-
-                font-size: 28px;
-
-            }
-
-
-
-            .testimonial-card {
-
+                text-align: center;
                 padding: 25px;
-
+                gap: 18px;
+                margin: 10px;
+                border-radius: 22px;
             }
 
-        }
-
-        /* ===== Center Slider Effect ===== */
-
-        /* ===== Mobile Fix ===== */
-
-        .slick-list {
-            overflow: hidden;
-        }
-
-        .slick-track {
-            display: flex;
-            align-items: stretch;
-        }
-
-        .slick-slide,
-        .slick-current,
-        .slick-active,
-        .slick-center {
-            opacity: 1 !important;
-            transform: none !important;
-        }
-
-        /* Responsive fix for Academic Department cards */
-        @media (max-width: 768px) {
-            .horizontal-dept-card {
-                flex-direction: column;
-                min-height: auto;
+            .testimonial-left {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto;
             }
 
-            .horizontal-dept-card .card-left {
-
-                flex: none;
-
-                width: 100%;
-
-                min-width: 0;
-
-                height: 150px;
-
-                padding: 20px;
-
-                border-right: none;
-
-                border-bottom: 1px solid #eef2f7;
-
-                display: flex;
-
-                align-items: center;
-
-                justify-content: center;
-
+            .testimonial-right h3 {
+                font-size: 20px;
             }
 
-            .horizontal-dept-card .dept-logo {
-
-                width: auto;
-
-                height: auto;
-
-                max-width: 150px;
-
-                max-height: 110px;
-
-                object-fit: contain;
-
+            .testimonial-right span {
+                font-size: 15px;
             }
 
-            .horizontal-dept-card .card-right {
-                padding: 22px 24px 28px;
+            .testimonial-right p {
+                font-size: 15px;
+                line-height: 1.7;
             }
-
-            .horizontal-dept-card .card-action {
-                position: static;
-                margin-top: 18px;
-            }
-
-            .horizontal-dept-card .view-details-link {
-                width: 100%;
-            }
-
-            .horizontal-dept-card .card-desc {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .horizontal-dept-card .card-title {
-                font-size: 21px;
-            }
-        }
-
-
-
-        /* Hide Read More button */
-        .read-more-btn {
-            display: none !important;
-        }
-
-        /* Show full testimonial text */
-        .testimonial-text {
-            max-height: none !important;
-            overflow: visible !important;
         }
     </style>
 </head>
@@ -1079,39 +624,43 @@
             <!-- RIGHT: Content -->
             <div>
                 <span
-                    style="color: var(--mce-secondary); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 8px;">Principal's
+                    style="color: var(--mce-secondary); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 8px;">Director's
                     Desk</span>
-                <h2 style="font-size: 36px; margin: 0 0 4px; color: var(--mce-primary); font-weight: 800;">Dr. T.K.
-                    Maqbool</h2>
-                <span class="pd-subtitle">Principal</span>
+                <h2 style="font-size: 36px; margin: 0 0 4px; color: var(--mce-heading-color); font-weight: 800;">
+                    Muhammad
+                    Rishal K</h2>
+                <span class="pd-subtitle">Director</span>
 
                 <div class="pd-text-body" id="pdTextBody">
                     <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 14px;">
-                        Welcome to the Principal's Desk of Malabar College of Engineering. It is with great
-                        pleasure and pride that I welcome you to our academic community. For over a century, Malabar
-                        College of Engineering
-                        has stood as a beacon of knowledge, service, and educational empowerment. We are committed to
-                        nurturing intellectual curiosity, professional capability, and deep-seated ethical values in
-                        all our students.
+                        Welcome to Malabar College of Engineering Campus. It gives me immense pleasure to welcome you to
+                        an institution dedicated to empowering learners through quality education, professional
+                        training, and skill development. Our campus offers diverse academic opportunities in technical
+                        education, information technology, management studies, and global education, enabling students
+                        to pursue higher education, rewarding careers, entrepreneurship, and international pathways.
                     </p>
+
                     <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 14px;">
-                        Here, education is not just about textbook learning — it is a transformative process that
-                        encourages students to think beyond classroom boundaries. Through our diverse academic
-                        offerings — from industrial training and software engineering to management studies and global
-                        programme options — we focus on preparing our trainees with real-world skills that translate
-                        into solid employment.
+                        At Malabar College of Engineering Campus, we believe that education extends far beyond earning
+                        qualifications. Through practical learning experiences, industry collaborations,
+                        technology-enabled teaching, and an outcome-based approach, we ensure that every student gains
+                        the knowledge, technical expertise, and professional skills required to excel in today's
+                        competitive and rapidly evolving world.
                     </p>
+
                     <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 14px;">
-                        Our state-of-the-art laboratory networks, collaborative study spaces, and seasoned faculty
-                        members ensure a holistic learning journey. We are proud of our student-centric initiatives,
-                        academic quality assurance, and robust placement partnerships that connect our graduates
-                        directly with national and multinational companies.
+                        Together with our experienced faculty and committed team, we strive to create an inspiring and
+                        inclusive learning environment where innovation, creativity, and ethical values are nurtured. We
+                        encourage every learner to develop confidence, leadership qualities, and a strong sense of
+                        responsibility, preparing them to make meaningful contributions to society and the industries
+                        they serve.
                     </p>
+
                     <p style="font-size: 16px; line-height: 1.8; color: #555;">
-                        As we move ahead, we continue to innovate our curriculum, explore global pathways, and welcome
-                        prospective students to join our legacy. We invite you to explore our campus, learn about our
-                        heritage, and build a successful professional foundation. Let us learn, pioneer, and transform
-                        the future together.
+                        I warmly welcome you to Malabar College of Engineering Campus and invite you to become a part of
+                        our journey towards excellence, innovation, and lifelong success. Together, let us build a
+                        brighter future through knowledge, determination, and continuous learning while shaping the next
+                        generation of skilled professionals and responsible global citizens.
                     </p>
                 </div>
 
@@ -1225,7 +774,9 @@
         <div class="section-container">
             <div class="grid-2" style="align-items: center; margin-bottom: 60px;">
                 <div>
-                    <h2 style="font-size: 34px; color: var(--mce-primary); margin-bottom: 18px; font-weight: 800;">Why
+                    <h2
+                        style="font-size: 34px; color: var(--mce-heading-color); margin-bottom: 18px; font-weight: 800;">
+                        Why
                         Study at Malabar College of Engineering?</h2>
                     <p style="color: #555; margin-bottom: 24px; font-size: 15.5px; line-height: 1.7;">
                         For over a century, Malabar College of Engineering has delivered quality practical-oriented
@@ -1261,228 +812,93 @@
 
             <section id="testimonials" class="premium-testimonials">
 
-                <div class="container-fluid px-0">
-                    <div class="container">
+                <div class="container">
 
-                        <!-- Heading -->
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 text-center">
+                    <div class="section-heading text-center">
+                        <span class="sub-title">Testimonials</span>
+                        <h2>What Our Students Say</h2>
+                    </div>
 
-                                <div class="section-heading" data-aos="fade-up">
+                    <div class="testimonial-slider">
 
-                                    <span class="sub-title">
-                                        Testimonials
-                                    </span>
-
-                                    <h2>
-                                        LET'S HEAR WHAT THEY HAVE TO SAY
-                                    </h2>
-
-                                </div>
-
+                        <!-- CARD 1 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-left">
+                                <img src="assets/images/student1.jpg" alt="Amina Munawira">
+                            </div>
+                            <div class="testimonial-right">
+                                <h3>Amina Munawira</h3>
+                                <span>B.Com Finance • 2021–2024</span>
+                                <p>
+                                    Forever grateful to be a part of Malabar College of Engineering.
+                                    The college gave me confidence, leadership skills, lifelong
+                                    friendships and outstanding academic guidance. Every faculty member
+                                    inspired me to grow professionally and personally.
+                                    <span class="read-more-btn">Read more</span>
+                                </p>
                             </div>
                         </div>
 
-
-                        <div class="row mt-5">
-
-                            <div class="col-12">
-
-                                <div class="slick_slider_1">
-
-                                    <!-- CARD 1 -->
-
-                                    <div class="testimonial-card">
-
-                                        <div class="testimonial-flex">
-
-                                            <div class="testimonial-image">
-
-                                                <img src="assets/images/mce-logo-white.png">
-
-                                            </div>
-
-                                            <div class="testimonial-content">
-
-                                                <div class="quote-icon">
-                                                    <i class="fas fa-quote-left"></i>
-                                                </div>
-
-                                                <h3 class="student-name">
-                                                    Amina Munawira
-                                                </h3>
-
-                                                <span class="student-batch">
-                                                    B.Com Finance | 2021–2024
-                                                </span>
-
-                                                <p class="testimonial-text">
-                                                    Forever grateful and thankful to be an alumnus of Malabar College of
-                                                    Engineering.
-                                                    The college gave me confidence, leadership skills, lifelong
-                                                    friendships,
-                                                    and excellent academic guidance. Every faculty member inspired me to
-                                                    grow,
-                                                    both professionally and personally. I am proud to be a part of the
-                                                    MCE
-                                                    family.
-                                                </p>
-
-
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <!-- CARD 2 -->
-
-                                    <div class="testimonial-card">
-
-                                        <div class="testimonial-flex">
-
-                                            <div class="testimonial-image">
-
-                                                <img src="assets/images/logo-cdit.jpg">
-
-                                            </div>
-
-                                            <div class="testimonial-content">
-
-                                                <div class="quote-icon">
-                                                    <i class="fas fa-quote-left"></i>
-                                                </div>
-
-                                                <h3 class="student-name">
-                                                    Amina Munawira
-                                                </h3>
-
-                                                <span class="student-batch">
-                                                    B.Com Finance | 2021–2024
-                                                </span>
-
-                                                <p class="testimonial-text">
-                                                    Forever grateful and thankful to be an alumnus of Malabar College of
-                                                    Engineering.
-                                                    The college gave me confidence, leadership skills, lifelong
-                                                    friendships,
-                                                    and excellent academic guidance. Every faculty member inspired me to
-                                                    grow,
-                                                    both professionally and personally. I am proud to be a part of the
-                                                    MCE
-                                                    family.
-                                                </p>
-
-
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- CARD 3 -->
-
-                                    <div class="testimonial-card">
-
-                                        <div class="testimonial-flex">
-
-                                            <div class="testimonial-image">
-
-                                                <img src="assets/images/logo-cdit.jpg">
-
-                                            </div>
-
-                                            <div class="testimonial-content">
-
-                                                <div class="quote-icon">
-                                                    <i class="fas fa-quote-left"></i>
-                                                </div>
-
-                                                <h3 class="student-name">
-                                                    Amina Munawira
-                                                </h3>
-
-                                                <span class="student-batch">
-                                                    B.Com Finance | 2021–2024
-                                                </span>
-
-                                                <p class="testimonial-text">
-                                                    Forever grateful and thankful to be an alumnus of Malabar College of
-                                                    Engineering.
-                                                    The college gave me confidence, leadership skills, lifelong
-                                                    friendships,
-                                                    and excellent academic guidance. Every faculty member inspired me to
-                                                    grow,
-                                                    both professionally and personally. I am proud to be a part of the
-                                                    MCE
-                                                    family.
-                                                </p>
-
-
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- CARD 4 -->
-
-                                    <div class="testimonial-card">
-
-                                        <div class="testimonial-flex">
-
-                                            <div class="testimonial-image">
-
-                                                <img src="assets/images/logo-cdit.jpg">
-
-                                            </div>
-
-                                            <div class="testimonial-content">
-
-                                                <div class="quote-icon">
-                                                    <i class="fas fa-quote-left"></i>
-                                                </div>
-
-                                                <h3 class="student-name">
-                                                    Amina Munawira
-                                                </h3>
-
-                                                <span class="student-batch">
-                                                    B.Com Finance | 2021–2024
-                                                </span>
-
-                                                <p class="testimonial-text">
-                                                    Forever grateful and thankful to be an alumnus of Malabar College of
-                                                    Engineering.
-                                                    The college gave me confidence, leadership skills, lifelong
-                                                    friendships,
-                                                    and excellent academic guidance. Every faculty member inspired me to
-                                                    grow,
-                                                    both professionally and personally. I am proud to be a part of the
-                                                    MCE
-                                                    family.
-                                                </p>
-
-
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
+                        <!-- CARD 2 -->
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-left">
+                                <img src="assets/images/student1.jpg" alt="Amina Munawira">
                             </div>
+                            <div class="testimonial-right">
+                                <h3>Amina Munawira</h3>
+                                <span>B.Com Finance • 2021–2024</span>
+                                <p>
+                                    Forever grateful to be a part of Malabar College of Engineering.
+                                    The college gave me confidence, leadership skills, lifelong
+                                    friendships and outstanding academic guidance. Every faculty member
+                                    inspired me to grow professionally and personally.
+                                    <span class="read-more-btn">Read more</span>
+                                </p>
+                            </div>
+                        </div>
 
+                        <!-- CARD 3 -->
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-left">
+                                <img src="assets/images/student1.jpg" alt="Amina Munawira">
+                            </div>
+                            <div class="testimonial-right">
+                                <h3>Amina Munawira</h3>
+                                <span>B.Com Finance • 2021–2024</span>
+                                <p>
+                                    Forever grateful to be a part of Malabar College of Engineering.
+                                    The college gave me confidence, leadership skills, lifelong
+                                    friendships and outstanding academic guidance. Every faculty member
+                                    inspired me to grow professionally and personally.
+                                    <span class="read-more-btn">Read more</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4 -->
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-left">
+                                <img src="assets/images/student1.jpg" alt="Amina Munawira">
+                            </div>
+                            <div class="testimonial-right">
+                                <h3>Amina Munawira</h3>
+                                <span>B.Com Finance • 2021–2024</span>
+                                <p>
+                                    Forever grateful to be a part of Malabar College of Engineering.
+                                    The college gave me confidence, leadership skills, lifelong
+                                    friendships and outstanding academic guidance. Every faculty member
+                                    inspired me to grow professionally and personally.
+                                    <span class="read-more-btn">Read more</span>
+                                </p>
+                            </div>
                         </div>
 
                     </div>
+
+                </div>
 
             </section>
 
@@ -1514,7 +930,7 @@
             <!-- News Section -->
             <div class="reveal reveal-fade-left">
                 <h3
-                    style="font-size: 26px; color: var(--mce-primary); font-weight: 800; margin-bottom: 24px; text-transform: uppercase;">
+                    style="font-size: 26px; color: var(--mce-heading-color); font-weight: 800; margin-bottom: 24px; text-transform: uppercase;">
                     Latest News Ticker</h3>
                 <div class="news-item">
                     <span
@@ -1539,7 +955,7 @@
             <!-- Events Section -->
             <div class="reveal reveal-fade-right">
                 <h3
-                    style="font-size: 26px; color: var(--mce-primary); font-weight: 800; margin-bottom: 24px; text-transform: uppercase;">
+                    style="font-size: 26px; color: var(--mce-heading-color); font-weight: 800; margin-bottom: 24px; text-transform: uppercase;">
                     Upcoming Events</h3>
                 <div
                     style="background-color: var(--mce-white); border-radius: 8px; box-shadow: var(--mce-shadow-sm); overflow: hidden; padding: 24px;">
@@ -1664,82 +1080,55 @@
 
         $(document).ready(function () {
 
-            $('.slick_slider_1').slick({
-
-                centerMode: true,
-                centerPadding: '180px',
+            $('.testimonial-slider').slick({
 
                 slidesToShow: 1,
                 slidesToScroll: 1,
-
                 infinite: true,
-
                 autoplay: true,
-                autoplaySpeed: 4000,
-
+                autoplaySpeed: 2need000,
                 arrows: false,
-
                 dots: true,
-
-                speed: 700,
-
+                speed: 600,
                 adaptiveHeight: false,
+                centerMode: true,
+                centerPadding: '180px',
+                accessibility: false,
 
                 responsive: [
-
                     {
                         breakpoint: 1200,
                         settings: {
-                            centerPadding: '120px'
+                            centerPadding: '100px'
                         }
                     },
-
                     {
                         breakpoint: 992,
                         settings: {
-                            centerPadding: '60px'
+                            centerPadding: '50px'
                         }
                     },
-
                     {
                         breakpoint: 768,
                         settings: {
                             centerMode: false,
-                            centerPadding: '0',
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            adaptiveHeight: true
+                            centerPadding: '0'
                         }
                     }
-
                 ]
 
             });
 
         });
 
+
+
         document.querySelectorAll('.read-more-btn').forEach(function (btn) {
-
             btn.addEventListener('click', function () {
-
-                const text = this.previousElementSibling;
-
-                if (text.classList.contains('expanded')) {
-
-                    text.classList.remove('expanded');
-
-                    this.textContent = "Read More";
-
-                } else {
-
-                    text.classList.add('expanded');
-
-                    this.textContent = "Hide";
-
-                }
-
+                const text = this.closest('p');
+                text.classList.toggle('expanded');
+                this.textContent = text.classList.contains('expanded') ? ' Show less' : ' Read more';
             });
-
         });
 
 

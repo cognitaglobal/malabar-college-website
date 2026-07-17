@@ -148,7 +148,27 @@
             transform: translateX(4px);
         }
 
+        /* Hide the stray top-right arrow div - decorative, not needed */
+        .card-top-right-arrow {
+            display: none;
+        }
+
         /* Responsive fix for Academic Department cards */
+        @media (max-width: 900px) {
+            .horizontal-dept-card .card-right {
+                padding-right: 24px;
+            }
+
+            .horizontal-dept-card .card-action {
+                position: static;
+                margin-top: 16px;
+            }
+
+            .horizontal-dept-card .card-desc {
+                max-width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .horizontal-dept-card {
                 flex-direction: column;
@@ -332,172 +352,12 @@
     <!-- Premium Departments -->
     <!-- ========================================= -->
 
-    <section class="premium-department section-padding">
 
-        <div class="section-container">
-
-            <div class="premium-layout">
-
-                <!-- LEFT SIDEBAR -->
-
-                <div class="premium-sidebar">
-
-                    <h6>ACADEMIC DEPARTMENTS</h6>
-
-                    <button class="premium-btn active" data-dept="tourism">
-                        Travel & Tourism
-                    </button>
-
-                    <button class="premium-btn" data-dept="commerce">
-                        Commerce
-                    </button>
-
-                    <button class="premium-btn" data-dept="english">
-                        English
-                    </button>
-
-                    <button class="premium-btn" data-dept="multimedia">
-                        Multimedia
-                    </button>
-
-                    <button class="premium-btn" data-dept="cs">
-                        Computer Science
-                    </button>
-
-                    <button class="premium-btn" data-dept="bba">
-                        Business Administration
-                    </button>
-
-                </div>
-
-                <!-- RIGHT CONTENT -->
-
-                <div class="premium-content">
-
-                    <h2 id="deptTitle">
-                        Department of Travel & Tourism
-                    </h2>
-
-                    <p id="deptDescription">
-
-                        The Department of Travel and Tourism prepares students for
-                        careers in tourism, hospitality, airlines, travel
-                        management and destination marketing through practical
-                        learning and industrial exposure.
-
-                    </p>
-
-                    <!-- Faculty -->
-
-                    <div id="facultyCards" class="premium-faculty">
-
-                        <div class="faculty-box">
-
-                            <img src="assets/images/faculty/faculty1.jpg">
-
-                            <h4>Anusha K</h4>
-
-                            <span>Head of Department</span>
-
-                        </div>
-
-                        <div class="faculty-box">
-
-                            <img src="assets/images/faculty/faculty2.jpg">
-
-                            <h4>Suramya T</h4>
-
-                            <span>Assistant Professor</span>
-
-                        </div>
-
-                        <div class="faculty-box">
-
-                            <img src="assets/images/faculty/faculty3.jpg">
-
-                            <h4>Najumdheen K</h4>
-
-                            <span>Assistant Professor</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
 
     <script>
 
-        const data = {
 
-            tourism: {
-                title: "Department of Travel & Tourism",
-                description: "The Department of Travel and Tourism prepares students for careers in tourism, hospitality, airlines, travel management and destination marketing through practical learning and industrial exposure.",
-                faculty: [
-                    ["assets/images/faculty/faculty1.jpg", "Anusha K", "Head of Department"],
-                    ["assets/images/faculty/faculty2.jpg", "Suramya T", "Assistant Professor"],
-                    ["assets/images/faculty/faculty3.jpg", "Najumdheen K", "Assistant Professor"]
-                ]
-            },
-
-            commerce: {
-                title: "Department of Commerce",
-                description: "The Department of Commerce equips students with accounting, finance, taxation and entrepreneurship skills through projects and internships.",
-                faculty: [
-                    ["assets/images/faculty/commerce1.jpg", "Rahul R", "Head of Department"],
-                    ["assets/images/faculty/commerce2.jpg", "Anjana M", "Assistant Professor"],
-                    ["assets/images/faculty/commerce3.jpg", "Nidhin K", "Assistant Professor"]
-                ]
-            },
-
-            english: {
-                title: "Department of English",
-                description: "The Department of English develops communication, literature and research skills.",
-                faculty: [
-                    ["assets/images/faculty/english1.jpg", "Arya S", "Head of Department"],
-                    ["assets/images/faculty/english2.jpg", "Megha P", "Faculty"],
-                    ["assets/images/faculty/english3.jpg", "Neethu T", "Faculty"]
-                ]
-            },
-
-            multimedia: {
-                title: "Department of Multimedia",
-                description: "The Multimedia Department focuses on Graphic Design, Motion Graphics, Animation and Video Editing.",
-                faculty: [
-                    ["assets/images/faculty/multi1.jpg", "Irshad Ali", "Head of Department"],
-                    ["assets/images/faculty/multi2.jpg", "Nabeel", "Faculty"],
-                    ["assets/images/faculty/multi3.jpg", "Aslam", "Faculty"]
-                ]
-            },
-
-            cs: {
-                title: "Department of Computer Science",
-                description: "The Department of Computer Science focuses on AI, Programming, Cyber Security and Software Engineering.",
-                faculty: [
-                    ["assets/images/faculty/cs1.jpg", "Ashif", "Head of Department"],
-                    ["assets/images/faculty/cs2.jpg", "Suhail", "Faculty"],
-                    ["assets/images/faculty/cs3.jpg", "Faris", "Faculty"]
-                ]
-            },
-
-            bba: {
-                title: "Department of Business Administration",
-                description: "The Department of Business Administration prepares future managers and entrepreneurs.",
-                faculty: [
-                    ["assets/images/faculty/bba1.jpg", "Shameer", "Head of Department"],
-                    ["assets/images/faculty/bba2.jpg", "Rashid", "Faculty"],
-                    ["assets/images/faculty/bba3.jpg", "Nisam", "Faculty"]
-                ]
-            }
-
-        };
-
-        const buttons = document.querySelectorAll(".premium-btn");
+      const buttons = document.querySelectorAll(".premium-btn");
 
         buttons.forEach(btn => {
 

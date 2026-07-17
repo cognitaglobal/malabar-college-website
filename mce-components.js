@@ -77,9 +77,9 @@
 <div class="mce-top-bar">
   <div class="mce-top-bar-inner">
     <div class="mce-top-bar-left">
-      <a class="mce-phone" href="tel:04884280800">
+      <a class="mce-phone" href="tel:0496 265 4200">
         ${iconPhone()}
-        04884 280800
+        0496 265 4200
       </a>
       <span class="mce-top-bar-sep">|</span>
       <a class="mce-center-link" href="contact.html">Center</a>
@@ -97,7 +97,9 @@
 <div class="mce-main-header">
   <div class="mce-main-header-inner">
     <a class="mce-logo-block" href="index.html">
-     <img src="assets/images/logo-malabar.jpg" alt="Malabar College of Engineering Logo">
+    <img src="assets/images/malabar-new.png"
+     alt="Malabar College of Engineering Logo"
+     class="mce-logo">
       <div class="mce-college-name">
         <span class="mce-main-name">Malabar College of Engineering Campus</span>
         <span class="mce-sub-name">Engineering Excellence Through Innovation</span>
@@ -111,7 +113,7 @@
       <div class="mce-nav-item">
         <a href="about.html" class="mce-nav-link ${active === 'about' ? 'mce-nav-active' : ''}">About Us</a>
       </div>
-      <div class="mce-nav-item dropdown-toggle">
+      <div class="mce-nav-item mce-dropdown-toggle">
         <a href="academics.html" class="mce-nav-link ${active === 'academics' ? 'mce-nav-active' : ''}">
           Academics ${iconCaretDown()}
         </a>
@@ -231,6 +233,7 @@ stroke-linejoin="round">
 <a href="sms.html">School of Management (SMS)</a>
 
 <a href="cognita.html">Cognita Global Pathway</a>
+
 
 </div>
 
@@ -438,7 +441,7 @@ stroke-linejoin="round">
       }
     });
 
-    // 5. Mobile Toggle & Dropdown Accordion Behavior
+    // 5. Mobile Hamburger Toggle
     const toggle = document.getElementById('mceMobileToggle');
     const nav = document.getElementById('mceMainNav');
     if (toggle && nav) {
@@ -448,26 +451,40 @@ stroke-linejoin="round">
       });
     }
 
-    // Handle dropdown element collapse/expand triggers for Mobile
-    const dropdownToggles = document.querySelectorAll('.mce-nav-item.dropdown-toggle');
-    dropdownToggles.forEach(toggleEl => {
-      const link = toggleEl.querySelector('.mce-nav-link');
-      if (link) {
-        link.addEventListener('click', (e) => {
-          if (window.innerWidth <= 900) {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleEl.classList.toggle('mobile-open');
+    // ── ACADEMICS DROPDOWN (Desktop: click-to-open / Mobile: accordion) ──
+    // Use .mce-dropdown-toggle to avoid collision with Bootstrap's .dropdown-toggle
+    const academicItem = document.querySelector('.mce-nav-item.mce-dropdown-toggle');
+    const dropdownToggles = document.querySelectorAll('.mce-nav-item.mce-dropdown-toggle');
+
+    if (academicItem) {
+      const academicLink = academicItem.querySelector('.mce-nav-link');
+
+      if (academicLink) {
+        academicLink.addEventListener('mouseenter', function () {
+          if (window.innerWidth > 900) {
+            academicItem.classList.add('dropdown-open');
+          }
+        });
+
+        academicItem.addEventListener('mouseleave', function () {
+          if (window.innerWidth > 900) {
+            academicItem.classList.remove('dropdown-open');
           }
         });
       }
-    });
+    }
 
-    // Close menu on click outside
+    // Single outside-click handler – closes both the mobile inline nav
+    // and the desktop Academics dropdown when clicking elsewhere
     document.addEventListener('click', (e) => {
-      if (nav && !nav.contains(e.target) && !toggle.contains(e.target)) {
+      // Close mobile inline nav
+      if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove('mce-nav-open');
         dropdownToggles.forEach(tel => tel.classList.remove('mobile-open'));
+      }
+      // Close desktop Academics dropdown
+      if (academicItem && window.innerWidth > 900 && !academicItem.contains(e.target)) {
+        academicItem.classList.remove('dropdown-open');
       }
     });
 

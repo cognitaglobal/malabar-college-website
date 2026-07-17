@@ -149,7 +149,7 @@
         .foundation-content h3 {
             font-size: 34px;
             font-weight: 800;
-            color: var(--mce-primary);
+            color: var(--mce-heading-color);
             margin: 0;
         }
 
@@ -238,7 +238,7 @@
 
         .value-box h5 {
             margin: 0;
-            color: var(--mce-primary);
+            color: var(--mce-heading-color);
             font-size: 17px;
             font-weight: 700;
             line-height: 1.5;
@@ -339,7 +339,13 @@
                 order: 1;
             }
 
+            .management-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
         }
+
+
 
         @media(max-width:576px) {
 
@@ -394,6 +400,311 @@
             }
 
         }
+
+
+
+        .management-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg,
+                    #ffffff 0%,
+                    var(--mce-bg-gray) 100%);
+        }
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+
+
+        .management-card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+            height: auto;
+        }
+
+        .management-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, .15);
+        }
+
+        .management-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .management-content {
+            padding: 18px 24px 16px;
+        }
+
+        .management-content h3 {
+            margin: 0 0 6px;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--mce-heading-color);
+            line-height: 1.2;
+        }
+
+        .management-content p {
+            margin: 0;
+            font-size: 18px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .management-section .section-subtitle {
+            max-width: 1200px;
+            width: 100%;
+            margin: 25px auto 0;
+            font-size: 19px;
+            line-height: 1.9;
+            color: #5b6472;
+            text-align: center;
+        }
+
+        @media(max-width:767px) {
+            .management-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* ==========================================
+   ADMINISTRATIVE TEAM
+========================================== */
+
+        .admin-team-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-top: 55px;
+        }
+
+        .admin-card {
+            background: #fff;
+            border-radius: 22px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #e8edf5;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
+            transition: .35s ease;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 74, 173, .15);
+        }
+
+        .admin-card img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 22px;
+        }
+
+        .admin-card h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--mce-heading-color);
+        }
+
+        .admin-card p {
+            margin-top: 8px;
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        @media(max-width:991px) {
+
+            .admin-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:576px) {
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-card img {
+                width: 150px;
+                height: 150px;
+            }
+
+        }
+
+        .leader-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .leader-section.gray {
+            background: #f7f9fc;
+        }
+
+        .leader-card {
+            display: grid;
+            grid-template-columns: 430px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .leader-card.reverse {
+            grid-template-columns: 1fr 430px;
+        }
+
+        .leader-card.reverse .leader-image {
+            order: 2;
+        }
+
+        .leader-card.reverse .leader-content {
+            order: 1;
+        }
+
+        .leader-image img {
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
+        }
+
+        .leader-tag {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--mce-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .leader-content h2 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--mce-heading-color);
+        }
+
+        .leader-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .leader-name {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .leader-name h4 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .leader-name span {
+            font-size: 17px;
+            color: var(--mce-secondary);
+            font-weight: 600;
+        }
+
+        /* FACULTY */
+
+        .faculty-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .faculty-card {
+            background: #fff;
+            border-radius: 22px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+            transition: .35s;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .faculty-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: 50% 10%;
+            background: #f8f8f8;
+        }
+
+        .faculty-card h3 {
+            margin: 20px 0 8px;
+            font-size: 24px;
+        }
+
+        .faculty-card p {
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        /* Responsive */
+
+        @media(max-width:991px) {
+
+            .leader-card,
+            .leader-card.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .leader-card.reverse .leader-image,
+            .leader-card.reverse .leader-content {
+                order: unset;
+            }
+
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:767px) {
+
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leader-content h2 {
+                font-size: 34px;
+            }
+
+            .leader-image img {
+                height: 420px;
+            }
+
+        }
     </style>
 </head>
 
@@ -419,7 +730,8 @@
                 <span
                     style="color: var(--mce-secondary); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Our
                     Story Since 1922</span>
-                <h2 style="font-size: 34px; color: var(--mce-primary); margin: 10px 0 20px; font-weight: 800;">A Legacy
+                <h2 style="font-size: 34px; color: var(--mce-heading-color); margin: 10px 0 20px; font-weight: 800;">A
+                    Legacy
                     Built on Service and Scholarship</h2>
                 <p style="color: #555; line-height: 1.8; margin-bottom: 16px;">Malabar College of Engineering &
                     Educational
@@ -595,66 +907,212 @@ OUR MOTTO
     </section>
 
     <!-- Messages -->
-    <section class="section-padding">
-        <div class="section-container">
-            <div class="section-header reveal reveal-fade-up">
-                <h2 class="section-title">Leadership Messages</h2>
-                <p class="section-subtitle">Words of guidance from our institutional leaders.</p>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 30px;">
-                <div class="msg-card reveal reveal-fade-left">
-                    <div class="msg-avatar">👔</div>
-                    <div>
-                        <p
-                            style="color: #555; font-size: 15.5px; line-height: 1.8; font-style: italic; margin-bottom: 16px;">
-                            "For over a century, Malabar College of Engineering has stood as both a sanctuary and a
-                            launchpad — caring for
-                            orphaned children while simultaneously launching them into self-sufficient, dignified lives.
-                            We remain steadfast that quality education is the most potent tool for social
-                            transformation."</p>
-                        <h4 style="color: var(--mce-primary); margin-bottom: 4px;">Janab. H. Abdul Razzak</h4>
-                        <span style="font-size: 13.5px; color: var(--mce-secondary); font-weight: 600;">Chairman,
-                            Malabar College of Engineering
-                            Orphanage & Educational Institutions</span>
-                    </div>
-                </div>
-                <div class="msg-card reveal reveal-fade-right">
-                    <div class="msg-avatar" style="background: linear-gradient(135deg, var(--mce-secondary), #002d68);">
-                        🎓
-                    </div>
-                    <div>
-                        <p
-                            style="color: #555; font-size: 15.5px; line-height: 1.8; font-style: italic; margin-bottom: 16px;">
-                            "Our college challenges every student to think beyond classroom boundaries. With
-                            state-of-the-art laboratories, experienced faculty, and a culture of curiosity, we are
-                            shaping professionals who bring both technical expertise and human values into their
-                            careers."</p>
-                        <h4 style="color: var(--mce-primary); margin-bottom: 4px;">Dr. T.K. Maqbool</h4>
-                        <span
-                            style="font-size: 13.5px; color: var(--mce-secondary); font-weight: 600; display: block; margin-bottom: 15px;">Principal,
-                            Malabar College of Engineering</span>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
     <!-- CTA -->
-    <section class="section-padding">
-        <div class="section-container reveal reveal-fade-up">
-            <div class="cta-banner">
-                <h2>Be Part of a Century-Long Legacy</h2>
-                <p>Apply for admissions and join thousands who have built successful careers through Malabar College of
-                    Engineering's
-                    world-class programmes.</p>
-                <a href="admission.html" class="btn-primary"
-                    style="background: var(--mce-accent); color: var(--mce-primary-dark);">Apply for Admission</a>
+    <!-- =====================================================
+        CHAIRMAN'S MESSAGE
+======================================================-->
+
+    <section class="leader-section">
+        <div class="section-container">
+
+            <div class="leader-card">
+
+                <div class="leader-image">
+                    <img src="assets/images/chairman.jpg" alt="Chairman">
+                </div>
+
+                <div class="leader-content">
+
+                    <span class="leader-tag">OUR LEADERSHIP</span>
+
+                    <h2>Chairman's Message</h2>
+
+                    <p>
+                        We believe that education is the foundation of personal growth and societal progress, and at
+                        Malabar College of Engineering Campus, we are committed to nurturing and empowering learners
+                        through quality education, skill development, and innovation, enabling them to become competent
+                        professionals, responsible citizens, and lifelong learners.
+                    </p>
+
+                    <div class="leader-name">
+                        <h4>Chairman's Name</h4>
+                        <span>Chairman</span>
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
     </section>
+
+
+    <!-- =====================================================
+        DIRECTOR'S MESSAGE
+======================================================-->
+
+    <section class="leader-section gray">
+
+        <div class="section-container">
+
+            <div class="leader-card reverse">
+
+                <div class="leader-image">
+                    <img src="assets/images/director.jpg" alt="Director">
+                </div>
+
+                <div class="leader-content">
+
+                    <span class="leader-tag">OUR LEADERSHIP</span>
+
+                    <h2>Director's Message</h2>
+
+                    <p>Welcome to Malabar College of Engineering Campus.</p>
+
+                    <p>
+                        At Malabar College of Engineering Campus, we are committed to empowering learners through
+                        quality education, professional training, and skill development. Our campus offers diverse
+                        learning opportunities in technical education, information technology, management studies, and
+                        global education, preparing students for higher education, employment, entrepreneurship, and
+                        international careers.
+                    </p>
+
+                    <p>
+                        We believe that education extends beyond qualifications. Through practical training, industry
+                        collaboration, technology-enabled learning, and a learner-centric approach, we equip our
+                        students with the knowledge, skills, confidence, and values required to succeed in a rapidly
+                        evolving world.
+                    </p>
+
+                    <p>
+                        Together with our dedicated faculty and team, we strive to create an inspiring learning
+                        environment where every student is encouraged to realize their potential and contribute
+                        meaningfully to society.
+                    </p>
+
+                    <p>
+                        I warmly welcome you to Malabar College of Engineering Campus and invite you to be a part of our
+                        journey towards excellence, innovation, and lifelong success.
+                    </p>
+
+                    <div class="leader-name">
+                        <h4>Muhammad Rishal K</h4>
+                        <span>Director</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+        PRINCIPAL'S MESSAGE
+======================================================-->
+
+    <section class="leader-section">
+
+        <div class="section-container">
+
+            <div class="leader-card">
+
+                <div class="leader-image">
+                    <img src="assets/images/ajeeba.jpeg" alt="Principal">
+                </div>
+
+                <div class="leader-content">
+
+                    <span class="leader-tag">OUR LEADERSHIP</span>
+
+                    <h2>Principal's Message</h2>
+
+                    <p>
+                        At Malabar College of Engineering Campus, we are committed to fostering academic excellence,
+                        practical skills, and lifelong learning in a supportive and disciplined environment.
+                    </p>
+
+                    <p>
+                        Our goal is to inspire every learner to achieve their full potential and become competent
+                        professionals equipped to meet the challenges of the future.
+                    </p>
+
+                    <div class="leader-name">
+                        <h4>Principal Name</h4>
+                        <span>Principal</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="faculty-section">
+
+        <div class="section-container">
+
+            <div class="section-header">
+
+                <span class="foundation-subtitle">
+                    OUR TEAM
+                </span>
+
+                <h2 class="section-title">
+                    Faculties
+                </h2>
+
+                <p class="section-subtitle">
+                    Meet our experienced and dedicated teaching professionals.
+                </p>
+
+            </div>
+
+            <div class="faculty-grid">
+
+                <div class="faculty-card">
+                    <img src="assets/images/aswathi.jpeg">
+                    <h3>Aswathi suku</h3>
+                    <p>Group Instructor</p>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="assets/images/shamna.jpeg">
+                    <h3> Shamna K P</h3>
+                    <p>Instructor</p>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="assets/images/sangeetha.jpeg">
+                    <h3>Sangeetha T K</h3>
+                    <p>Instructor</p>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="assets/images/raihanath.jpeg">
+                    <h3>Raihanath K</h3>
+                    <p>Instructor</p>
+                </div>
+
+                <!-- <div class="faculty-card">
+                    <img src="assets/images/f5.jpg">
+                    <h3>Faculty Name</h3>
+                    <p>Assistant Professor</p>
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 
     <footer id="mce-footer"></footer>
     <script src="mce-components.js"></script>

@@ -1,6 +1,22 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 /* =====================================================
    Malabar College of Engineering — Global Page Theme Styles (theme.css)
+   
    ===================================================== */
+
 
 /* ── Typography & Global Elements ── */
 body {
@@ -25,36 +41,41 @@ h6 {
 /* ── Breadcrumb & Hero Banner ── */
 .hero-banner {
     position: relative;
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background-image: url("assets/images/collagebanner.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 24px 80px;
-    color: var(--mce-white);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 350px;
-    z-index: 1;
 }
 
+.hero-home {
+    min-height: 900px;
+}
+
+
 .hero-banner::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(6, 46, 84, 0.92) 0%, rgba(10, 77, 140, 0.8) 50%, rgba(14, 107, 168, 0.7) 100%);
-    z-index: -1;
+    background: transparent;
 }
 
 .hero-banner h1 {
-    font-size: clamp(24px, 5vw, 42px);
-    color: var(--mce-white);
-    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+
+    font-size: 70px;
     font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    animation: zoomIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    color: #fff;
+
+    margin: 0;
+    transform: translateY(-20px);
 }
 
 .hero-description {

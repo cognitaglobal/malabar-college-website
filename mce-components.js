@@ -82,7 +82,6 @@
         0496 265 4200
       </a>
       <span class="mce-top-bar-sep">|</span>
-      <a class="mce-center-link" href="contact.html">Center</a>
       <div class="mce-top-social">
         <a href="https://www.facebook.com" target="_blank" rel="noopener" title="Facebook">${iconFacebook()}</a>
         <a href="https://www.instagram.com" target="_blank" rel="noopener" title="Instagram">${iconInstagram()}</a>

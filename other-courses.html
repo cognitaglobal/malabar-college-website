@@ -73,20 +73,9 @@
 
                 <!-- <p id="description"></p> -->
 
-                <div id="pdfContainer" style="width:100%; height:500px; background:#f5f8ff; border:2px dashed #004aad;
-                    border-radius:15px; display:flex; align-items:center; justify-content:center;
-                    flex-direction:column;">
-
-                    <span style="font-size:60px;">📄</span>
-
-                    <h3 style="color:#004aad;">
-                        PDF Will Be Uploaded Soon
-                    </h3>
-
-                    <p style="color:#666;">
-                        Course PDF will be added here later
-                    </p>
-
+                <div id="pdfContainer" style="width:100%; height:700px; border-radius:15px; overflow:hidden;">
+                    <iframe id="pdfViewer" src="" width="100%" height="100%" style="border:none;">
+                    </iframe>
                 </div>
 
             </div>
@@ -133,7 +122,7 @@
                 duration: "1 Month",
                 eligibility: "SSLC",
                 description: "Malayalam computing, typing and digital document preparation.",
-                pdf: "pdfs/cmc.pdf"
+                pdf: "assets/pdfs/CMC SYLLABUS.pdf"
             },
 
             ADL: {
@@ -141,7 +130,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "25 Hours",
                 eligibility: "SSLC",
-                description: "Comprehensive logistics and supply chain management training."
+                description: "Comprehensive logistics and supply chain management training.",
+                pdf: "assets/pdfs/ADL SYLLABUS.pdf"
             },
 
             TEC: {
@@ -149,7 +139,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "106 Hours",
                 eligibility: "Plus Two",
-                description: "Fundamentals of Tally accounting and GST."
+                description: "Fundamentals of Tally accounting and GST.",
+                pdf: "assets/pdfs/TEC SYLLABUS.pdf"
             },
 
             TEL1: {
@@ -157,7 +148,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "35 Hours",
                 eligibility: "Plus Two",
-                description: "Beginner level professional Tally training."
+                description: "Beginner level professional Tally training.",
+                pdf: "assets/pdfs/TEL1 SYLLABUS.pdf"
             },
 
             TEL2: {
@@ -165,7 +157,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "35 Hours",
                 eligibility: "Plus Two",
-                description: "Intermediate Tally and accounting practices."
+                description: "Intermediate Tally and accounting practices.",
+                pdf: "assets/pdfs/TEL2 SYLLABUS.pdf"
             },
 
             TEL3: {
@@ -173,7 +166,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "35 Hours",
                 eligibility: "Plus Two",
-                description: "Advanced Tally, GST, payroll and business accounting."
+                description: "Advanced Tally, GST, payroll and business accounting.",
+                pdf: "assets/pdfs/TEL3 SYLLABUS.pdf"
             },
 
             GCCVT: {
@@ -181,7 +175,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "35 Hours",
                 eligibility: "Plus Two",
-                description: "Vocational skill development and certification program."
+                description: "Vocational skill development and certification program.",
+                pdf: "assets/pdfs/GCCVT SYLLABUS.pdf"
             },
 
             TDST: {
@@ -189,7 +184,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "7 Hours",
                 eligibility: "Plus Two",
-                description: "Training program for teaching and classroom management skills."
+                description: "Training program for teaching and classroom management skills.",
+                pdf: "assets/pdfs/TDST SYLLABUS.pdf"
             },
 
             PBCU: {
@@ -197,7 +193,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "5 Hours",
                 eligibility: "Tally ACE/Tally pro certified (From C-Dit)",
-                description: "Business communication and computer application skills."
+                description: "Business communication and computer application skills.",
+                pdf: "assets/pdfs/PBCU SYLLABUS.pdf"
             },
 
             CDTP: {
@@ -205,7 +202,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "3 Months",
                 eligibility: "SSLC",
-                description: "DTP, page design and publishing software training."
+                description: "DTP, page design and publishing software training.",
+                pdf: "assets/pdfs/CDTP SYLLABUS.pdf"
             },
 
             CPHP: {
@@ -213,7 +211,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "3 Months",
                 eligibility: "PLUS TWO/3 Year Diploma in Engineering",
-                description: "PHP web development and database integration."
+                description: "PHP web development and database integration.",
+                pdf: "assets/pdfs/PHP SYLLABUS.pdf"
             },
 
             CJP: {
@@ -221,7 +220,9 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "3 Months",
                 eligibility: "PLUS TWO/3 Year Diploma in Engineering",
-                description: "Core Java programming and application development."
+                description: "Core Java programming and application development.",
+                pdf: "assets/pdfs/CJP SYLLABUS.pdf"
+
             },
 
             CNP: {
@@ -229,7 +230,8 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "3 Months",
                 eligibility: "PLUS TWO/3 Year Diploma in Engineering",
-                description: ".NET application development using C#."
+                description: ".NET application development using C#.",
+                pdf: "assets/pdfs/CNP SYLLABUS.pdf"
             },
 
             CIP: {
@@ -237,7 +239,9 @@
                 Certificate: "C-Dit (Under Govt of Kerala)",
                 duration: "3 Months",
                 eligibility: "SSLC",
-                description: "Python programming from fundamentals to advanced concepts."
+                description: "Python programming from fundamentals to advanced concepts.",
+                pdf: "assets/pdfs/CIP SYLLABUS.pdf"
+
             }
 
         };
@@ -264,7 +268,7 @@
             // document.getElementById("description").innerText =
             //     c.description || "";
 
-            // document.getElementById("pdfViewer").src = c.pdf;
+            document.getElementById("pdfViewer").src = c.pdf;
 
         }
 

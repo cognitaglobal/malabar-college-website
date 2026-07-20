@@ -40,41 +40,66 @@ h6 {
 
 /* ── Breadcrumb & Hero Banner ── */
 .hero-banner {
+
     position: relative;
-    min-height: 600px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    min-height: 700px;
+
     overflow: hidden;
 
-    background-image: url("assets/images/collagebanner.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
 .hero-home {
-    min-height: 900px;
+    min-height: 1000px;
 }
 
 
 .hero-banner::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
-    background: transparent;
+
+    background: url("assets/images/collagebanner.jpeg") center center/cover no-repeat;
+
+    filter: blur(3px);
+
+    transform: scale(1.08);
+
+    z-index: -2;
+}
+
+.hero-banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .30);
+
+    z-index: -1;
 }
 
 .hero-banner h1 {
     position: relative;
     z-index: 2;
 
-    font-size: 70px;
+    font-size: clamp(28px, 6vw, 70px);
     font-weight: 800;
     color: #fff;
 
     margin: 0;
+    padding: 0 16px;
+    text-align: center;
     transform: translateY(-20px);
 }
 
@@ -114,7 +139,7 @@ h6 {
 
 /* ── Section Structure ── */
 .section-padding {
-    padding: 80px 24px;
+    padding: clamp(40px, 8vw, 80px) clamp(16px, 4vw, 24px);
 }
 
 .section-container {
@@ -162,19 +187,19 @@ h6 {
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: clamp(20px, 4vw, 40px);
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: clamp(16px, 3vw, 30px);
 }
 
 .grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: clamp(14px, 2.5vw, 24px);
 }
 
 @media (max-width: 1024px) {
@@ -184,17 +209,6 @@ h6 {
 
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
-
-    .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
     }
 }
 
@@ -210,9 +224,16 @@ h6 {
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    .section-padding {
-        padding: 60px 16px;
+@media (max-width: 576px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
     }
 }
 
@@ -304,6 +325,39 @@ h6 {
     background-color: var(--mce-primary);
     color: var(--mce-white);
     box-shadow: 0 4px 15px rgba(139, 26, 26, 0.2);
+}
+
+/* ============================
+   Hero Animation (All Pages)
+============================ */
+
+.hero-content h1 {
+
+    animation: heroFade 1s ease both;
+}
+
+.hero-description {
+
+    animation: heroFade 1.2s ease both;
+
+    animation-delay: .2s;
+}
+
+@keyframes heroFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
 
 /* Call To Action Container */
@@ -683,9 +737,9 @@ textarea.form-control {
 .department-wrapper {
 
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: minmax(0, 320px) 1fr;
 
-    gap: 60px;
+    gap: 40px;
 
     align-items: flex-start;
 

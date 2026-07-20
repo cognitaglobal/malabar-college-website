@@ -7,10 +7,461 @@
     <title>Facilities — Malabar College of Engineering</title>
     <meta name="description"
         content="Explore the world-class facilities at Malabar College of Engineering — labs, library, hostel, sports, and more.">
+
+    <!-- Existing Styles -->
     <link rel="stylesheet" href="mce-header-footer.css">
     <link rel="stylesheet" href="theme.css">
+
+    <!-- Existing Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
     <style>
+        /* =========================================================
+           FACILITIES PAGE - PREMIUM UPGRADE STYLES START
+           Only Facilities page content is redesigned
+        ========================================================== */
+
+        /* ---------- Base Page Scope Start ---------- */
+        .facilities-page {
+            --fac-white: #ffffff;
+            --fac-light: #f7f8fb;
+            --fac-light-2: #f1f3f7;
+            --fac-text: #555;
+            --fac-text-soft: #6b7280;
+            --fac-heading: var(--mce-heading-color, #1b1b1b);
+            --fac-accent: var(--mce-accent, #ffd166);
+            --fac-primary-dark: var(--mce-primary-dark, #0f2444);
+            --fac-shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.06);
+            --fac-shadow-md: 0 16px 40px rgba(15, 23, 42, 0.08);
+            --fac-shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.12);
+            --fac-radius-sm: 18px;
+            --fac-radius-md: 22px;
+            --fac-radius-lg: 24px;
+        }
+
+        .facilities-page * {
+            box-sizing: border-box;
+        }
+
+        .facilities-page img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .facilities-page .section-intro {
+            max-width: 760px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .facilities-page .section-intro h2 {
+            color: var(--fac-heading);
+            margin-bottom: 14px;
+        }
+
+        .facilities-page .section-intro p {
+            color: var(--fac-text-soft);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .facilities-page .fac-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 209, 102, 0.16);
+            color: var(--fac-primary-dark);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        /* ---------- Base Page Scope End ---------- */
+
+
+        /* ---------- Hero Enhancement Start ---------- */
+        
+
+        /* ---------- Hero Enhancement End ---------- */
+
+
+        /* ---------- Feature Cards Section Start ---------- */
+        .fac-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .fac-feature-card {
+            background: var(--fac-white);
+            border-radius: var(--fac-radius-md);
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--fac-shadow-sm);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            height: 100%;
+        }
+
+        .fac-feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--fac-shadow-lg);
+        }
+
+        .fac-feature-icon {
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 209, 102, 0.22), rgba(255, 255, 255, 0.8));
+            color: var(--fac-primary-dark);
+            font-size: 30px;
+            transition: transform 0.4s ease;
+        }
+
+        .fac-feature-card:hover .fac-feature-icon {
+            transform: rotate(-8deg) scale(1.06);
+        }
+
+        .fac-feature-card h3 {
+            font-size: 20px;
+            color: var(--fac-heading);
+            margin-bottom: 12px;
+        }
+
+        .fac-feature-card p {
+            font-size: 14.8px;
+            color: var(--fac-text);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ---------- Feature Cards Section End ---------- */
+
+
+        /* ---------- Facility Showcase Section Start ---------- */
+        .fac-showcase-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 34px;
+        }
+
+        .fac-showcase-card {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: 0;
+            background: var(--fac-white);
+            border-radius: var(--fac-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--fac-shadow-md);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .fac-showcase-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--fac-shadow-lg);
+        }
+
+        .fac-showcase-card.reverse {
+            grid-template-columns: 1fr 1.05fr;
+        }
+
+        .fac-showcase-media {
+            position: relative;
+            overflow: hidden;
+            min-height: 360px;
+            background: var(--fac-light-2);
+        }
+
+        .fac-showcase-media img {
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .fac-showcase-card:hover .fac-showcase-media img {
+            transform: scale(1.08);
+        }
+
+        .fac-showcase-content {
+            padding: 42px 42px 40px;
+        }
+
+        .fac-showcase-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .fac-showcase-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 20px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 209, 102, 0.18);
+            color: var(--fac-primary-dark);
+            font-size: 26px;
+            transition: transform 0.35s ease;
+        }
+
+        .fac-showcase-card:hover .fac-showcase-icon {
+            transform: rotate(-10deg);
+        }
+
+        .fac-showcase-content h3 {
+            margin: 0;
+            color: var(--fac-heading);
+            font-size: 28px;
+            line-height: 1.2;
+        }
+
+        .fac-showcase-content p {
+            color: var(--fac-text);
+            line-height: 1.9;
+            margin: 0 0 22px;
+            font-size: 15px;
+        }
+
+        .fac-showcase-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .fac-showcase-tags span {
+            padding: 9px 14px;
+            border-radius: 999px;
+            background: var(--fac-light);
+            color: var(--fac-primary-dark);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fac-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fac-btn-primary {
+            background: var(--fac-accent);
+            color: var(--fac-primary-dark);
+            box-shadow: 0 12px 30px rgba(255, 209, 102, 0.25);
+        }
+
+        .fac-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 36px rgba(255, 209, 102, 0.35);
+            color: var(--fac-primary-dark);
+        }
+
+        .fac-btn-primary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+            transform: translateX(-120%);
+            transition: transform 0.55s ease;
+        }
+
+        .fac-btn-primary:hover::before {
+            transform: translateX(120%);
+        }
+
+        /* ---------- Facility Showcase Section End ---------- */
+
+
+        /* ---------- Statistics Section Start ---------- */
+        .fac-stats-section {
+            background: var(--mce-bg-gray, #f6f7fb);
+        }
+
+        .fac-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .fac-stat-card {
+            background: var(--fac-white);
+            border-radius: var(--fac-radius-md);
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: var(--fac-shadow-sm);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .fac-stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--fac-shadow-md);
+        }
+
+        .fac-stat-card i {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: rgba(255, 209, 102, 0.18);
+            color: var(--fac-primary-dark);
+            font-size: 28px;
+        }
+
+        .fac-stat-card .num {
+            display: block;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--fac-heading);
+            margin-bottom: 10px;
+        }
+
+        .fac-stat-card .label {
+            display: block;
+            color: var(--fac-text-soft);
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* ---------- Statistics Section End ---------- */
+
+
+        /* ---------- Gallery Section Start ---------- */
+        .fac-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .fac-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--fac-radius-md);
+            min-height: 280px;
+            box-shadow: var(--fac-shadow-sm);
+            background: var(--fac-light-2);
+        }
+
+        .fac-gallery-item img {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .fac-gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.14));
+            display: flex;
+            align-items: flex-end;
+            padding: 22px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .fac-gallery-overlay h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0;
+            transform: translateY(10px);
+            transition: transform 0.35s ease;
+        }
+
+        .fac-gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .fac-gallery-item:hover .fac-gallery-overlay {
+            opacity: 1;
+        }
+
+        .fac-gallery-item:hover .fac-gallery-overlay h3 {
+            transform: translateY(0);
+        }
+
+        /* ---------- Gallery Section End ---------- */
+
+
+        /* ---------- CTA Section Start ---------- */
+        .fac-cta {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--fac-primary-dark), #17335d 55%, #22467d 100%);
+            border-radius: 28px;
+            padding: 72px 28px;
+            text-align: center;
+            box-shadow: var(--fac-shadow-lg);
+            isolation: isolate;
+        }
+
+        .fac-cta-shape,
+        .fac-cta-shape-2 {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            z-index: -1;
+        }
+
+        .fac-cta-shape {
+            width: 220px;
+            height: 220px;
+            top: -50px;
+            left: -50px;
+        }
+
+        .fac-cta-shape-2 {
+            width: 160px;
+            height: 160px;
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .fac-cta h2 {
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .fac-cta p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            color: rgba(255, 255, 255, 0.86);
+            line-height: 1.8;
+        }
+
+        /* ---------- CTA Section End ---------- */
+
+
+        /* ---------- Legacy Facility Card Cleanup Start ---------- */
         .facility-card {
             text-align: center;
             padding: 36px 24px;
@@ -33,131 +484,747 @@
             color: #555;
             line-height: 1.7;
         }
+
+        /* ---------- Legacy Facility Card Cleanup End ---------- */
+
+
+        /* ---------- Responsive Styles Start ---------- */
+        @media (max-width: 1199px) {
+            .fac-feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fac-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fac-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fac-showcase-content {
+                padding: 34px 30px;
+            }
+
+            .fac-showcase-content h3 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .fac-showcase-card,
+            .fac-showcase-card.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .fac-showcase-media,
+            .fac-showcase-media img {
+                min-height: 280px;
+            }
+
+            .fac-showcase-card.reverse .fac-showcase-media {
+                order: 1;
+            }
+
+            .fac-showcase-card.reverse .fac-showcase-content {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .fac-feature-grid,
+            .fac-stats-grid,
+            .fac-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fac-showcase-content {
+                padding: 24px 18px;
+            }
+
+            .fac-showcase-top {
+                align-items: flex-start;
+            }
+
+            .fac-showcase-content h3 {
+                font-size: 22px;
+            }
+
+            .fac-stat-card .num {
+                font-size: 30px;
+            }
+
+            .fac-cta {
+                padding: 44px 16px;
+                border-radius: 20px;
+            }
+        }
+
+        @media (max-width: 425px) {
+
+            .fac-feature-grid,
+            .fac-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .fac-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fac-showcase-content {
+                padding: 20px 16px;
+            }
+
+            .fac-showcase-content h3 {
+                font-size: 20px;
+            }
+
+            .fac-showcase-tags span {
+                font-size: 12px;
+                padding: 7px 12px;
+            }
+        }
+
+        /* ---------- Responsive Styles End ---------- */
+
+        /* =========================================================
+           FACILITIES PAGE - PREMIUM UPGRADE STYLES END
+        ========================================================== */
     </style>
 </head>
 
 <body>
     <header id="mce-header"></header>
 
-    <section class="hero-banner" style="background-image: url('assets/images/collagebanner.jpeg');">
-        <h1>Campus Facilities</h1>
-        
-    </section>
+    <!-- =========================
+         EXISTING HERO SECTION START
+         Hero kept intact as requested
+    ========================== -->
+    <section class="hero-banner">
 
-    <!-- Facilities Grid -->
-    <section class="section-padding">
-        <div class="section-container">
-            <div class="section-header reveal reveal-fade-up">
-                <h2 class="section-title">World-Class Infrastructure</h2>
-                <p class="section-subtitle">Every facility at Malabar College of Engineering is designed to nurture
-                    creativity, learning, and
-                    well-being.</p>
-            </div>
-            <div class="grid-4 reveal reveal-fade-up">
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">📚</span>
-                    <h3>Central Library</h3>
-                    <p>Over 20,000 books across technical, management, and general literature. Subscriptions to leading
-                        journals and digital e-learning platforms.</p>
+        <div class="hero-content">
+
+            <h1>FACILITIES</h1>
+
+            <p class="hero-description">
+                Experience modern laboratories,
+                smart classrooms, library,
+                sports and student facilities.
+            </p>
+
+        </div>
+
+    </section>
+    <!-- =========================
+         EXISTING HERO SECTION END
+    ========================== -->
+
+    <main class="facilities-page">
+
+        <!-- =========================
+             NEW FEATURE CARDS SECTION START
+        ========================== -->
+        <section class="section-padding">
+            <div class="section-container">
+                <div class="section-intro" data-aos="fade-up">
+                    <span class="fac-badge"><i class="fa-solid fa-star"></i> Premium Campus Experience</span>
+                    <h2 class="section-title">World-Class Infrastructure for Future Engineers</h2>
+                    <p class="section-subtitle">
+                        Every space at Malabar College of Engineering is thoughtfully designed to support innovation,
+                        hands-on learning, student well-being, and a vibrant academic experience.
+                    </p>
                 </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🔬</span>
-                    <h3>Trade Laboratories</h3>
-                    <p>Fully-equipped ITI labs with latest industrial machinery, electrical panel training rigs, and
-                        civil drawing studios for practical learning.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">💻</span>
-                    <h3>Computer Labs</h3>
-                    <p>High-speed internet connected PCs running latest operating systems, design software, accounting
-                        tools, and programming environments.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🏠</span>
-                    <h3>Hostel</h3>
-                    <p>Separate hostels for boys and girls with furnished rooms, 24/7 security, clean sanitation, common
-                        study halls, and regular meals.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🚌</span>
-                    <h3>Transportation</h3>
-                    <p>Fleet of college buses covering key areas of Calicut city and surrounding districts for daily
-                        commuting of students and staff.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">⚽</span>
-                    <h3>Sports & Athletics</h3>
-                    <p>Multi-sport grounds including football, volleyball, kabaddi, and indoor facilities for table
-                        tennis, chess, and carrom competitions.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">📡</span>
-                    <h3>Campus Wi-Fi</h3>
-                    <p>High-speed gigabit Wi-Fi across all academic blocks, library, and hostel. Enabling seamless
-                        online learning and digital resources access.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🎓</span>
-                    <h3>Smart Classrooms</h3>
-                    <p>Interactive digital boards, projectors, and audio-video teaching tools in every classroom for
-                        enhanced, engaging learning experiences.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🍽️</span>
-                    <h3>Cafeteria</h3>
-                    <p>Clean and hygienic canteen serving freshly prepared nutritious meals and snacks at subsidised
-                        rates throughout college hours.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🎭</span>
-                    <h3>Auditorium</h3>
-                    <p>Air-conditioned 500-seat auditorium equipped with professional audio-visual systems for
-                        convocations, cultural events, and seminars.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">💊</span>
-                    <h3>Medical Room</h3>
-                    <p>On-campus health centre with trained nursing staff, basic medicines, and tie-up with nearby
-                        hospitals for student emergency care.</p>
-                </div>
-                <div class="premium-card facility-card">
-                    <span class="facility-icon">🌿</span>
-                    <h3>Green Campus</h3>
-                    <p>Eco-friendly campus with plantation drives, solar panels, rainwater harvesting systems, and waste
-                        management programmes.</p>
+
+                <div class="fac-feature-grid">
+                    <div class="fac-feature-card" data-aos="fade-up">
+                        <div class="fac-feature-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3>Modern Infrastructure</h3>
+                        <p>
+                            Contemporary academic spaces built to encourage creativity, focus, collaboration, and
+                            technology-enabled learning.
+                        </p>
+                    </div>
+
+                    <div class="fac-feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="fac-feature-icon">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3>Technical Support</h3>
+                        <p>
+                            Skilled technical staff and support systems help maintain a smooth, reliable, and efficient
+                            learning environment.
+                        </p>
+                    </div>
+
+                    <div class="fac-feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="fac-feature-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3>Industry-Level Resources</h3>
+                        <p>
+                            Practical exposure to up-to-date equipment, digital platforms, and advanced facilities that
+                            prepare students for real careers.
+                        </p>
+                    </div>
+
+                    <div class="fac-feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="fac-feature-icon">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                        </div>
+                        <h3>Student-Friendly Campus</h3>
+                        <p>
+                            Safe, welcoming, and comfortable spaces that support academic development and everyday
+                            student life.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- =========================
+             NEW FEATURE CARDS SECTION END
+        ========================== -->
 
-    <!-- Stats Banner -->
-    <section class="section-padding" style="background: var(--mce-bg-gray);">
-        <div class="section-container stats-container grid-4 reveal reveal-fade-up">
-            <div class="stat-item"><span class="num" data-target="20000" data-suffix="+">0</span><span
-                    class="label">Library Books</span></div>
-            <div class="stat-item"><span class="num" data-target="200" data-suffix="+">0</span><span
-                    class="label">Computer Terminals</span></div>
-            <div class="stat-item"><span class="num" data-target="500">0</span><span class="label">Seat
-                    Auditorium</span></div>
-            <div class="stat-item"><span class="num" data-target="12" data-suffix=" Acres">0</span><span
-                    class="label">Campus Area</span></div>
-        </div>
-    </section>
 
-    <section class="section-padding">
-        <div class="section-container reveal reveal-fade-up">
-            <div class="cta-banner">
-                <h2>Experience Our Campus First-Hand</h2>
-                <p>Book a campus tour and see our world-class facilities in person. Our team is happy to guide you.</p>
-                <a href="contact.html" class="btn-primary"
-                    style="background: var(--mce-accent); color: var(--mce-primary-dark);">Schedule a Campus Visit</a>
+        <!-- =========================
+             NEW FACILITY SHOWCASE SECTION START
+        ========================== -->
+        <section class="section-padding" style="background: var(--mce-bg-gray, #f7f8fb);">
+            <div class="section-container">
+                <div class="section-intro" data-aos="fade-up">
+                    <span class="fac-badge"><i class="fa-solid fa-school"></i> Explore Our Facilities</span>
+                    <h2 class="section-title">Spaces Designed for Learning, Growth and Innovation</h2>
+                    <p class="section-subtitle">
+                        From smart classrooms to campus-wide connectivity, every facility is curated to offer students a
+                        premium and future-ready educational environment.
+                    </p>
+                </div>
+
+                <div class="fac-showcase-wrap">
+
+                    <!-- Facility Item 01 Start -->
+                    <article class="fac-showcase-card">
+                        <div class="fac-showcase-media" data-aos="fade-right">
+                            <img src="assets/images/facilities/smart-classrooms.jpg" alt="Smart Classrooms">
+                        </div>
+                        <div class="fac-showcase-content" data-aos="fade-left">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                <h3>Smart Classrooms</h3>
+                            </div>
+                            <p>
+                                Interactive teaching environments equipped with projectors, presentation systems, and
+                                digital aids to make every classroom session more engaging and effective.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Interactive Learning</span>
+                                <span>Digital Teaching</span>
+                                <span>Student Engagement</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Facility Item 01 End -->
+
+                    <!-- Facility Item 02 Start -->
+                    <article class="fac-showcase-card reverse">
+                        <div class="fac-showcase-content" data-aos="fade-right">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-desktop"></i></div>
+                                <h3>Computer Labs</h3>
+                            </div>
+                            <p>
+                                Well-equipped labs with updated systems, essential software, and high-speed internet
+                                access that support coding, design, analysis, and project-based learning.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>High Performance PCs</span>
+                                <span>Software Access</span>
+                                <span>Digital Skills</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="fac-showcase-media" data-aos="fade-left">
+                            <img src="assets/images/facilities/computer-labs.jpg" alt="Computer Labs">
+                        </div>
+                    </article>
+                    <!-- Facility Item 02 End -->
+
+                    <!-- Facility Item 03 Start -->
+                    <article class="fac-showcase-card">
+                        <div class="fac-showcase-media" data-aos="zoom-in">
+                            <img src="assets/images/facilities/workshops.jpg" alt="Engineering Workshops">
+                        </div>
+                        <div class="fac-showcase-content" data-aos="fade-up">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                                <h3>Engineering Workshops</h3>
+                            </div>
+                            <p>
+                                Practical training spaces where students gain hands-on exposure through tools,
+                                equipment, fabrication exercises, and technical workshop activities.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Hands-On Training</span>
+                                <span>Practical Exposure</span>
+                                <span>Technical Skills</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Facility Item 03 End -->
+
+                    <!-- Facility Item 04 Start -->
+                    <article class="fac-showcase-card reverse">
+                        <div class="fac-showcase-content" data-aos="fade-right">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                                <h3>Digital Library</h3>
+                            </div>
+                            <p>
+                                A modern academic resource hub with digital access, reading support, reference
+                                materials, and learning resources that strengthen research and self-study.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Academic Resources</span>
+                                <span>Research Support</span>
+                                <span>Quiet Study</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="fac-showcase-media" data-aos="fade-left">
+                            <img src="assets/images/facilities/digital-library.jpg" alt="Digital Library">
+                        </div>
+                    </article>
+                    <!-- Facility Item 04 End -->
+
+                    <!-- Facility Item 05 Start -->
+                    <article class="fac-showcase-card">
+                        <div class="fac-showcase-media" data-aos="fade-right">
+                            <img src="assets/images/facilities/seminar-hall.jpg" alt="Seminar Hall">
+                        </div>
+                        <div class="fac-showcase-content" data-aos="flip-up">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-people-group"></i></div>
+                                <h3>Seminar Hall</h3>
+                            </div>
+                            <p>
+                                A professional event space designed for presentations, talks, workshops, seminars, and
+                                academic gatherings that inspire learning beyond the classroom.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Guest Sessions</span>
+                                <span>Academic Events</span>
+                                <span>Presentation Space</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Facility Item 05 End -->
+
+                    <!-- Facility Item 06 Start -->
+                    <article class="fac-showcase-card reverse">
+                        <div class="fac-showcase-content" data-aos="fade-right">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <h3>Placement Cell</h3>
+                            </div>
+                            <p>
+                                Dedicated placement guidance, career readiness support, and industry interaction help
+                                students prepare confidently for internships and professional opportunities.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Career Guidance</span>
+                                <span>Industry Connect</span>
+                                <span>Interview Support</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="fac-showcase-media" data-aos="fade-left">
+                            <img src="assets/images/facilities/placement-cell.jpg" alt="Placement Cell">
+                        </div>
+                    </article>
+                    <!-- Facility Item 06 End -->
+
+                    <!-- Facility Item 07 Start -->
+                    <article class="fac-showcase-card">
+                        <div class="fac-showcase-media" data-aos="zoom-in">
+                            <img src="assets/images/facilities/hostel.jpg" alt="Hostel Facilities">
+                        </div>
+                        <div class="fac-showcase-content" data-aos="fade-up">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-bed"></i></div>
+                                <h3>Hostel Facilities</h3>
+                            </div>
+                            <p>
+                                Comfortable residential accommodation with secure surroundings, essential amenities, and
+                                a supportive environment that helps students feel at home.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Comfortable Stay</span>
+                                <span>Safe Campus Life</span>
+                                <span>Essential Amenities</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Facility Item 07 End -->
+
+                    <!-- Facility Item 08 Start -->
+                    <article class="fac-showcase-card reverse">
+                        <div class="fac-showcase-content" data-aos="fade-right">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-bus"></i></div>
+                                <h3>Transportation</h3>
+                            </div>
+                            <p>
+                                Reliable transport services connect the campus with important locations, helping
+                                students and staff commute with ease and convenience.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Daily Commute</span>
+                                <span>Safe Travel</span>
+                                <span>Wide Route Coverage</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="fac-showcase-media" data-aos="fade-left">
+                            <img src="assets/images/facilities/transportation.jpg" alt="Transportation">
+                        </div>
+                    </article>
+                    <!-- Facility Item 08 End -->
+
+                    <!-- Facility Item 09 Start -->
+                    <article class="fac-showcase-card">
+                        <div class="fac-showcase-media" data-aos="fade-right">
+                            <img src="assets/images/facilities/cafeteria.jpg" alt="Cafeteria">
+                        </div>
+                        <div class="fac-showcase-content" data-aos="fade-left">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-utensils"></i></div>
+                                <h3>Cafeteria</h3>
+                            </div>
+                            <p>
+                                A clean and student-friendly dining space that serves fresh meals and refreshments in a
+                                comfortable atmosphere throughout the day.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Fresh Meals</span>
+                                <span>Clean Dining</span>
+                                <span>Student Comfort</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Facility Item 09 End -->
+
+                    <!-- Facility Item 10 Start -->
+                    <article class="fac-showcase-card reverse">
+                        <div class="fac-showcase-content" data-aos="fade-right">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                                <h3>Sports &amp; Fitness</h3>
+                            </div>
+                            <p>
+                                Spaces for outdoor sports, recreation, and physical well-being that encourage balance,
+                                teamwork, discipline, and active student life.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Outdoor Sports</span>
+                                <span>Fitness Culture</span>
+                                <span>Healthy Lifestyle</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="fac-showcase-media" data-aos="fade-left">
+                            <img src="assets/images/facilities/sports.jpg" alt="Sports Facilities">
+                        </div>
+                    </article>
+                    <!-- Facility Item 10 End -->
+
+                    <!-- Facility Item 11 Start -->
+                    <article class="fac-showcase-card">
+                        <div class="fac-showcase-media" data-aos="zoom-in">
+                            <img src="assets/images/facilities/wifi-campus.jpg" alt="Wi-Fi Campus">
+                        </div>
+                        <div class="fac-showcase-content" data-aos="fade-up">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-wifi"></i></div>
+                                <h3>Wi-Fi Campus</h3>
+                            </div>
+                            <p>
+                                Seamless campus-wide internet connectivity ensures uninterrupted access to digital
+                                learning tools, communication, and research resources.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>Connected Campus</span>
+                                <span>Fast Access</span>
+                                <span>Digital Learning</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Facility Item 11 End -->
+
+                    <!-- Facility Item 12 Start -->
+                    <article class="fac-showcase-card reverse">
+                        <div class="fac-showcase-content" data-aos="fade-right">
+                            <div class="fac-showcase-top">
+                                <div class="fac-showcase-icon"><i class="fa-solid fa-kit-medical"></i></div>
+                                <h3>Medical Facilities</h3>
+                            </div>
+                            <p>
+                                On-campus first-aid and health support services ensure student safety and quick response
+                                for basic medical needs and emergency situations.
+                            </p>
+                            <div class="fac-showcase-tags">
+                                <span>First Aid Support</span>
+                                <span>Student Safety</span>
+                                <span>Health Assistance</span>
+                            </div>
+                            <a href="contact.html" class="fac-btn fac-btn-primary">Learn More <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="fac-showcase-media" data-aos="fade-left">
+                            <img src="assets/images/facilities/medical-facilities.jpg" alt="Medical Facilities">
+                        </div>
+                    </article>
+                    <!-- Facility Item 12 End -->
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- =========================
+             NEW FACILITY SHOWCASE SECTION END
+        ========================== -->
+
+
+        <!-- =========================
+             NEW STATISTICS SECTION START
+        ========================== -->
+        <section class="section-padding fac-stats-section">
+            <div class="section-container">
+                <div class="section-intro" data-aos="fade-up">
+                    <span class="fac-badge"><i class="fa-solid fa-chart-simple"></i> Campus Highlights</span>
+                    <h2 class="section-title">Facilities Backed by Scale and Quality</h2>
+                    <p class="section-subtitle">
+                        A premium academic environment is built on consistent infrastructure, smart resources, and
+                        student-first support across campus.
+                    </p>
+                </div>
+
+                <div class="fac-stats-grid">
+                    <div class="fac-stat-card" data-aos="fade-up">
+                        <i class="fa-solid fa-chalkboard"></i>
+                        <span class="num" data-target="25" data-suffix="+">0</span>
+                        <span class="label">Smart Classrooms</span>
+                    </div>
+
+                    <div class="fac-stat-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span class="num" data-target="10" data-suffix="+">0</span>
+                        <span class="label">Modern Labs</span>
+                    </div>
+
+                    <div class="fac-stat-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa-solid fa-wifi"></i>
+                        <span class="num" data-target="100" data-suffix=" Mbps">0</span>
+                        <span class="label">Campus Wi-Fi</span>
+                    </div>
+
+                    <div class="fac-stat-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fa-solid fa-book"></i>
+                        <span class="num" data-target="500" data-suffix="+">0</span>
+                        <span class="label">Library Resources</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             NEW STATISTICS SECTION END
+        ========================== -->
+
+
+        <!-- =========================
+             NEW GALLERY SECTION START
+        ========================== -->
+        <section class="section-padding">
+            <div class="section-container">
+                <div class="section-intro" data-aos="fade-up">
+                    <span class="fac-badge"><i class="fa-solid fa-images"></i> Facilities Gallery</span>
+                    <h2 class="section-title">A Glimpse into Campus Life</h2>
+                    <p class="section-subtitle">
+                        Discover the spaces where students learn, collaborate, build skills, and create memorable
+                        campus experiences every day.
+                    </p>
+                </div>
+
+                <div class="fac-gallery-grid">
+                    <div class="fac-gallery-item" data-aos="zoom-in">
+                        <img src="assets/images/facilities/gallery-classroom.jpg" alt="Smart Classroom Gallery">
+                        <div class="fac-gallery-overlay">
+                            <h3>Smart Classrooms</h3>
+                        </div>
+                    </div>
+
+                    <div class="fac-gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/images/facilities/gallery-lab.jpg" alt="Computer Lab Gallery">
+                        <div class="fac-gallery-overlay">
+                            <h3>Computer Labs</h3>
+                        </div>
+                    </div>
+
+                    <div class="fac-gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/images/facilities/gallery-workshop.jpg" alt="Workshop Gallery">
+                        <div class="fac-gallery-overlay">
+                            <h3>Workshops</h3>
+                        </div>
+                    </div>
+
+                    <div class="fac-gallery-item" data-aos="zoom-in">
+                        <img src="assets/images/facilities/gallery-library.jpg" alt="Digital Library Gallery">
+                        <div class="fac-gallery-overlay">
+                            <h3>Digital Library</h3>
+                        </div>
+                    </div>
+
+                    <div class="fac-gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/images/facilities/gallery-hostel.jpg" alt="Hostel Gallery">
+                        <div class="fac-gallery-overlay">
+                            <h3>Hostel Facilities</h3>
+                        </div>
+                    </div>
+
+                    <div class="fac-gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/images/facilities/gallery-sports.jpg" alt="Sports Gallery">
+                        <div class="fac-gallery-overlay">
+                            <h3>Sports &amp; Fitness</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             NEW GALLERY SECTION END
+        ========================== -->
+
+
+        <!-- =========================
+             UPDATED CTA SECTION START
+             Existing link functionality preserved
+        ========================== -->
+        <section class="section-padding">
+            <div class="section-container" data-aos="fade-up">
+                <div class="fac-cta">
+                    <div class="fac-cta-shape"></div>
+                    <div class="fac-cta-shape-2"></div>
+                    <h2>Experience World-Class Learning Facilities</h2>
+                    <p>
+                        Visit the campus, explore our academic spaces, and discover how Malabar College of Engineering
+                        provides an inspiring environment for future-ready education.
+                    </p>
+                    <a href="contact.html" class="fac-btn fac-btn-primary">Schedule a Campus Visit <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             UPDATED CTA SECTION END
+        ========================== -->
+
+    </main>
 
     <footer id="mce-footer"></footer>
+
+    <!-- Existing Scripts -->
     <script src="mce-components.js"></script>
     <script src="theme-scroller.js"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /* =========================================================
+           FACILITIES PAGE - PREMIUM UPGRADE JS START
+        ========================================================== */
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* ---------- AOS Initialization Start ---------- */
+            if (typeof AOS !== "undefined") {
+                AOS.init({
+                    duration: 850,
+                    easing: "ease-out-cubic",
+                    once: true,
+                    offset: 80
+                });
+            }
+            /* ---------- AOS Initialization End ---------- */
+
+
+            /* ---------- Animated Counter Section Start ---------- */
+            const counters = document.querySelectorAll(".fac-stat-card .num");
+
+            if (counters.length) {
+                const runCounter = (counter) => {
+                    const target = parseInt(counter.getAttribute("data-target"), 10) || 0;
+                    const suffix = counter.getAttribute("data-suffix") || "";
+                    const duration = 1800;
+                    const startTime = performance.now();
+
+                    const animate = (currentTime) => {
+                        const progress = Math.min((currentTime - startTime) / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 4);
+                        const currentValue = Math.floor(eased * target);
+
+                        counter.textContent = currentValue + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            counter.textContent = target + suffix;
+                        }
+                    };
+
+                    requestAnimationFrame(animate);
+                };
+
+                const counterObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            runCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                counters.forEach((counter) => counterObserver.observe(counter));
+            }
+            /* ---------- Animated Counter Section End ---------- */
+
+        });
+
+        /* =========================================================
+           FACILITIES PAGE - PREMIUM UPGRADE JS END
+        ========================================================== */
+    </script>
 </body>
 
 </html>

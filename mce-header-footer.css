@@ -206,8 +206,8 @@ h6 {
     align-items: center;
     justify-content: flex-end;
     flex: 1;
-    margin-left: 80px;
-    /* Creates the big gap like the original website */
+    /* Removed fixed margin-left to prevent overflow on small screens */
+    margin-left: 0;
 }
 
 .mce-top-bar-right .mce-top-link {
@@ -536,7 +536,7 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 80px 40px 56px;
+    padding: clamp(40px, 6vw, 80px) clamp(16px, 3vw, 40px) clamp(36px, 5vw, 56px);
     display: grid;
     grid-template-columns: 1.8fr 1fr 1.2fr;
     gap: 60px;

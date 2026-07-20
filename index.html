@@ -19,7 +19,7 @@
         /* Slider Styling */
         .hero-slider-wrap {
             position: relative;
-            height: 600px;
+            height: 780px;
             overflow: hidden;
             width: 100%;
         }
@@ -43,34 +43,91 @@
         }
 
         .slide::before {
-            content: '';
+            content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(92, 15, 15, 0.88), rgba(0, 74, 173, 0.65));
+
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+
+            background: linear-gradient(rgba(0, 0, 0, .38),
+                    rgba(0, 0, 0, .38));
+
+            z-index: 1;
         }
 
         .slide-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: 0 24px;
+
+            position: absolute;
+
+            top: 43%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            z-index: 5;
+
+            width: min(92%, 1200px);
+
+            text-align: center;
+        }
+
+        .hero-tag {
+
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #fff;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            letter-spacing: 8px;
+
+            text-transform: none;
+
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .65);
         }
 
         .slide-content h2 {
-            font-size: 52px;
-            font-weight: 800;
-            color: var(--mce-white);
+
+            font-size: clamp(62px, 7vw, 100px);
+
+            font-weight: 900;
+
+            line-height: 1.05;
+
+            color: #fff;
+
             text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+            margin-bottom: 25px;
+
+            text-shadow:
+                0 6px 18px rgba(0, 0, 0, .65);
         }
 
         .slide-content p {
-            font-size: 19px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 35px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+            font-size: clamp(20px, 2vw, 30px);
+
+            font-weight: 500;
+
+            line-height: 1.8;
+
+            color: #fff;
+
+            max-width: 950px;
+
+            margin: 0 auto;
+
+            text-shadow:
+                0 4px 12px rgba(0, 0, 0, .8);
+
+            opacity: 1;
         }
 
         /* Modern Horizontal Institution Cards Styling */
@@ -104,8 +161,9 @@
         }
 
         .horizontal-dept-card .card-left {
-            flex: 0 0 18%;
-            min-width: 170px;
+            flex: 0 0 auto;
+            width: 180px;
+            min-width: 0;
             background: #ffffff;
             display: flex;
             align-items: center;
@@ -275,6 +333,69 @@
             box-shadow: var(--mce-shadow-sm);
         }
 
+        /* Department card responsive stacking (HOME PAGE) */
+        @media (max-width: 900px) {
+            .horizontal-dept-card .card-right {
+                padding-right: 24px;
+            }
+
+            .horizontal-dept-card .card-action {
+                position: static;
+                margin-top: 16px;
+            }
+
+            .horizontal-dept-card .card-desc {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .horizontal-dept-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .horizontal-dept-card .card-left {
+                flex: none;
+                width: 100%;
+                height: 150px;
+                padding: 20px;
+                border-right: none;
+                border-bottom: 1px solid #eef2f7;
+            }
+
+            .horizontal-dept-card .card-right {
+                padding: 22px 24px 28px;
+            }
+
+            .horizontal-dept-card .card-action {
+                position: static;
+                margin-top: 18px;
+            }
+
+            .horizontal-dept-card .view-details-link {
+                width: 100%;
+            }
+
+            .horizontal-dept-card .card-desc {
+                max-width: 100%;
+            }
+
+            .partner-logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 425px) {
+            .horizontal-dept-card .card-title {
+                font-size: 21px;
+            }
+
+            .partner-logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         /* Principal Photo */
         .pd-photo-wrap {
             border-radius: 20px;
@@ -343,22 +464,32 @@
             border-radius: 2px;
         }
 
-        @media (max-width: 768px) {
-            .hero-slider-wrap {
-                height: 450px;
+        @media(max-width:768px) {
+
+            .slide-content {
+
+                top: 45%;
+            }
+
+            .hero-tag {
+
+                font-size: 14px;
+
+                letter-spacing: 4px;
             }
 
             .slide-content h2 {
-                font-size: 32px;
+
+                font-size: 42px;
             }
 
             .slide-content p {
-                font-size: 15px;
+
+                font-size: 16px;
+
+                line-height: 1.6;
             }
 
-            .partner-logo-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
         }
 
         /* .testimonial-image { */
@@ -487,12 +618,14 @@
             margin: 0;
             display: -webkit-box;
             -webkit-line-clamp: 3;
+            line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
         .testimonial-right p.expanded {
             -webkit-line-clamp: unset;
+            line-clamp: unset;
             display: block;
         }
 
@@ -570,34 +703,39 @@
 
         @media(max-width:768px) {
             .premium-testimonials {
-                padding: 80px 0;
+                padding: 60px 0;
             }
 
             .testimonial-card {
                 flex-direction: column;
                 text-align: center;
-                padding: 25px;
-                gap: 18px;
+                padding: 22px 18px;
+                gap: 16px;
                 margin: 10px;
-                border-radius: 22px;
+                border-radius: 18px;
             }
 
             .testimonial-left {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
                 margin: 0 auto;
             }
 
+            .testimonial-header img {
+                width: 100px;
+                height: 100px;
+            }
+
             .testimonial-right h3 {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .testimonial-right span {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .testimonial-right p {
-                font-size: 15px;
+                font-size: 14px;
                 line-height: 1.7;
             }
         }
@@ -610,9 +748,15 @@
     <header id="mce-header"></header>
 
     <!-- Hero Slider -->
-    <section class="hero-banner hero-home" style="background-image: url('assets/images/collagebanner.jpeg');">
+    <section class="hero-banner hero-home">
         <div class="slide-content">
-            <h2>Welcome to Malabar College of Engineering</h2>
+            <span class="hero-tag">
+                Welcome To
+            </span>
+
+            <h2>
+                MALABAR COLLEGE OF ENGINEERING CAMPUS
+            </h2>
             <p>Establishing educational excellence, moral values, and student carer growth for over 100 years.
                 Learn. Pioneer. Transform.</p>
 
@@ -805,7 +949,7 @@
                     </ul>
                 </div>
                 <div
-                    style="background-color: var(--mce-primary); padding: 40px; border-radius: 12px; color: var(--mce-white); box-shadow: var(--mce-shadow-lg);">
+                    style="background-color: var(--mce-primary); padding: clamp(24px, 4vw, 40px); border-radius: 12px; color: var(--mce-white); box-shadow: var(--mce-shadow-lg);">
                     <h3
                         style="color: var(--mce-white); margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">
                         Admissions Open 2026</h3>

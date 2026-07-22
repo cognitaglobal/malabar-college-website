@@ -147,181 +147,182 @@
 
             opacity: 1;
         }
-/*==========================================
+
+        /*==========================================
       PREMIUM ACADEMIC CARDS 2026
 ==========================================*/
 
-.horizontal-depts-container{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:35px;
-    margin-top:50px;
-}
+        .horizontal-depts-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            margin-top: 50px;
+        }
 
-@media(max-width:992px){
-    .horizontal-depts-container{
-        grid-template-columns:1fr;
-    }
-}
+        @media(max-width:992px) {
+            .horizontal-depts-container {
+                grid-template-columns: 1fr;
+            }
+        }
 
-.horizontal-dept-card{
-    background:#fff;
-    border-radius:24px;
-    padding:40px 35px;
-    text-decoration:none;
-    color:inherit;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    border:1px solid #edf2f7;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-    transition:.35s;
-    min-height:460px;
-}
+        .horizontal-dept-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 35px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+            transition: .35s;
+            min-height: 460px;
+        }
 
-.horizontal-dept-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 25px 55px rgba(0,0,0,.12);
-}
+        .horizontal-dept-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 55px rgba(0, 0, 0, .12);
+        }
 
-.horizontal-dept-card::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:6px;
-    height:100%;
-    background:var(--mce-secondary);
-    transform:scaleY(0);
-    transition:.35s;
-}
+        .horizontal-dept-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--mce-secondary);
+            transform: scaleY(0);
+            transition: .35s;
+        }
 
-.horizontal-dept-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 25px 55px rgba(0,0,0,.12);
-}
+        .horizontal-dept-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 55px rgba(0, 0, 0, .12);
+        }
 
-.horizontal-dept-card:hover::before{
-    transform:scaleY(1);
-}
+        .horizontal-dept-card:hover::before {
+            transform: scaleY(1);
+        }
 
-.card-left{
-    width:120px;
-    flex-shrink:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        .card-left {
+            width: 120px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.logo-wrapper{
-    width:100px;
-    height:100px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        .logo-wrapper {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.dept-logo{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    transition:.35s;
-}
+        .dept-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: .35s;
+        }
 
-.horizontal-dept-card:hover .dept-logo{
-    transform:scale(1.08);
-}
+        .horizontal-dept-card:hover .dept-logo {
+            transform: scale(1.08);
+        }
 
-.card-right{
-    flex:1;
-}
+        .card-right {
+            flex: 1;
+        }
 
-.card-title{
-    font-size:28px;
-    font-weight:800;
-    line-height:1.25;
-    color:#1e293b;
-    margin-bottom:10px;
-}
+        .card-title {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
 
-.card-subtitle{
-    display:block;
-    color:#0ea5e9;
-    font-size:16px;
-    font-weight:700;
-    margin-bottom:15px;
-}
+        .card-subtitle {
+            display: block;
+            color: #0ea5e9;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
-.card-desc{
-    color:#64748b;
-    font-size:15px;
-    line-height:1.8;
-    margin-bottom:25px;
+        .card-desc {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
 
-    display:-webkit-box;
-    -webkit-line-clamp:3;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
-}
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-.card-action{
-    position:static;
-}
+        .card-action {
+            position: static;
+        }
 
-.view-details-link{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 24px;
-    border-radius:50px;
-    background:var(--mce-secondary);
-    color:#fff;
-    font-weight:600;
-    transition:.3s;
-}
+        .view-details-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            background: var(--mce-secondary);
+            color: #fff;
+            font-weight: 600;
+            transition: .3s;
+        }
 
-.view-details-link:hover{
-    gap:18px;
-}
+        .view-details-link:hover {
+            gap: 18px;
+        }
 
-.arrow-slide{
-    transition:.3s;
-}
+        .arrow-slide {
+            transition: .3s;
+        }
 
-.horizontal-dept-card:hover .arrow-slide{
-    transform:translateX(5px);
-}
+        .horizontal-dept-card:hover .arrow-slide {
+            transform: translateX(5px);
+        }
 
-@media(max-width:992px){
+        @media(max-width:992px) {
 
-.horizontal-depts-container{
+            .horizontal-depts-container {
 
-grid-template-columns:1fr;
+                grid-template-columns: 1fr;
 
-}
+            }
 
-.horizontal-dept-card{
+            .horizontal-dept-card {
 
-flex-direction:column;
-text-align:center;
+                flex-direction: column;
+                text-align: center;
 
-}
+            }
 
-.card-left{
+            .card-left {
 
-width:100%;
+                width: 100%;
 
-}
+            }
 
-.card-desc{
+            .card-desc {
 
-margin-bottom:20px;
+                margin-bottom: 20px;
 
-}
+            }
 
-}
-      
+        }
+
 
         /* News & Event items list */
         .news-item {
@@ -1128,7 +1129,7 @@ margin-bottom:20px;
 
                                     <div class="testimonial-info">
                                         <h3>Faisal K</h3>
-                                        <span>B.Com Finance • 2021–2024</span>
+                                        <span>Draughtsman Civil • 2021–2024</span>
                                     </div>
 
                                 </div>
@@ -1157,7 +1158,7 @@ margin-bottom:20px;
 
                                     <div class="testimonial-info">
                                         <h3>Vaishna K k</h3>
-                                        <span>B.Com Finance • 2021–2024</span>
+                                        <span>Draughtsman Civil • 2021–2024</span>
                                     </div>
 
                                 </div>
@@ -1186,7 +1187,7 @@ margin-bottom:20px;
 
                                     <div class="testimonial-info">
                                         <h3>Muhammed Shahal</h3>
-                                        <span>B.Com Finance • 2021–2024</span>
+                                        <span>Draughtsman Civil • 2021–2024</span>
                                     </div>
 
                                 </div>
@@ -1215,7 +1216,7 @@ margin-bottom:20px;
 
                                     <div class="testimonial-info">
                                         <h3>Sinan</h3>
-                                        <span>B.Com Finance • 2021–2024</span>
+                                        <span>Draughtsman Civil • 2021–2024</span>
                                     </div>
 
                                 </div>
@@ -1243,7 +1244,7 @@ margin-bottom:20px;
 
                                     <div class="testimonial-info">
                                         <h3>Abhiram V</h3>
-                                        <span>B.Com Finance • 2021–2024</span>
+                                        <span>Draughtsman Civil • 2021–2024</span>
                                     </div>
 
                                 </div>
@@ -1259,6 +1260,36 @@ margin-bottom:20px;
                             </div>
 
                         </div>
+
+                        <!-- CARD 6 -->
+
+                        <div class="testimonial-card">
+
+                            <div class="testimonial-right">
+
+                                <div class="testimonial-header">
+
+                                    <img src="assets/images/akshay.jpeg" alt="Akshay Krishna B K">
+
+                                    <div class="testimonial-info">
+                                        <h3>Akshay Krishna B K</h3>
+                                        <span>Draughtsman Civil • 2021–2024</span>
+                                    </div>
+
+                                </div>
+
+                                <p>
+                                    Forever grateful to be a part of Malabar College of Engineering.
+                                    The college gave me confidence, leadership skills, lifelong
+                                    friendships and outstanding academic guidance. Every faculty member
+                                    inspired me to grow professionally and personally.
+                                    <span class="read-more-btn">Read more</span>
+                                </p>
+
+                            </div>
+
+                        </div>
+
 
                     </div>
 

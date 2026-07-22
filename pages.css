@@ -427,4 +427,13 @@
     .pdf-wrapper {
         min-height: 400px;
     }
+    .pdf-iframe {
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-iframe {
+        height: 400px;
+    }
 }

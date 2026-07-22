@@ -2728,3 +2728,15 @@
         margin: 0 auto;
     }
 }
+
+@media (max-width: 480px) {
+    .facilities-grid,
+    .quicklinks-grid,
+    .placement-stats {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    .iti-wrap {
+        padding: 0 16px;
+    }
+}

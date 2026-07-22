@@ -596,8 +596,22 @@ body::after {
   }
 }
 
+@media (max-width: 768px) {
+  .page-header {
+    padding: 100px 16px 30px;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 400px) {
   .dept-title {
     font-size: 1.6rem;
+  }
+  .page-header {
+    padding: 85px 12px 20px;
+    margin-bottom: 15px;
+  }
+  .container {
+    padding: 0 12px;
   }
 }

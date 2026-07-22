@@ -11,128 +11,266 @@
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <style>
-        .filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 36px;
-            justify-content: center;
+        /*==========================
+   GALLERY ALBUM SECTION
+==========================*/
+
+        .gallery-section {
+            background: #e1e1f0;
         }
 
-        .filter-btn {
-            padding: 10px 24px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            background: var(--mce-white);
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: var(--mce-transition);
-            color: #555;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--mce-primary);
-            color: var(--mce-white);
-            border-color: var(--mce-primary);
-        }
-
-        .gallery-grid {
+        .album-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
+        .album-card {
             position: relative;
-            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 320px;
             cursor: pointer;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+            transition: .4s ease;
+            background: #fff;
         }
 
-        .gallery-item img {
+        .album-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, .18);
+        }
+
+        .album-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
-            display: block;
+            transition: .6s ease;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.08);
+        .album-card:hover img {
+            transform: scale(1.12);
         }
 
-        .gallery-item .overlay {
+        .album-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(139, 26, 26, 0);
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, .88),
+                    rgba(0, 0, 0, .18));
             display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px;
+            color: #fff;
         }
 
-        .gallery-item:hover .overlay {
-            background: rgba(139, 26, 26, 0.38);
+        .album-overlay span {
+            display: inline-block;
+            width: max-content;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(8px);
+            font-size: 13px;
+            margin-bottom: 14px;
         }
 
-        .gallery-item .zoom-icon {
+        .album-overlay h3 {
+            margin: 0;
             font-size: 28px;
-            color: var(--mce-white);
-            opacity: 0;
-            transform: scale(0.5);
-            transition: all 0.3s ease;
+            font-weight: 700;
+            color: #fff;
         }
 
-        .gallery-item:hover .zoom-icon {
-            opacity: 1;
-            transform: scale(1);
+        .album-btn {
+            margin-top: 20px;
+            border: none;
+            background: #ffffff;
+            color: var(--mce-primary-dark);
+            padding: 12px 26px;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
         }
 
-        /* Lightbox */
+        .album-btn:hover {
+            background: var(--mce-primary-dark);
+            color: #fff;
+        }
+
+        .featured {
+            grid-column: span 2;
+            height: 420px;
+        }
+
+        .featured h3 {
+            font-size: 38px;
+        }
+
+        .section-subtitle {
+            max-width: 760px;
+            margin: auto;
+            text-align: center;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Tablet */
+
+        @media(max-width:992px) {
+
+            .album-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured {
+                grid-column: span 2;
+                height: 380px;
+            }
+
+        }
+
+        /* Mobile */
+
+        @media(max-width:768px) {
+
+            .album-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                grid-column: span 1;
+                height: 320px;
+            }
+
+            .album-card {
+                height: 280px;
+            }
+
+            .album-overlay h3 {
+                font-size: 24px;
+            }
+
+        }
+
+        /* Small Mobile */
+
+        @media(max-width:480px) {
+
+            .album-card {
+                height: 240px;
+            }
+
+            .album-overlay {
+                padding: 20px;
+            }
+
+            .album-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .album-overlay h3 {
+                font-size: 22px;
+            }
+
+        }
+
         .lightbox {
-            display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.92);
-            z-index: 99999;
-            align-items: center;
+            background: rgba(0, 0, 0, .95);
+            display: none;
             justify-content: center;
+            align-items: center;
+            z-index: 99999;
         }
 
-        .lightbox.open {
+        .lightbox.active {
             display: flex;
         }
 
         .lightbox img {
-            max-width: 90vw;
-            max-height: 90vh;
-            border-radius: 8px;
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+        }
+
+        .lb-close,
+        .lb-prev,
+        .lb-next {
+            position: absolute;
+            color: #fff;
+            cursor: pointer;
+            user-select: none;
         }
 
         .lb-close {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            color: var(--mce-white);
-            font-size: 36px;
-            cursor: pointer;
-            background: none;
-            border: none;
+            top: 25px;
+            right: 35px;
+            font-size: 42px;
         }
 
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+        .lb-prev {
+            left: 40px;
+            font-size: 60px;
+        }
+
+        .lb-next {
+            right: 40px;
+            font-size: 60px;
+        }
+
+        .lb-prev:hover,
+        .lb-next:hover,
+        .lb-close:hover {
+            color: #d4af37;
+        }
+
+        @media(max-width:768px) {
+
+            .lb-prev {
+                left: 15px;
+                font-size: 42px;
             }
+
+            .lb-next {
+                right: 15px;
+                font-size: 42px;
+            }
+
+            .lb-close {
+                right: 20px;
+            }
+
         }
 
         @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
+            .lb-prev {
+                left: 8px;
+                font-size: 32px;
             }
+            .lb-next {
+                right: 8px;
+                font-size: 32px;
+            }
+            .lb-close {
+                top: 15px;
+                right: 15px;
+                font-size: 32px;
+            }
+            .lightbox img {
+                max-width: 96%;
+                max-height: 75vh;
+            }
+        }
+
+
+        .album-card:hover .album-preview img {
+            transform: scale(1.08);
         }
     </style>
 </head>
@@ -155,76 +293,107 @@
 
     </section>
 
-    <section class="section-padding">
+    <section class="section-padding gallery-section">
         <div class="section-container">
-            <!-- Filter Buttons -->
-            <div class="filter-bar reveal reveal-fade-up">
-                <button class="filter-btn active" data-filter="all">All Photos</button>
-                <button class="filter-btn" data-filter="campus">Campus</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="labs">Laboratories</button>
-                <button class="filter-btn" data-filter="sports">Sports</button>
-                <button class="filter-btn" data-filter="cultural">Cultural</button>
+
+            <div class="section-header reveal reveal-fade-up">
+                <h2 class="section-title">Campus Memories</h2>
+                <p class="section-subtitle">
+                    Explore memorable moments, student achievements, academic activities,
+                    celebrations, and life at Malabar College of Engineering.
+                </p>
             </div>
 
-            <!-- Gallery Grid — using picsum placeholder images with distinct seeds -->
-            <div class="gallery-grid reveal reveal-fade-up" id="galleryGrid">
-                <div class="gallery-item" data-cat="campus"><img src="https://picsum.photos/seed/campus1/400/400"
-                        alt="Campus Building" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+            <div class="album-grid">
+
+                <!-- Events -->
+                <div class="album-card">
+                    <img src="assets/images/event.jpeg" alt="Events">
+                    <div class="album-overlay">
+
+                        <h3>Event</h3>
+                        <button class="album-btn" onclick="openAlbum('event')">
+                            View Album
+                        </button>
+                    </div>
                 </div>
-                <div class="gallery-item" data-cat="events"><img src="https://picsum.photos/seed/event1/400/400"
-                        alt="College Event" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+
+                <!-- Classroom -->
+                <div class="album-card">
+                    <img src="assets/images/classroom.jpeg" alt="Classroom">
+                    <div class="album-overlay">
+
+                        <h3>Classroom</h3>
+                        <button class="album-btn" onclick="openAlbum('classroom')">
+                            View Album
+                        </button>
+                    </div>
                 </div>
-                <div class="gallery-item" data-cat="labs"><img src="https://picsum.photos/seed/lab1/400/400"
-                        alt="Laboratory" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+
+                <!-- Convocation -->
+                <div class="album-card featured">
+                    <img src="assets/images/convocation.jpeg" alt="Convocation">
+                    <div class="album-overlay">
+
+                        <h3>Convocation Ceremony</h3>
+                        <button class="album-btn" onclick="openAlbum('convocation')">
+                            View Album
+                        </button>
+                    </div>
                 </div>
-                <div class="gallery-item" data-cat="sports"><img src="https://picsum.photos/seed/sports1/400/400"
-                        alt="Sports Ground" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+
+                <!-- Blood Donation -->
+                <div class="album-card">
+                    <img src="assets/images/blood donation.jpeg" alt="Blood Donation">
+                    <div class="album-overlay">
+
+                        <h3>Blood Donation Camp</h3>
+                        <button class="album-btn" onclick="openAlbum('blood')">
+                            View Album
+                        </button>
+                    </div>
                 </div>
-                <div class="gallery-item" data-cat="cultural"><img src="https://picsum.photos/seed/cultural1/400/400"
-                        alt="Cultural Event" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+
+                <!-- Onam -->
+                <div class="album-card">
+                    <img src="assets/images/onam.jpeg" alt="Onam">
+                    <div class="album-overlay">
+
+                        <h3>Onam Celebration</h3>
+                        <button class="album-btn" onclick="openAlbum('onam')">
+                            View Album
+                        </button>
+                    </div>
                 </div>
-                <div class="gallery-item" data-cat="campus"><img src="https://picsum.photos/seed/campus2/400/400"
-                        alt="Campus Exterior" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+
+                <!-- Group -->
+                <div class="album-card">
+                    <img src="assets/images/group photo.jpeg" alt="Group Photo">
+                    <div class="album-overlay">
+
+                        <h3>Group Photos</h3>
+                        <button class="album-btn" onclick="openAlbum('group photo')">
+                            View Album
+                        </button>
+                    </div>
                 </div>
-                <div class="gallery-item" data-cat="events"><img src="https://picsum.photos/seed/event2/400/400"
-                        alt="Annual Day" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
-                </div>
-                <div class="gallery-item" data-cat="labs"><img src="https://picsum.photos/seed/lab2/400/400"
-                        alt="IT Lab" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
-                </div>
-                <div class="gallery-item" data-cat="sports"><img src="https://picsum.photos/seed/sports2/400/400"
-                        alt="Football" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
-                </div>
-                <div class="gallery-item" data-cat="cultural"><img src="https://picsum.photos/seed/cultural2/400/400"
-                        alt="Stage Performance" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
-                </div>
-                <div class="gallery-item" data-cat="campus"><img src="https://picsum.photos/seed/campus3/400/400"
-                        alt="Hostel Building" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
-                </div>
-                <div class="gallery-item" data-cat="events"><img src="https://picsum.photos/seed/event3/400/400"
-                        alt="Graduation" onerror="this.style.background='var(--mce-bg-gray)'">
-                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
-                </div>
+
             </div>
+
         </div>
     </section>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <button class="lb-close" id="lbClose">✕</button>
-        <img id="lbImg" src="" alt="Gallery image">
+
+        <span class="lb-close">&times;</span>
+
+        <span class="lb-prev">&#10094;</span>
+
+        <img id="lightboxImage" src="" alt="">
+
+        <span class="lb-next">&#10095;</span>
+
     </div>
 
     <section class="section-padding">
@@ -243,29 +412,144 @@
     <script src="mce-components.js"></script>
     <script src="theme-scroller.js"></script>
     <script>
-        // Filter logic
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.dataset.filter;
-                document.querySelectorAll('.gallery-item').forEach(item => {
-                    item.style.display = (filter === 'all' || item.dataset.cat === filter) ? 'block' : 'none';
-                });
-            });
-        });
+        const albums = {
 
-        // Lightbox logic
-        const lightbox = document.getElementById('lightbox');
-        const lbImg = document.getElementById('lbImg');
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', () => {
-                lbImg.src = item.querySelector('img').src;
-                lightbox.classList.add('open');
-            });
-        });
-        document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
-        lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+            event: [
+                "assets/images/event.jpeg",
+                "assets/images/event2.jpeg",
+                "assets/images/event3.jpeg",
+                "assets/images/event4.jpeg",
+
+            ],
+
+            classroom: [
+                "assets/images/classroom.jpeg",
+                "assets/images/classroom2.jpeg",
+                "assets/images/classroom3.jpeg",
+                "assets/images/classroom4.jpeg",
+                "assets/images/classroom5.jpeg",
+
+            ],
+
+            convocation: [
+                "assets/images/convocation.jpeg",
+                "assets/images/convocation2.jpeg",
+                "assets/images/convocation3.jpeg",
+                "assets/images/convocation4.jpeg",
+                "assets/images/convocation5.jpeg",
+                "assets/images/convocation6.jpeg",
+                "assets/images/convocation7.jpeg"
+
+            ],
+
+            blood: [
+                "assets/images/blood donation.jpeg",
+                "assets/images/blood donation2.jpeg",
+                "assets/images/blood donation3.jpeg"
+            ],
+
+            onam: [
+                "assets/images/onam.jpeg"
+            ],
+
+            group: [
+                "assets/images/group photo.jpeg",
+                "assets/images/group2.jpg",
+                "assets/images/group3.jpg"
+            ]
+
+        };
+
+        let currentAlbum = [];
+        let currentIndex = 0;
+
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+
+        function openAlbum(name) {
+
+            currentAlbum = albums[name];
+            currentIndex = 0;
+
+            showImage();
+
+            lightbox.classList.add("active");
+
+        }
+
+        function showImage() {
+
+            lightboxImage.src = currentAlbum[currentIndex];
+
+        }
+
+        document.querySelector(".lb-next").onclick = function () {
+
+            currentIndex++;
+
+            if (currentIndex >= currentAlbum.length) {
+
+                currentIndex = 0;
+
+            }
+
+            showImage();
+
+        };
+
+        document.querySelector(".lb-prev").onclick = function () {
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+
+                currentIndex = currentAlbum.length - 1;
+
+            }
+
+            showImage();
+
+        };
+
+        document.querySelector(".lb-close").onclick = function () {
+
+            lightbox.classList.remove("active");
+
+        };
+
+        lightbox.onclick = function (e) {
+
+            if (e.target === lightbox) {
+
+                lightbox.classList.remove("active");
+
+            }
+
+        };
+
+        document.onkeydown = function (e) {
+
+            if (!lightbox.classList.contains("active")) return;
+
+            if (e.key === "ArrowRight") {
+
+                document.querySelector(".lb-next").click();
+
+            }
+
+            if (e.key === "ArrowLeft") {
+
+                document.querySelector(".lb-prev").click();
+
+            }
+
+            if (e.key === "Escape") {
+
+                lightbox.classList.remove("active");
+
+            }
+
+        };
     </script>
 </body>
 

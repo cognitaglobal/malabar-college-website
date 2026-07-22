@@ -79,6 +79,95 @@
         .doc-item:last-child {
             border-bottom: none;
         }
+
+        .admission-btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--mce-primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 42px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all .3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+        }
+
+        .apply-btn:hover {
+            background: var(--mce-primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+        }
+
+        .apply-btn i {
+            transition: transform .3s ease;
+        }
+
+        .apply-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .apply-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto 0;
+            width: 100%;
+        }
+
+        .apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 42px;
+            background: var(--mce-primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all .3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+        }
+
+        .apply-btn:hover {
+            background: var(--mce-primary-dark);
+            transform: translateY(-3px);
+            color: #fff;
+        }
+
+        .apply-btn i {
+            transition: transform .3s ease;
+        }
+
+        .apply-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 576px) {
+            .step-card {
+                padding: 18px 14px;
+                gap: 12px;
+            }
+            .step-num {
+                width: 38px;
+                height: 38px;
+                font-size: 16px;
+            }
+            .apply-btn {
+                padding: 14px 28px;
+                font-size: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -107,150 +196,89 @@
                 <h2 class="section-title">How to Apply</h2>
                 <p class="section-subtitle">Follow these simple steps for a smooth admission experience.</p>
             </div>
-            <div class="grid-2 reveal reveal-fade-up">
-                <div>
-                    <div class="step-card">
-                        <div class="step-num">1</div>
-                        <div>
-                            <h4 style="margin-bottom: 6px;">Choose Your Programme</h4>
-                            <p style="font-size: 14px; color: #555;">Browse our ITI, SIT, SMS, or Cognita programmes.
-                                Review eligibility criteria, course duration, and career outcomes.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-num">2</div>
-                        <div>
-                            <h4 style="margin-bottom: 6px;">Fill the Application</h4>
-                            <p style="font-size: 14px; color: #555;">Complete the online application or collect the
-                                physical form from college office. Ensure all details are accurate.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-num">3</div>
-                        <div>
-                            <h4 style="margin-bottom: 6px;">Submit Documents</h4>
-                            <p style="font-size: 14px; color: #555;">Upload or submit certified copies of required
-                                supporting documents — certificates, marks cards, and ID proofs.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-num">4</div>
-                        <div>
-                            <h4 style="margin-bottom: 6px;">Pay Fees & Confirm</h4>
-                            <p style="font-size: 14px; color: #555;">Pay the admission fee online or at the campus
-                                office. Receive your confirmation letter and report on orientation day.</p>
-                        </div>
+            <div class="reveal reveal-fade-up admission-steps">
+
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h4 style="margin-bottom:6px;">Register</h4>
+                        <p style="font-size:14px;color:#555;">
+                            Create your admission account by registering with your name, mobile number, email address,
+                            and a secure password.
+                        </p>
                     </div>
                 </div>
-                <div
-                    style="background: linear-gradient(135deg, var(--mce-primary) 0%, var(--mce-primary-dark) 100%); border-radius: 16px; padding: 40px; color: var(--mce-white);">
-                    <h3 style="color: var(--mce-accent); font-size: 26px; margin-bottom: 8px;">Apply Online Now</h3>
-                    <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 28px; line-height: 1.7;">
-                        Fill out the form below and our admissions team will contact you within 24 hours to guide your
-                        application.</p>
-                    <div class="form-group"><input class="form-control" placeholder="Your Full Name"
-                            style="border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: var(--mce-white);">
+
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h4 style="margin-bottom:6px;">Fill Personal Details</h4>
+                        <p style="font-size:14px;color:#555;">
+                            Enter your personal information including date of birth, gender, address, contact details,
+                            and guardian information.
+                        </p>
                     </div>
-                    <div class="form-group"><input class="form-control" placeholder="Mobile Number"
-                            style="border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: var(--mce-white);">
-                    </div>
-                    <div class="form-group"><input class="form-control" placeholder="Email Address"
-                            style="border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: var(--mce-white);">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control"
-                            style="border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: var(--mce-white);">
-                            <option value="">Select Programme</option>
-                            <option>ITI — Electrician Trade</option>
-                            <option>ITI — Draughtsman Civil</option>
-                            <option>SIT — DCA</option>
-                            <option>SIT — PGDCA</option>
-                            <option>SMS — Office Management</option>
-                            <option>Cognita — UK/Canada</option>
-                        </select>
-                    </div>
-                    <button class="btn-primary"
-                        style="width: 100%; background: var(--mce-accent); color: var(--mce-primary-dark);">Submit
-                        Enquiry
-                        →</button>
                 </div>
+
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h4 style="margin-bottom:6px;">Academic Details</h4>
+                        <p style="font-size:14px;color:#555;">
+                            Provide your educational qualifications, examination details, board or university, marks,
+                            and year of passing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <div>
+                        <h4 style="margin-bottom:6px;">Choose Your Course</h4>
+                        <p style="font-size:14px;color:#555;">
+                            Select your preferred programme or course from the available options and review the
+                            eligibility requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">5</div>
+                    <div>
+                        <h4 style="margin-bottom:6px;">Submit Documents</h4>
+                        <p style="font-size:14px;color:#555;">
+                            Upload the required documents such as passport-size photo, ID proof, academic certificates,
+                            and mark sheets.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">6</div>
+                    <div>
+                        <h4 style="margin-bottom:6px;">Payment & Submit</h4>
+                        <p style="font-size:14px;color:#555;">
+                            Complete the application fee payment through the available online payment methods and submit
+                            your application successfully.
+                        </p>
+                    </div>
+                </div>
+
             </div>
+        </div>
+
+        <div class="apply-btn-wrapper">
+            <a href="#" class="apply-btn">
+                Apply Now <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+
         </div>
     </section>
 
     <!-- Eligibility & Documents -->
-    <section class="section-padding" style="background: var(--mce-bg-gray);">
-        <div class="section-container">
-            <div class="grid-2 reveal reveal-fade-up" style="gap: 40px;">
-                <div>
-                    <h3
-                        style="font-size: 24px; color: var(--mce-heading-color); margin-bottom: 20px; font-weight: 800;">
-                        📋
-                        Eligibility Criteria</h3>
-                    <div class="premium-card">
-                        <h4 style="color: var(--mce-secondary); margin-bottom: 12px;">ITI Trades</h4>
-                        <p style="font-size: 14.5px; color: #555; margin-bottom: 16px;">Minimum SSLC (Class 10) pass
-                            with Science and Mathematics. Age: 14–25 years. Relaxation for SC/ST/OBC applicants per
-                            government norms.</p>
-                        <h4 style="color: var(--mce-secondary); margin-bottom: 12px;">SIT Courses</h4>
-                        <p style="font-size: 14.5px; color: #555; margin-bottom: 16px;">Plus Two or equivalent pass for
-                            diploma programmes. SSLC pass for certificate courses. Basic computer literacy preferred.
-                        </p>
-                        <h4 style="color: var(--mce-secondary); margin-bottom: 12px;">SMS Programmes</h4>
-                        <p style="font-size: 14.5px; color: #555; margin-bottom: 16px;">Graduate degree in any
-                            discipline for PG programmes. Plus Two for undergraduate management certificates.</p>
-                        <h4 style="color: var(--mce-secondary); margin-bottom: 12px;">Cognita — Study Abroad</h4>
-                        <p style="font-size: 14.5px; color: #555;">IELTS/TOEFL scores required depending on the
-                            destination country. Our team assists with language preparation.</p>
-                    </div>
-                </div>
-                <div>
-                    <h3
-                        style="font-size: 24px; color: var(--mce-heading-color); margin-bottom: 20px; font-weight: 800;">
-                        📁
-                        Required Documents</h3>
-                    <div class="premium-card">
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">📄</span> SSLC /
-                            Plus Two Certificate & Mark List</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">📄</span>
-                            Transfer Certificate (TC) from previous school</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">📄</span> Caste
-                            /
-                            Community Certificate (if applicable)</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">📷</span> Recent
-                            Passport Size Photographs (4 nos.)</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">🪪</span>
-                            Aadhaar
-                            Card / ID Proof (self & parent)</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">📝</span>
-                            Completed Application Form</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">💰</span> Income
-                            Certificate (for scholarship applicants)</div>
-                        <div class="doc-item"><span style="color: var(--mce-primary); font-size: 18px;">📋</span>
-                            Migration Certificate (if applicable)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Fee Structure -->
-
-
-    <!-- FAQs -->
-
-
-    <section class="section-padding">
-        <div class="section-container reveal reveal-fade-up">
-            <div class="cta-banner">
-                <h2>Seats Are Filling Fast — Apply Today</h2>
-                <p>Don't miss your opportunity to build a certified, job-ready career at one of Kerala's most respected
-                    institutions.</p>
-                <a href="contact.html" class="btn-primary"
-                    style="background: var(--mce-accent); color: var(--mce-primary-dark);">Contact Admissions Office</a>
-            </div>
-        </div>
-    </section>
 
     <footer id="mce-footer"></footer>
     <script src="mce-components.js"></script>

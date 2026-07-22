@@ -20,6 +20,52 @@
             background: #004aad;
             color: white;
         }
+
+        .course-sidebar {
+            width: 300px;
+            height: 600px;
+            overflow-y: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .course-content-area {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .course-pdf-container {
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .course-sidebar {
+                width: 100%;
+                height: 250px;
+            }
+            .course-pdf-container {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-pdf-container {
+                height: 350px;
+            }
+            .course-content-area {
+                padding: 15px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="mce-header-footer.css">
     <link rel="stylesheet" href="theme.css">
@@ -39,8 +85,7 @@
         <div style="display:flex; flex-wrap:wrap; gap:20px; margin:40px 0;">
 
             <!-- Left Side -->
-            <div
-                style="width:300px; height:600px; overflow-y:auto; background:white; border-radius:20px; padding:15px;">
+            <div class="course-sidebar">
 
                 <div class="course-item" onclick="showCourse('CMC')">CMC</div>
                 <div class="course-item" onclick="showCourse('ADL')">ADL</div>
@@ -60,7 +105,7 @@
             </div>
 
             <!-- Right Side -->
-            <div style="flex:1; background:white; border-radius:20px; padding:20px;">
+            <div class="course-content-area">
 
                 <h2 id="courseName">Select a Course</h2>
 
@@ -73,7 +118,7 @@
 
                 <!-- <p id="description"></p> -->
 
-                <div id="pdfContainer" style="width:100%; height:700px; border-radius:15px; overflow:hidden;">
+                <div id="pdfContainer" class="course-pdf-container">
                     <iframe id="pdfViewer" src="" width="100%" height="100%" style="border:none;">
                     </iframe>
                 </div>

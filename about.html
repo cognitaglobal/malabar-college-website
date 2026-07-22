@@ -118,8 +118,31 @@
 
             transform: translateY(-10px);
 
-            box-shadow: 0 25px 55px rgba(0, 74, 173, .15);
+        }
 
+        @media (max-width: 900px) {
+            .foundation-row {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 40px;
+            }
+            .foundation-row.reverse {
+                direction: ltr;
+            }
+            .msg-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 24px 18px;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .foundation-content {
+                padding: 24px 18px;
+                border-radius: 18px;
+            }
         }
 
         .foundation-icon {
@@ -624,6 +647,76 @@
             color: var(--mce-secondary);
             font-weight: 600;
         }
+  /*=========================================
+        DOUBLE LEADERSHIP
+=========================================*/
+
+.leader-double-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+    margin-top:60px;
+}
+
+.leader-double-grid .leader-card{
+    display:grid;
+    grid-template-columns:190px 1fr;
+    gap:25px;
+    align-items:center;
+
+    background:#fff;
+    padding:20px;
+    border-radius:24px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.leader-double-grid .leader-image img{
+    width:190px;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.leader-double-grid .leader-content h2{
+    font-size:32px;
+    line-height:1.25;
+    margin-bottom:18px;
+    color:var(--mce-heading-color);
+}
+
+.leader-double-grid .leader-content p{
+    font-size:16px;
+    line-height:1.8;
+    color:#666;
+}
+
+.leader-double-grid .leader-name{
+    margin-top:25px;
+    padding-top:18px;
+    border-top:1px solid #ddd;
+}
+
+@media(max-width:1200px){
+
+    .leader-double-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .leader-double-grid .leader-card{
+        grid-template-columns:1fr;
+    }
+
+    .leader-double-grid .leader-image img{
+        width:100%;
+        height:420px;
+    }
+
+}
 
         /* FACULTY */
 
@@ -733,7 +826,7 @@
             <div class="reveal reveal-fade-left">
                 <span
                     style="color: var(--mce-secondary); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Our
-                    Story Since 1922</span>
+                    Story Since 2000</span>
                 <h2 style="font-size: 34px; color: var(--mce-heading-color); margin: 10px 0 20px; font-weight: 800;">A
                     Legacy
                     Built on Service and Scholarship</h2>
@@ -754,7 +847,7 @@
             <div class="reveal reveal-fade-right">
                 <div class="grid-2" style="gap: 20px;">
                     <div class="highlight-stat">
-                        <div class="val">1922</div>
+                        <div class="val">2000</div>
                         <p style="font-weight: 700; color: #555; margin-top: 4px;">Year Founded</p>
                     </div>
                     <div class="highlight-stat">
@@ -1017,12 +1110,29 @@ OUR MOTTO
 
 
     <!-- =====================================================
-        PRINCIPAL'S MESSAGE
+        PRINCIPAL'S MESSAGE and Group Instructure
 ======================================================-->
 
-    <section class="leader-section">
+ <section class="leader-section">
 
-        <div class="section-container">
+    <div class="section-container">
+
+        <div class="section-header text-center">
+
+            <span class="foundation-subtitle">OUR LEADERSHIP</span>
+
+            <h2 class="section-title">Meet Our Academic Leaders</h2>
+
+            <p class="section-subtitle">
+                Dedicated leaders committed to academic excellence, innovation,
+                and student success.
+            </p>
+
+        </div>
+
+        <div class="leader-double-grid">
+
+            <!-- Principal -->
 
             <div class="leader-card">
 
@@ -1032,18 +1142,12 @@ OUR MOTTO
 
                 <div class="leader-content">
 
-                    <span class="leader-tag">OUR LEADERSHIP</span>
-
                     <h2>Principal's Message</h2>
 
                     <p>
-                        At Malabar College of Engineering Campus, we are committed to fostering academic excellence,
-                        practical skills, and lifelong learning in a supportive and disciplined environment.
-                    </p>
-
-                    <p>
-                        Our goal is to inspire every learner to achieve their full potential and become competent
-                        professionals equipped to meet the challenges of the future.
+                        At Malabar College of Engineering Campus, we are committed
+                        to fostering academic excellence, practical skills and
+                        lifelong learning in a disciplined environment.
                     </p>
 
                     <div class="leader-name">
@@ -1055,9 +1159,38 @@ OUR MOTTO
 
             </div>
 
+            <!-- Group Instructor -->
+
+            <div class="leader-card">
+
+                <div class="leader-image">
+                    <img src="assets/images/aswathi.jpeg" alt="Group Instructor">
+                </div>
+
+                <div class="leader-content">
+
+                    <h2>Group Instructor's Message</h2>
+
+                    <p>
+                        We strive to provide practical knowledge, professional
+                        guidance and a supportive learning environment that
+                        prepares students for successful careers.
+                    </p>
+
+                    <div class="leader-name">
+                        <h4>Aswathi Suku</h4>
+                        <span>Group Instructor</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-    </section>
+    </div>
+
+</section>
     <section class="faculty-section">
 
         <div class="section-container">
@@ -1080,11 +1213,7 @@ OUR MOTTO
 
             <div class="faculty-grid">
 
-                <div class="faculty-card">
-                    <img src="assets/images/aswathi.jpeg">
-                    <h3>Aswathi suku</h3>
-                    <p>Group Instructor</p>
-                </div>
+               
 
                 <div class="faculty-card">
                     <img src="assets/images/shamna.jpeg">

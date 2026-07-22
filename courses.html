@@ -142,6 +142,38 @@
                 transform: translateY(-50%) scale(1);
             }
         }
+
+        @media (max-width: 992px) {
+            .starburst-popup {
+                width: 140px;
+                height: 140px;
+                right: 10px;
+            }
+            .popup-text h3 {
+                font-size: 13px;
+            }
+            .popup-text p {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .starburst-popup {
+                width: 90px;
+                height: 90px;
+                right: 10px;
+                top: auto;
+                bottom: 15px;
+                transform: none;
+                animation: none;
+            }
+            .popup-text h3 {
+                font-size: 10px;
+            }
+            .popup-text p {
+                display: none;
+            }
+        }
     </style>
     <link rel="stylesheet" href="mce-header-footer.css">
     <link rel="stylesheet" href="theme.css">

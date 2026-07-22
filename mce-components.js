@@ -516,72 +516,52 @@ stroke-linejoin="round">
 ============================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
-
   const menu = document.getElementById("mceMobileDrawer");
-
   const overlay = document.getElementById("mceMobileOverlay");
-
   const openBtn = document.getElementById("mceMobileToggle");
-
   const closeBtn = document.getElementById("mceCloseDrawer");
 
   if (openBtn) {
-
+    openBtn.setAttribute("aria-expanded", "false");
+    openBtn.setAttribute("aria-controls", "mceMobileDrawer");
+    openBtn.setAttribute("aria-label", "Open Navigation Menu");
     openBtn.addEventListener("click", function () {
-
-      menu.classList.add("active");
-
-      overlay.classList.add("active");
-
+      if (menu) menu.classList.add("active");
+      if (overlay) overlay.classList.add("active");
+      openBtn.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
-
     });
-
   }
 
   if (closeBtn) {
-
+    closeBtn.setAttribute("aria-label", "Close Navigation Menu");
     closeBtn.addEventListener("click", closeDrawer);
-
   }
 
   if (overlay) {
-
     overlay.addEventListener("click", closeDrawer);
-
   }
 
   function closeDrawer() {
-
-    menu.classList.remove("active");
-
-    overlay.classList.remove("active");
-
+    if (menu) menu.classList.remove("active");
+    if (overlay) overlay.classList.remove("active");
+    if (openBtn) openBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
-
   }
 
   document.addEventListener("keydown", function (e) {
-
     if (e.key === "Escape") {
-
       closeDrawer();
-
     }
-
-
   });
+
   const dropdownBtn = document.querySelector(".mce-mobile-dropdown-btn");
-
   if (dropdownBtn) {
-
+    dropdownBtn.setAttribute("aria-expanded", "false");
     dropdownBtn.addEventListener("click", function () {
-
-      this.parentElement.classList.toggle("active");
-
+      const parent = this.parentElement;
+      const isExpanded = parent.classList.toggle("active");
+      this.setAttribute("aria-expanded", isExpanded ? "true" : "false");
     });
-
   }
-
-
 });
